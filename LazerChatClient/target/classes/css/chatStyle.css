@@ -1,0 +1,81 @@
+#status{
+    -fx-prompt-text-fill: white;
+    -fx-font-family: Arial;
+}
+
+#searchContact{
+    -fx-prompt-text-fill: gray;
+}
+
+.jfx-decorator {
+    -fx-decorator-color:  #40444A;
+}
+
+.jfx-decorator .jfx-decorator-buttons-container {
+    -fx-background-color: -fx-decorator-color;
+}
+
+.jfx-decorator .resize-border {
+    -fx-border-color: -fx-decorator-color;
+    -fx-border-width: 2 2 2 2;
+}
+.jfx-decorator .title{
+    -fx-font-family : "Arial Black";
+}
+
+.loginPassword{
+    -fx-prompt-text-fill: silver;
+    -fx-font-style: italic;
+    -fx-font-size: 17px;
+}
+
+.loginPhone{
+    -fx-prompt-text-fill: silver;
+    -fx-font-style: italic;
+    -fx-font-size: 17px;
+    -jfx-focus-color: #609699;
+    -jfx-unfocus-color: #609699;
+}
+
+.registerTextField
+{
+    -fx-prompt-text-fill: silver;
+    -fx-font-style: italic;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -jfx-focus-color: #609699;
+    -jfx-unfocus-color: #609699;
+}
+.registerPasswordField
+{
+    -fx-prompt-text-fill: silver;
+    -fx-font-style: italic;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -jfx-focus-color: #609699;
+    -jfx-unfocus-color: #609699;
+}
+
+/***    Text Field   ***/
+/**.jfx-text-field{
+    -jfx-focus-color: #9dff92;
+    -jfx-unfocus-color: white;
+    -fx-padding: 0.333333em 0 0.333333em 0;
+}
+
+.jfx-text-field > .input-line {
+    -fx-background-color: -jfx-unfocus-color;
+    -fx-pref-height: 1px;
+    -fx-translate-y: 1px;
+}
+
+.jfx-text-field > .input-focused-line {
+    -fx-background-color: -jfx-focus-color;
+    -fx-pref-height: 2px;
+}
+
+.jfx-text-field, .jfx-text-field:focused, .jfx-password-field {
+    -fx-background-color: TRANSPARENT, TRANSPARENT, TRANSPARENT;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+}**/

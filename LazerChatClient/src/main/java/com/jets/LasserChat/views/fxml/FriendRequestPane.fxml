@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="friendRequestPane" minHeight="200.0" minWidth="200.0" prefHeight="431.0" prefWidth="254.0" style="-fx-background-color: #40444A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="85.0" prefWidth="246.0" style="-fx-border-color: transparent transparent gray gray;">
+         <children>
+            <Circle fx:id="profileImg2131" fill="WHITE" layoutX="39.0" layoutY="36.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="73.0" layoutY="14.0" prefHeight="26.0" prefWidth="115.0" text="01097706982" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="174.0" layoutY="15.0" prefHeight="24.0" prefWidth="68.0" text="Mohmd ELhosany" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <HBox layoutX="73.0" layoutY="60.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="73.0">
+               <children>
+                  <JFXButton prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #79C952;" text="Accept" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #D53F46;" text="Reject" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="85.0" prefWidth="246.0" style="-fx-border-color: transparent transparent gray gray;">
+         <children>
+            <Circle fx:id="profileImg21311" fill="WHITE" layoutX="39.0" layoutY="36.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="73.0" layoutY="14.0" prefHeight="26.0" prefWidth="115.0" text="01097706982" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="174.0" layoutY="15.0" prefHeight="24.0" prefWidth="68.0" text="Mohmd ELhosany" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <HBox layoutX="73.0" layoutY="60.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="73.0">
+               <children>
+                  <JFXButton prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #79C952;" text="Accept" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #D53F46;" text="Reject" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="95.0" prefHeight="85.0" prefWidth="246.0" style="-fx-border-color: transparent transparent gray gray;">
+         <children>
+            <Circle fx:id="profileImg213111" fill="WHITE" layoutX="39.0" layoutY="36.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="73.0" layoutY="14.0" prefHeight="26.0" prefWidth="115.0" text="01097706982" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <HBox layoutX="75.0" layoutY="60.0" prefHeight="24.0" prefWidth="147.0" spacing="10.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="74.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Pending" textFill="#02ff4a">
+                     <font>
+                        <Font name="Arial" size="15.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SPINNER" />
+                     </graphic>
+                  </Label>
+                  <JFXButton prefHeight="18.0" prefWidth="65.0" style="-fx-background-color: #D53F46;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+   </children>
+</VBox>

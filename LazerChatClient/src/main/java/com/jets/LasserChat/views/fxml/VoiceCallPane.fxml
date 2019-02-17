@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="350.0" maxWidth="320.0" minHeight="350.0" minWidth="320.0" style="-fx-background-color: #40444A; -fx-border-color: gray; -fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="354.0" layoutY="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="20.0" />
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="135.0" fitWidth="160.0" layoutX="80.0" layoutY="44.0" pickOnBounds="true" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="44.0">
+         <image>
+            <Image url="@Capture.PNG" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <JFXButton layoutX="119.0" layoutY="261.0" style="-fx-background-color: #ff4c4c;" text="End Call" textFill="#fffafa" AnchorPane.bottomAnchor="58.0" AnchorPane.rightAnchor="118.0">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="PHONE" size="22" />
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="14.0" layoutY="318.0" text="Ringing ..." textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0">
+         <font>
+            <Font name="Consolas" size="12.0" />
+         </font>
+      </Label>
+      <VBox alignment="TOP_CENTER" layoutX="150.0" layoutY="179.85714721679688">
+         <children>
+            <FontAwesomeIconView fill="#00ff1e" glyphName="CHEVRON_UP" size="25" />
+            <FontAwesomeIconView fill="#00ff1e" glyphName="CHEVRON_UP" layoutX="10.0" layoutY="27.0" size="18" />
+            <FontAwesomeIconView fill="#00ff1e" glyphName="CHEVRON_UP" layoutX="10.0" layoutY="48.0" size="15" />
+            <FontAwesomeIconView fill="#00ff1e" glyphName="CHEVRON_UP" layoutX="15.0" layoutY="68.0" size="15" />
+         </children>
+      </VBox>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

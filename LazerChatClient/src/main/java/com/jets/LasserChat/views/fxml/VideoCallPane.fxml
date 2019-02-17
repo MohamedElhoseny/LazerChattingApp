@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="325.0" prefWidth="528.0" style="-fx-background-color: #40444A; -fx-border-color: gray; -fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="477.0" layoutY="14.0">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="20.0" />
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="285.0" fitWidth="295.0" layoutX="28.0" layoutY="17.0" pickOnBounds="true">
+         <image>
+            <Image url="@Capture.PNG" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="129.0" fitWidth="160.0" layoutX="341.0" layoutY="95.0" pickOnBounds="true">
+         <image>
+            <Image url="@Capture.PNG" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <JFXButton layoutX="122.0" layoutY="261.0" style="-fx-background-color: #ff4c4c;" text="End Call" textFill="#fffafa">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="VIDEO_CAMERA" size="22" />
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="376.0" layoutY="268.0" text="Ringing ..." textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="15.0" />
+         </font>
+      </Label>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

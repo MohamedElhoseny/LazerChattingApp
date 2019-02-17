@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.jets</groupId>
+	<artifactId>LazerChat</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>LazerChat</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+
+		<!-- Add commonServices Jar -->
+		<dependency>
+			<groupId>common</groupId>
+			<artifactId>Services</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>E:/FCIH/ITI/JavaSE/Project/Implementation/LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
+
+		<!-- Add Jfoenix Jar -->
+		<dependency>
+			<groupId>com.jfoenix</groupId>
+			<artifactId>jfoenix</artifactId>
+			<version>8.0.8</version>
+		</dependency>
+
+		<!-- Add FontAwesomeFX glyphs Jar -->
+		<dependency>
+			<groupId>fontawesomefx</groupId>
+			<artifactId>commons</artifactId>
+			<version>8.15</version>
+			<scope>system</scope>
+			<systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/fontawesomefx-commons-8.15.jar</systemPath>
+		</dependency>
+
+		<!-- Add FontAwesome Jar -->
+		<dependency>
+			<groupId>fontawesomefx</groupId>
+			<artifactId>fontawesome</artifactId>
+			<version>4.7.0</version>
+			<scope>system</scope>
+			<systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/fontawesomefx-fontawesome-4.7.0-5.jar</systemPath>
+		</dependency>
+
+		<!-- Add FontAwesome Jar -->
+		<dependency>
+			<groupId>AnimationFX</groupId>
+			<artifactId>simpleAnimations</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/AnimationPackage.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

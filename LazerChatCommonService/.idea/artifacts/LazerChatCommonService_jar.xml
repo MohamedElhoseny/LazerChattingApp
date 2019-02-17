@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LazerChatCommonService:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/LazerChatCommonService_jar</output-path>
+    <root id="archive" name="LazerChatCommonService.jar">
+      <element id="module-output" name="LazerChatCommonService" />
+    </root>
+  </artifact>
+</component>

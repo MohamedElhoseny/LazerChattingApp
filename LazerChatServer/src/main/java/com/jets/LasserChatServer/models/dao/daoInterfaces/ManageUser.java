@@ -1,5 +1,6 @@
 package com.jets.LasserChatServer.models.dao.daoInterfaces;
 
+
 import com.jets.LazerChatCommonService.models.entity.User;
 
 public interface ManageUser

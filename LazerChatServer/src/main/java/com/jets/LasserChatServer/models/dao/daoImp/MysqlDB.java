@@ -10,7 +10,7 @@ public class MysqlDB implements DatabaseInterface
 	
 	/* ANY CONFIGURATION MUST BE IN XML FILE */
     private static MysqlDB instance;
-    private String dbName = "swf2_db";
+    private String dbName = "projdb";
     private String dbURL = "jdbc:mysql://localhost:3306/" + dbName;
     private String dbUsername = "root";
     private String dbPassword = "12131234";
@@ -23,6 +23,7 @@ public class MysqlDB implements DatabaseInterface
     //Constructor
     private MysqlDB() {
         try {
+            new com.mysql.cj.jdbc.Driver();
             connection = DriverManager.getConnection(dbURL, dbUsername, dbPassword);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -41,7 +42,7 @@ public class MysqlDB implements DatabaseInterface
 
     //Methods
     @Override
-    public void insert(String table, String attributes, String values) {
+    public void insert(String table, String attributes, String values) throws SQLException {
         query = "INSERT INTO " + table + "(" + attributes + ") VALUES(" + values + ")";
 
         //for checking
@@ -50,7 +51,7 @@ public class MysqlDB implements DatabaseInterface
         executeQuery(query, false);
     }
     @Override
-    public void delete(String table, int objectId) {
+    public void delete(String table, int objectId) throws SQLException{
         query = "DELETE FROM " + table + " WHERE ID = " + objectId;
 
         //for checking
@@ -59,7 +60,8 @@ public class MysqlDB implements DatabaseInterface
         executeQuery(query, false);
     }
     @Override
-    public void update(String table, String options, int objectId, String whereStatement) {
+    public void update(String table, String options, int objectId, String whereStatement) throws SQLException
+    {
         query = "UPDATE " + table + " SET " + options + " WHERE ID = " + objectId;
 
         if(!whereStatement.equals("")) {
@@ -73,14 +75,16 @@ public class MysqlDB implements DatabaseInterface
     }
     
     @Override
-    public void update(String table, String attr, String values , String Where){
+    public void update(String table, String attr, String values , String Where) throws SQLException
+    {
         query = "Update "+table+" SET "+attr+ " = "+values+" Where "+Where;
         System.out.println(query);
         executeQuery(query,false);
     }
 
     @Override
-    public ArrayList<Object[]> select(String table) {
+    public ArrayList<Object[]> select(String table) throws SQLException
+    {
         query = prepareQuery(table, "*", "");
 
         //for checking
@@ -91,7 +95,8 @@ public class MysqlDB implements DatabaseInterface
         return resultList;
     }
     @Override
-    public ArrayList<Object[]> select(String table, String options) {
+    public ArrayList<Object[]> select(String table, String options) throws SQLException
+    {
         query = prepareQuery(table, options, "");
 
         //for checking
@@ -102,7 +107,8 @@ public class MysqlDB implements DatabaseInterface
         return resultList;
     }
     @Override
-    public ArrayList<Object[]> select(String table, String options, String whereStatement) {
+    public ArrayList<Object[]> select(String table, String options, String whereStatement) throws SQLException
+    {
         query = prepareQuery(table, options, whereStatement);
 
         //for checking
@@ -112,16 +118,9 @@ public class MysqlDB implements DatabaseInterface
 
         return resultList;
     }
-    @Override
-    public ArrayList<Object[]> select(String table, String options ,int userID ){
-        table += " INNER JOIN User_notification on Notification.ID = User_notification.notification_ID WHERE User_notification.User_ID = "+userID;
-        query = prepareQuery(table,options,"");
-        executeQuery(query, true);
-        return resultList;
-    }
-
     //Helper Methods
-    private String prepareQuery(String table,String options, String whereStatement) {
+    private String prepareQuery(String table,String options, String whereStatement) throws SQLException
+    {
         query = "SELECT " + options + " FROM " + table;
 
         if (!whereStatement.equals("")) {
@@ -131,7 +130,7 @@ public class MysqlDB implements DatabaseInterface
         return query;
     }
 
-    private void executeQuery(String query, Boolean dataRetrieval)
+    private void executeQuery(String query, Boolean dataRetrieval) throws SQLException
     {
         try(PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
@@ -146,12 +145,6 @@ public class MysqlDB implements DatabaseInterface
             else {
                 preparedStatement.executeUpdate();
             }
-        }
-        catch (SQLException ex){
-            // handle any errors
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
         }
     }
 

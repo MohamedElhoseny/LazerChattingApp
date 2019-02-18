@@ -1,6 +1,7 @@
 package com.jets.LasserChat.models.dao;
 
 import java.io.File;
+import java.rmi.Remote;
 
 import com.jets.LazerChatCommonService.models.entity.User;
 
@@ -8,7 +9,7 @@ import com.jets.LazerChatCommonService.models.entity.User;
  * Description : called from the other friend side to update all his friends
  * 				(Looping through friend list and call notifyStatus)
  * */
-public interface NotifierServices
+public interface NotifierServices extends Remote
 {
 	/* Notify user about a new user message, for notifying only */
 	void notifyMessage(User fromUser);

@@ -16,7 +16,7 @@ public class ServerServicesController
         try
         {
             UserServicesImp userServices = new UserServicesImp();
-            Registry register= LocateRegistry.getRegistry();
+            Registry register = LocateRegistry.getRegistry();
             register.rebind("UserServices", userServices);
 
             System.out.println("Server is started .");

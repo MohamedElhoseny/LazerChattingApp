@@ -1,5 +1,7 @@
 package com.jets.LazerChatCommonService.models.entity;
 
-public enum GroupCategory {
+import java.io.Serializable;
+
+public enum GroupCategory implements Serializable {
 	FAMILY, FRIENDS, WORK, OTHER
 }

@@ -24,7 +24,7 @@
 			<artifactId>Services</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>system</scope>
-			<systemPath>E:/FCIH/ITI/JavaSE/Project/Implementation/LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT.jar</systemPath>
+			<systemPath>E:/FCIH/ITI/JavaSE/Project/LazerChattingApp/LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -32,5 +32,13 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.13</version>
+		</dependency>
+
 	</dependencies>
 </project>

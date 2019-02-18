@@ -1,4 +1,12 @@
 package com.jets.LasserChat.views.controllers;
 
-class VideoCallPaneController {
+public class VideoCallPaneController
+{
+    public VideoCallPaneController(){
+
+    }
+
+    public VideoCallPaneController(ChatRoomController chatRoomController){
+
+    }
 }

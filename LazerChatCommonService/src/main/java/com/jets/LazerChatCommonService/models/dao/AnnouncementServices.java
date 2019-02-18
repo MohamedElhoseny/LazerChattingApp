@@ -1,7 +1,10 @@
 package com.jets.LazerChatCommonService.models.dao;
 
-public interface AnnouncementServices
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface AnnouncementServices extends Remote
 {
 	/* Client side*/
-	void broadcastAnnouncement(String description);
+	void broadcastAnnouncement(String description) throws RemoteException;
 }

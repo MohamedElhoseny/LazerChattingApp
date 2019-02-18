@@ -1,6 +1,8 @@
 package com.jets.LazerChatCommonService.models.entity;
 
-public class User
+import java.io.Serializable;
+
+public class User implements Serializable
 {
 	//Attributes
 	private int id;

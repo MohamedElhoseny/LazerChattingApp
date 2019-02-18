@@ -14,17 +14,10 @@ import java.util.ResourceBundle;
 
 public class LoginPaneController implements Initializable
 {
-    @FXML
-    private JFXTextField phoneTF;
-
-    @FXML
-    private JFXPasswordField passwordTF;
-
-    @FXML
-    private FontAwesomeIconView phone_error;
-
-    @FXML
-    private FontAwesomeIconView password_error;
+    @FXML private JFXTextField phoneTF;
+    @FXML private JFXPasswordField passwordTF;
+    @FXML private FontAwesomeIconView phone_error;
+    @FXML private FontAwesomeIconView password_error;
 
     private StartupPaneController parentController;
 
@@ -36,7 +29,8 @@ public class LoginPaneController implements Initializable
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         phoneTF.textProperty().addListener((observable, oldValue, newValue) -> {
             try {
                 Integer.parseInt(phoneTF.getText());
@@ -63,10 +57,17 @@ public class LoginPaneController implements Initializable
 
 
     @FXML
-    void logIn(ActionEvent event) {
-            //sucessed
-            //user info get
-            parentController.startChatRoom(new User());
+    void logIn(ActionEvent event)
+    {
+        String phone = phoneTF.getText();
+        String password = passwordTF.getText();
+
+        User loginUser = parentController.getLoginUser(phone, password);
+
+        if (loginUser != null)
+            parentController.startChatRoom(loginUser);
+        else
+            parentController.setFalseFlag(password_error);
     }
 
     @FXML

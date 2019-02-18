@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXSpinner?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
@@ -26,7 +25,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefWidth="1063.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefWidth="1063.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane layoutX="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="1036.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -36,15 +35,15 @@
                      <children>
                         <AnchorPane fx:id="profile" prefHeight="70.0" prefWidth="297.0">
                            <children>
-                              <Circle fx:id="profileImg" fill="WHITE" layoutX="54.0" layoutY="36.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="11.0" />
-                              <Label layoutX="90.0" layoutY="14.0" prefHeight="26.0" prefWidth="138.0" text="Mohamed Elhosany" textFill="WHITE" AnchorPane.topAnchor="14.0">
+                              <Circle fx:id="loginUserImage" fill="WHITE" layoutX="54.0" layoutY="36.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="11.0" />
+                              <Label fx:id="loginUserName" layoutX="90.0" layoutY="14.0" prefHeight="26.0" prefWidth="138.0" text="Mohamed Elhosany" textFill="WHITE" AnchorPane.topAnchor="14.0">
                                  <font>
                                     <Font name="Arial Black" size="13.0" />
                                  </font>
                               </Label>
-                              <Circle fill="#1fff4e" layoutX="73.0" layoutY="53.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="47.0" />
-                              <JFXComboBox id="status" focusColor="#4d4d4d" layoutX="149.0" layoutY="41.0" prefHeight="25.0" prefWidth="84.0" promptText="Available" stylesheets="@/css/chatStyle.css" AnchorPane.bottomAnchor="1.0" />
-                              <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="256.0" layoutY="20.0" mnemonicParsing="false" scaleShape="false" style="-fx-background-color: transparent;" text="Button">
+                              <Circle fx:id="loginUserStatus_Circle" fill="#1fff4e" layoutX="73.0" layoutY="53.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="47.0" />
+                              <JFXComboBox id="status" fx:id="loginUserStatus_CB" focusColor="#4d4d4d" layoutX="149.0" layoutY="41.0" prefHeight="25.0" prefWidth="84.0" promptText="Available" stylesheets="@/css/chatStyle.css" AnchorPane.bottomAnchor="1.0" />
+                              <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="256.0" layoutY="20.0" mnemonicParsing="false" onAction="#updateProfile" scaleShape="false" style="-fx-background-color: transparent;" text="Button">
                                  <graphic>
                                     <FontAwesomeIconView fill="#e4dddd" glyphName="EDIT" size="1.5em" />
                                  </graphic>
@@ -65,12 +64,12 @@
                         <HBox alignment="CENTER" minHeight="42.0" minWidth="200.0" prefHeight="42.0" prefWidth="275.0">
                            <children>
                               <FontAwesomeIconView fill="#b9b9b9" glyphName="SEARCH" translateX="10.0" HBox.hgrow="NEVER" />
-                              <JFXTextField id="searchContact" alignment="CENTER" prefHeight="25.0" prefWidth="187.0" promptText="Search for people and groups" style="-fx-border-radius: 50; -fx-background-radius: 50;" stylesheets="@/css/chatStyle.css" HBox.hgrow="NEVER">
+                              <JFXTextField id="searchContact" fx:id="searchUserTF" alignment="CENTER" prefHeight="25.0" prefWidth="187.0" promptText="Search for people and groups" style="-fx-border-radius: 50; -fx-background-radius: 50;" stylesheets="@/css/chatStyle.css" HBox.hgrow="NEVER">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
                               </JFXTextField>
-                              <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="28.0" prefWidth="21.0" style="-fx-background-color: transparent;" text="Button" translateX="20.0" HBox.hgrow="NEVER">
+                              <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#addContacts" prefHeight="28.0" prefWidth="21.0" style="-fx-background-color: transparent;" text="Button" translateX="20.0" HBox.hgrow="NEVER">
                                  <graphic>
                                     <FontAwesomeIconView fill="#9dff92" glyphName="USER_PLUS" size="1.6em" wrappingWidth="20.428571701049805" />
                                  </graphic>
@@ -90,7 +89,7 @@
                   <BorderPane prefHeight="465.0" prefWidth="297.0" BorderPane.alignment="CENTER">
                      <center>
                         <ScrollPane fx:id="switchableScrollPane" fitToHeight="true" fitToWidth="true" pickOnBounds="false" prefHeight="328.0" prefWidth="248.0" style="-fx-background-color: #40444A;">
-                           <fx:include fx:id="friendChatPane" source="FriendChatPane.fxml" />
+
                         </ScrollPane>
                      </center>
                      <left>
@@ -151,7 +150,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <Button contentDisplay="GRAPHIC_ONLY" layoutX="21.0" layoutY="248.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button">
+                              <Button contentDisplay="GRAPHIC_ONLY" layoutX="21.0" layoutY="248.0" mnemonicParsing="false" onAction="#logOut" style="-fx-background-color: transparent;" text="Button">
                                  <graphic>
                                     <FontAwesomeIconView fill="#e4dddd" glyphName="SIGN_OUT" size="2em" />
                                  </graphic>
@@ -169,7 +168,7 @@
                         </VBox>
                      </left>
                      <top>
-                        <VBox prefHeight="68.0" prefWidth="297.0" spacing="5.0" style="-fx-background-color: #40444A;" BorderPane.alignment="CENTER">
+                        <VBox fx:id="favouritePane" prefHeight="68.0" prefWidth="297.0" spacing="5.0" style="-fx-background-color: #40444A;" BorderPane.alignment="CENTER">
                            <children>
                               <Label text="Favourites" textFill="#fffdfd">
                                  <VBox.margin>
@@ -210,7 +209,7 @@
                            <children>
                               <HBox alignment="CENTER_RIGHT" layoutX="345.0" prefHeight="67.0" prefWidth="167.0" spacing="10.0" style="-fx-background-color: #F2F8F8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button">
+                                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#fileTransferChooser" style="-fx-background-color: transparent;" text="Button">
                                        <graphic>
                                           <FontAwesomeIconView fill="#9e9797" glyphName="FOLDER" size="1.5em" />
                                        </graphic>
@@ -218,7 +217,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </Button>
-                                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button">
+                                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#startVideoCall" style="-fx-background-color: transparent;" text="Button">
                                        <graphic>
                                           <FontAwesomeIconView fill="#9e9797" glyphName="VIDEO_CAMERA" size="1.5em" />
                                        </graphic>
@@ -229,7 +228,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </Button>
-                                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button">
+                                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#startVoiceCall" style="-fx-background-color: transparent;" text="Button">
                                        <graphic>
                                           <FontAwesomeIconView fill="#9e9797" glyphName="VOLUME_CONTROL_PHONE" size="1.5em" />
                                        </graphic>
@@ -539,29 +538,29 @@
                         </Circle>
                         <HBox alignment="CENTER" prefHeight="35.0" prefWidth="190.0" spacing="14.0">
                            <children>
-                              <ToggleButton contentDisplay="GRAPHIC_ONLY" prefHeight="20.0" prefWidth="31.0" style="-fx-border-color: silver;">
+                              <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#addFriendToFavourite" prefHeight="20.0" prefWidth="31.0" style="-fx-border-color: silver;">
                                  <graphic>
                                     <FontAwesomeIconView fill="#fff822" glyphName="STAR" size="2em" wrappingWidth="22.285715103149414" />
                                  </graphic>
                               </ToggleButton>
-                              <ToggleButton contentDisplay="GRAPHIC_ONLY" style="-fx-border-color: silver;">
+                              <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#blockUser" style="-fx-border-color: silver;">
                                  <graphic>
                                     <FontAwesomeIconView fill="RED" glyphName="BAN" size="2em" />
                                  </graphic>
                               </ToggleButton>
                            </children>
                         </HBox>
-                        <Label text="Chris Marina">
+                        <Label fx:id="chattedUserName_R" text="Chris Marina">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </Label>
-                        <Label text="UX/UI Designer" textFill="#655d5d" translateY="-12.0">
+                        <Label fx:id="chattedUserBio_R" text="UX/UI Designer" textFill="#655d5d" translateY="-12.0">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label graphicTextGap="15.0" prefHeight="21.0" prefWidth="187.0" text="Cairo, Egypt" textFill="#7f7a7a">
+                        <Label fx:id="chattedUserLoc_R" graphicTextGap="15.0" prefHeight="21.0" prefWidth="187.0" text="Cairo, Egypt" textFill="#7f7a7a">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -572,7 +571,7 @@
                               <Insets />
                            </VBox.margin>
                         </Label>
-                        <Label alignment="CENTER" graphicTextGap="15.0" layoutX="77.0" layoutY="209.0" text="Chris_marina99@gmail.com" textFill="#7f7a7a">
+                        <Label fx:id="chattedUserEmail_R" alignment="CENTER" graphicTextGap="15.0" layoutX="77.0" layoutY="209.0" text="Chris_marina99@gmail.com" textFill="#7f7a7a">
                            <graphic>
                               <FontAwesomeIconView fill="#616060" glyphName="ENVELOPE" size="16.0" />
                            </graphic>
@@ -580,7 +579,7 @@
                               <Font name="Baskerville Old Face" size="14.0" />
                            </font>
                         </Label>
-                        <Label graphicTextGap="15.0" layoutX="83.0" layoutY="209.0" prefHeight="21.0" prefWidth="184.0" text="April 26, 2016" textFill="#7f7a7a">
+                        <Label fx:id="chattedUserBirthdate_R" graphicTextGap="15.0" layoutX="83.0" layoutY="209.0" prefHeight="21.0" prefWidth="184.0" text="April 26, 2016" textFill="#7f7a7a">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -588,7 +587,7 @@
                               <FontAwesomeIconView fill="#616060" glyphName="PHONE" size="18.0" />
                            </graphic>
                         </Label>
-                        <Label graphicTextGap="15.0" layoutX="77.0" layoutY="250.0" prefHeight="21.0" prefWidth="180.0" text="01097706982" textFill="#7f7a7a">
+                        <Label fx:id="chattedUserPhone_R" graphicTextGap="15.0" layoutX="77.0" layoutY="250.0" prefHeight="21.0" prefWidth="180.0" text="01097706982" textFill="#7f7a7a">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -596,7 +595,7 @@
                               <FontAwesomeIconView fill="#616060" glyphName="MOBILE" size="22.0" />
                            </graphic>
                         </Label>
-                        <JFXButton style="-fx-background-color: #9dff92;" text="Backup chat">
+                        <JFXButton onAction="#backUpChat" style="-fx-background-color: #9dff92;" text="Backup chat">
                            <font>
                               <Font name="Century" size="13.0" />
                            </font>
@@ -610,41 +609,6 @@
             </AnchorPane>
          </center>
       </BorderPane>
-      <AnchorPane layoutX="293.0" layoutY="44.0" minWidth="100.0" prefHeight="371.0" prefWidth="239.0" style="-fx-background-color: #40444A; -fx-background-radius: 0 20 20 0; -fx-border-radius: 20;" visible="false">
-         <children>
-            <JFXListView layoutX="31.0" layoutY="70.0" prefHeight="231.0" prefWidth="176.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="70.0" />
-            <JFXButton contentDisplay="GRAPHIC_ONLY" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="20.0" />
-               </graphic>
-            </JFXButton>
-            <TextField alignment="CENTER" layoutX="54.0" layoutY="24.0" prefHeight="31.0" prefWidth="138.0" promptText="Enter contact phone" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="24.0">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-            </TextField>
-            <JFXButton layoutX="29.0" layoutY="318.0" prefHeight="29.0" prefWidth="84.0" style="-fx-background-color: #3CCF6D;" text="Save" textFill="WHITE" AnchorPane.bottomAnchor="24.0">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="CLOUD" size="20.0" />
-               </graphic>
-               <font>
-                  <Font name="Arial Bold" size="12.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="127.0" layoutY="318.0" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #E53935;" text="Delete" textFill="WHITE" AnchorPane.bottomAnchor="24.0">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="20.0" />
-               </graphic>
-               <font>
-                  <Font name="Arial Bold" size="12.0" />
-               </font>
-            </JFXButton>
-            <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: TRANSPARENT;" text="Button" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="20.0">
-               <graphic>
-                  <FontAwesomeIconView fill="#19d735" glyphName="PLUS_CIRCLE" size="30" />
-               </graphic>
-            </Button>
-         </children>
-      </AnchorPane>
+      <AnchorPane fx:id="addContactPane" layoutX="293.0" layoutY="44.0" minWidth="100.0" prefHeight="371.0" prefWidth="249.0" style="-fx-background-color: #40444A; -fx-background-radius: 0 20 20 0; -fx-border-radius: 20;" visible="false" />
    </children>
 </AnchorPane>

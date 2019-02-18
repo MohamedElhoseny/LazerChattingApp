@@ -18,7 +18,7 @@ public class InitialContext
             returnedService = registry.lookup(remoteService);
 
         } catch (RemoteException | NotBoundException ex) {
-            ex.printStackTrace();
+            System.err.println("Couldn't bind to the following service : "+remoteService);
         }
 
         return returnedService;

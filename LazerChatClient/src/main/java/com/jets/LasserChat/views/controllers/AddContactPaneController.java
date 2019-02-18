@@ -1,4 +1,12 @@
 package com.jets.LasserChat.views.controllers;
 
-class AddContactPaneController {
+public class AddContactPaneController {
+
+    public AddContactPaneController(){
+
+    }
+
+    public AddContactPaneController(ChatRoomController chatRoomController){
+
+    }
 }

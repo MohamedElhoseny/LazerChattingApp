@@ -5,6 +5,7 @@ import Animation.Transition.FadeInLeftTransition;
 import Animation.Transition.FadeInRightBigTransition;
 import Animation.Transition.FadeOutRightBigTransition;
 import com.jets.LasserChat.controllers.MainController;
+import com.jets.LasserChat.controllers.StartupMainController;
 import com.jets.LazerChatCommonService.models.entity.User;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
@@ -40,15 +41,14 @@ public class StartupPaneController implements Initializable
     @FXML
     private RegistrationPaneController registrationPaneController;
 
-    private MainController mainController;
+    private StartupMainController mainController;
 
     public StartupPaneController()
     {}
 
-    public StartupPaneController(MainController mainController){
+    public StartupPaneController(StartupMainController mainController)
+    {
         this.mainController = mainController;
-        if (this.mainController == null)
-            System.out.println("nullllll");
     }
 
     @Override
@@ -92,9 +92,12 @@ public class StartupPaneController implements Initializable
     }
 
 
-    public void startChatRoom(User loginUser){
+    public void startChatRoom(User loginUser)
+    {
+        //
         this.mainController.openChatRoomScene(loginUser);
     }
+
     /**
      * Used to get a custome graphic node for pagination
      * @param featureDetails string describe one of the feature in app
@@ -193,5 +196,12 @@ public class StartupPaneController implements Initializable
         iconView.setGlyphName(FontAwesomeIcon.TIMES.name());
         iconView.setFill(Paint.valueOf("#ff3600"));
         iconView.setVisible(true);
+    }
+
+    public User getLoginUser(String phone, String password) {
+        return mainController.loginService(phone, password);
+    }
+    public boolean registerNewUser(User newUser){
+        return mainController.registerService(newUser);
     }
 }

@@ -7,11 +7,14 @@ import java.util.ResourceBundle;
 
 public class FriendChatPaneController implements Initializable
 {
-    ChatRoomController chatRoomController;
-
-    void injectChatRoomController(ChatRoomController chatRoomController)
+    public FriendChatPaneController()
     {
-        this.chatRoomController = chatRoomController;
+
+    }
+
+    public FriendChatPaneController(ChatRoomController chatRoomController)
+    {
+
     }
 
     @Override

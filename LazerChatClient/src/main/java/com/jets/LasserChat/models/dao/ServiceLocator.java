@@ -1,26 +1,25 @@
 package com.jets.LasserChat.models.dao;
 
-import com.jets.LazerChatCommonService.models.dao.InitialContext;
-import com.jets.LazerChatCommonService.models.dao.Service;
+import java.rmi.Remote;
 
-public class ServiceLocator {
+public class ServiceLocator
+{
     private static Cache cache;
 
     static {
         cache = new Cache();
     }
 
-    public static Service getService(String jndiName){
-
-        Service service = cache.getService(jndiName);
-
-        if(service != null){
+    public static Remote getService(String chosenService)
+    {
+        Remote service = cache.getService(chosenService);
+        if(service !=null)
             return service;
-        }
 
-        InitialContext context = new InitialContext();
-        Service service1 = (Service)context.lookup(jndiName);
-        cache.addService(service1);
-        return service1;
+        Remote servicerequired = InitialContext.lookup(chosenService);
+
+        cache.addService(chosenService, servicerequired);
+
+        return servicerequired;
     }
 }

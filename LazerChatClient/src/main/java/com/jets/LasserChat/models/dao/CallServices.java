@@ -2,7 +2,9 @@ package com.jets.LasserChat.models.dao;
 
 import com.jets.LazerChatCommonService.models.entity.User;
 
-public interface CallServices
+import java.rmi.Remote;
+
+public interface CallServices extends Remote
 {
 	void startVoiceCall(User toUser);
 	void endVoiceCall(User toUser);

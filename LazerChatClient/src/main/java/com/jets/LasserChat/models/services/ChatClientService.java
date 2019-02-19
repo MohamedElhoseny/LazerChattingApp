@@ -8,6 +8,9 @@ import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * CLASS TO MAINTAIN HANDSHAKED CLIENT CONTACTS
+ * */
 public class ChatClientService
 {
     private Map<Integer, HandshakeServices> clientList;

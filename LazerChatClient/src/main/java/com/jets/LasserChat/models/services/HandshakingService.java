@@ -9,6 +9,9 @@ import com.jets.LazerChatCommonService.models.entity.Message;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+/**
+ * THIS CLASS USED BY SERVER TO REGISTER CONTACT WITH THIS CLIENT TO APPLY CONCEPT OF HANDSHAKING
+ */
 public class HandshakingService extends UnicastRemoteObject implements HandshakeServices
 {
     ChatRoomMainController controller;

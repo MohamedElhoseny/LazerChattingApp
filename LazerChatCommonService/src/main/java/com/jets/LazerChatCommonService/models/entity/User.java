@@ -10,7 +10,7 @@ public class User implements Serializable
 	private String password;
 	private String name;
 	private String email;
-	private Object picture;
+	private byte[] picture;
 	private int gender;
 	private String country;
 	private String date;
@@ -22,7 +22,7 @@ public class User implements Serializable
 	{
 		System.out.println("Constructing user object ..");
 	}
-	public User(int id, String phone, String password, String name, String email, Object picture, int gender,
+	public User(int id, String phone, String password, String name, String email, byte[] picture, int gender,
 			String country, String date, String bio, String status)
 	{
 		super();
@@ -80,11 +80,11 @@ public class User implements Serializable
 	{
 		this.email = email;
 	}
-	public Object getPicture()
+	public byte[] getPicture()
 	{
 		return picture;
 	}
-	public void setPicture(Object picture)
+	public void setPicture(byte[] picture)
 	{
 		this.picture = picture;
 	}

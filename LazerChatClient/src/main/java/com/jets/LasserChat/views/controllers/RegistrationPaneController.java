@@ -5,6 +5,7 @@ import com.jets.LazerChatCommonService.models.entity.User;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -42,6 +43,7 @@ public class RegistrationPaneController implements Initializable
 
     private StartupPaneController startupPaneController;
     private RegisterValidation registerValidation;
+    private File choosenImg;
 
     public RegistrationPaneController()
     {
@@ -62,12 +64,11 @@ public class RegistrationPaneController implements Initializable
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Open File Chooser");
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg"));
-            File selectedImage = fileChooser.showOpenDialog(null);
-            stream = new FileInputStream(selectedImage);
+            choosenImg = fileChooser.showOpenDialog(null);
+            stream = new FileInputStream(choosenImg);
             imageFile = new Image(stream);
-            userImgIV.setImage(imageFile);
-            Image image = new Image(selectedImage.toURI().toString());
-            userImgIV.setImage(image);
+            if (imageFile != null)
+                userImgIV.setImage(imageFile);
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } finally {
@@ -81,13 +82,13 @@ public class RegistrationPaneController implements Initializable
     }
 
     @FXML
-    void registerUser(ActionEvent event) {
+    void registerUser(ActionEvent event)
+    {
         //if (isAccept) {
             User user = new User();
             //dummy
             user.setId(1001);
             user.setGender(1);
-
             user.setName(userNameTF.getText());
             user.setCountry(userCountryTF.getText());
             user.setEmail(userEmailTF.getText());
@@ -95,8 +96,17 @@ public class RegistrationPaneController implements Initializable
             user.setPassword(userPasswordTF.getText());
             user.setDate(userBirthdayDP.getValue().toString());
             user.setBio(userBioTA.getText());
-            user.setPicture(convertImageToBytes(userImgIV.getImage()));
-            //Image img = new Image(new ByteArrayInputStream(buffer));   to read image from array of bytes
+
+            try {
+                BufferedImage bufferedImage = ImageIO.read(choosenImg);
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                ImageIO.write(bufferedImage, "jpg", bos);
+                byte[] imgBytes  = bos.toByteArray();
+
+                user.setPicture(imgBytes);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             boolean registerAccepted = startupPaneController.registerNewUser(user);
             if (registerAccepted)

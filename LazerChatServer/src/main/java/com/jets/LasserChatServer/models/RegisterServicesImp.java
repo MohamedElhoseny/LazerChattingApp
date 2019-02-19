@@ -52,6 +52,9 @@ public class RegisterServicesImp extends UnicastRemoteObject implements Register
         System.out.println(userId + ": Is Removed from Server");
     }
 
+
+
+
     public void stopServer() {
         // send to all user server is stopped
         clientList.entrySet().stream().forEach((client) -> {
@@ -64,14 +67,14 @@ public class RegisterServicesImp extends UnicastRemoteObject implements Register
     }
 
     public void startServer() {
-        // send to all user server is running again
+        /*// send to all user server is running again
         clientList.entrySet().stream().forEach((client) -> {
             try {
                 client.getValue().serverRunningAgain(this);
             } catch (RemoteException ex) {
                 ex.printStackTrace();
             }
-        });
+        });*/
     }
 
     public void clearMap() {

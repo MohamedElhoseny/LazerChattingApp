@@ -2,6 +2,7 @@ package com.jets.LasserChat.models.entity;
 
 import java.util.List;
 
+import com.jets.LazerChatCommonService.models.entity.Message;
 import com.jets.LazerChatCommonService.models.entity.User;
 
 public class Session

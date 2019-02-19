@@ -3,9 +3,11 @@ package com.jets.LasserChat.models.services;
 import com.jets.LasserChat.models.dao.ServiceLocator;
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.dao.RegisterServices;
-
 import java.rmi.RemoteException;
 
+/**
+ * RESPONSIBLE TO INJECT SERVER TO REGISTER AND UNREGISTER USER HANDSHAKING WITH HIS/HER CONTACTS
+ */
 public class ChatServerService
 {
     RegisterServices registerServices;

@@ -2,6 +2,7 @@ package com.jets.LasserChat.controllers;
 
 import com.jets.LasserChat.models.dao.ServiceLocator;
 import com.jets.LasserChat.views.controllers.ChatRoomController;
+import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.dao.UserServices;
 import com.jets.LazerChatCommonService.models.entity.User;
 import javafx.fxml.FXMLLoader;
@@ -24,18 +25,22 @@ public class StartupMainController
         this.userServices = (UserServices) ServiceLocator.getService("UserServices");
     }
 
-
-    public User loginService(String phone, String password) {
-        User loginUser = null;
+    public User loginService(String phone, String password)
+    {
+        /*User loginUser = null;
         try {
             loginUser = userServices.logIn(phone, password);
         } catch (RemoteException e) {
             System.err.println("Error occur in userServices : "+e.getMessage());
         }
-        return loginUser;
+
+        return loginUser;*/
+        return new User();  //return dummy
     }
 
-    public boolean registerService(User newUser) {
+
+    public boolean registerService(User newUser)
+    {
         boolean isAccepted;
         try {
             isAccepted = userServices.register(newUser);
@@ -45,6 +50,7 @@ public class StartupMainController
         }
         return isAccepted;
     }
+
 
     /**
      * Responsible for changing scene from startupScene to chatRoomScene

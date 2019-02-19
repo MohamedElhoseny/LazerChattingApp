@@ -1,6 +1,4 @@
-package com.jets.LasserChat.models.entity;
-
-import com.jets.LazerChatCommonService.models.entity.User;
+package com.jets.LazerChatCommonService.models.entity;
 
 import java.io.Serializable;
 

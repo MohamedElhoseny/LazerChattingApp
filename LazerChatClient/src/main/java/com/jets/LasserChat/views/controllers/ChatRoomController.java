@@ -1,7 +1,10 @@
 package com.jets.LasserChat.views.controllers;
 
 import com.healthmarketscience.rmiio.SimpleRemoteInputStream;
-import com.jets.LasserChat.models.dao.FileServices;
+import com.jets.LasserChat.models.services.FileServices;
+import com.jets.LasserChat.models.services.MessageServices;
+import com.jets.LasserChat.models.services.NotifierServices;
+import com.jets.LazerChatCommonService.models.entity.Message;
 import com.jets.LazerChatCommonService.models.entity.User;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -31,7 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class ChatRoomController implements Initializable
+public class ChatRoomController implements Initializable, MessageServices, NotifierServices
 {
     @FXML private Circle loginUserImage;
     @FXML private Label loginUserName;
@@ -272,6 +275,32 @@ public class ChatRoomController implements Initializable
         }catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+
+    @Override
+    public void receive(Message newMessage) {
+        notifyMessage(newMessage.getUser());
+    }
+
+    @Override
+    public void notifyMessage(User fromUser) {
+
+    }
+
+    @Override
+    public void notifyStatus(User fromUserStatus) {
+
+    }
+
+    @Override
+    public void notifyFileRequest(User fromUser, File senderFile) {
+
+    }
+
+    @Override
+    public void notifyFriendRequest(User fromUser) {
+
     }
 
     private enum MenuItems

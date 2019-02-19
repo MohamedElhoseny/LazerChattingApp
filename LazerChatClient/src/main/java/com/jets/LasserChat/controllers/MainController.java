@@ -64,21 +64,26 @@ public class MainController extends Application
         return scene;
     }
 
-    public Stage getPrimaryStage(){
+    public Stage getPrimaryStage()
+    {
         return this.primaryStage;
     }
+
     @Override
-    public void init() throws Exception {
+    public void init() throws Exception
+    {
         super.init();
         System.out.println("JavaFX Launcher Thread ..");
     }
     @Override
-    public void stop() throws Exception {
+    public void stop() throws Exception
+    {
         super.stop();
         System.out.println("Application is stopped !");
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args)
+    {
         launch(args);
     }
 }

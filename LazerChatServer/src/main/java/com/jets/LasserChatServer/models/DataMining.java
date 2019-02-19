@@ -1,4 +1,4 @@
-package com.jets.LasserChatServer.models.dao.daoInterfaces;
+package com.jets.LasserChatServer.models;
 
 import java.util.Map;
 

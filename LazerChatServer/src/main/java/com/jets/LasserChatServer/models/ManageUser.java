@@ -1,4 +1,4 @@
-package com.jets.LasserChatServer.models.dao.daoInterfaces;
+package com.jets.LasserChatServer.models;
 
 
 import com.jets.LazerChatCommonService.models.entity.User;

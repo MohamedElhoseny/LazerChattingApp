@@ -1,4 +1,4 @@
-package com.jets.LasserChat.models.dao;
+package com.jets.LasserChat.models.services;
 
 import java.io.File;
 import java.rmi.Remote;

@@ -1,8 +1,7 @@
-package com.jets.LasserChatServer.models.dao.daoImp;
+package com.jets.LasserChatServer.models;
 
 import java.sql.*;
 import java.util.ArrayList;
-import com.jets.LasserChatServer.models.dao.daoInterfaces.DatabaseInterface;
 
 public class MysqlDB implements DatabaseInterface
 {

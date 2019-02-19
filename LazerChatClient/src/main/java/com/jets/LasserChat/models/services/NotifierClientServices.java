@@ -1,6 +1,6 @@
-package com.jets.LasserChat.models.dao.impl;
+package com.jets.LasserChat.models.services;
 
-import com.jets.LasserChat.models.dao.NotifierServices;
+import com.jets.LasserChat.models.services.NotifierServices;
 import com.jets.LazerChatCommonService.models.entity.User;
 
 import java.io.File;

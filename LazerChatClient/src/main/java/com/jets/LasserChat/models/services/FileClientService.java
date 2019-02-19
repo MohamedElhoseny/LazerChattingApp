@@ -1,8 +1,8 @@
-package com.jets.LasserChat.models.dao.impl;
+package com.jets.LasserChat.models.services;
 
 import com.healthmarketscience.rmiio.RemoteInputStream;
 import com.healthmarketscience.rmiio.RemoteInputStreamClient;
-import com.jets.LasserChat.models.dao.FileServices;
+import com.jets.LasserChat.models.services.FileServices;
 import com.jets.LazerChatCommonService.models.entity.User;
 import java.io.File;
 import java.io.FileOutputStream;

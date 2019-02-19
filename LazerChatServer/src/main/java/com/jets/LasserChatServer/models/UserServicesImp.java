@@ -1,7 +1,8 @@
-package com.jets.LasserChatServer.models.dao.daoImp;
+package com.jets.LasserChatServer.models;
 
 import com.jets.LazerChatCommonService.models.dao.UserServices;
 import com.jets.LazerChatCommonService.models.entity.User;
+
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
@@ -37,7 +38,7 @@ public class UserServicesImp extends UnicastRemoteObject implements UserServices
                 loginUser.setPassword((String) record.get(0)[2]);
                 loginUser.setName((String) record.get(0)[3]);
                 loginUser.setEmail((String) record.get(0)[4]);
-                loginUser.setPicture(record.get(0)[5]);
+                loginUser.setPicture((byte[]) record.get(0)[5]);
                 loginUser.setGender((Integer) record.get(0)[6]);
                 loginUser.setCountry((String) record.get(0)[7]);
                 loginUser.setDate((String) record.get(0)[8]);
@@ -45,6 +46,7 @@ public class UserServicesImp extends UnicastRemoteObject implements UserServices
                 loginUser.setStatus((String) record.get(0)[10]);   //return int 'must join to get string value'
             }
         } catch (SQLException e) {
+            e.printStackTrace();
             System.err.println("Error while user login (phone = "+phone
                                 + ", password = "+password+ ") : "+ e.getMessage());
         }
@@ -59,13 +61,12 @@ public class UserServicesImp extends UnicastRemoteObject implements UserServices
 
     @Override
     public boolean register(User user) {
-        String attributes = "id, phone, password, name, email, picture, gender, country, birthday, bio";
-
-        String values = user.getId() + "," + "'"+user.getPhone()+"'," + "'"+user.getPassword()+"',"
-                + "'"+user.getName()+"',"+ "'"+user.getEmail()+"'," + user.getPicture() + ","+ user.getGender()
-                + ",'"+user.getCountry()+"',"+ user.getDate()+","+ "'"+user.getBio()+"'";
-
+        String attributes = "id, phone, password, name, email, picture, gender, country, birthdate, bio";
         try {
+            //Blob userImage = new SerialBlob(user.getPicture());
+            String values = user.getId() + "," + "'"+user.getPhone()+"'," + "'"+user.getPassword()+"',"
+                    + "'"+user.getName()+"',"+ "'"+user.getEmail()+"'," + user.getPicture() + ","+ user.getGender()
+                    + ",'"+user.getCountry()+"',"+ user.getDate()+","+ "'"+user.getBio()+"'";
             mysqlDB.insert("user",attributes, values);
             return true;
         } catch (SQLException e) {

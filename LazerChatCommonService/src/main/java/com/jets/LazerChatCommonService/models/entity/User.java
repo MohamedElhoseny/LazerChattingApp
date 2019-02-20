@@ -11,19 +11,19 @@ public class User implements Serializable
 	private String name;
 	private String email;
 	private byte[] picture;
-	private int gender;
+	private String gender;
 	private String country;
 	private String date;
 	private String bio;
-	private String status;
+	private Integer status;
 	
 	//Constructors
 	public User()
 	{
 		System.out.println("Constructing user object ..");
 	}
-	public User(int id, String phone, String password, String name, String email, byte[] picture, int gender,
-			String country, String date, String bio, String status)
+	public User(int id, String phone, String password, String name, String email, byte[] picture, String gender,
+			String country, String date, String bio, Integer status)
 	{
 		super();
 		this.id = id;
@@ -88,11 +88,11 @@ public class User implements Serializable
 	{
 		this.picture = picture;
 	}
-	public int getGender()
+	public String getGender()
 	{
 		return gender;
 	}
-	public void setGender(int gender)
+	public void setGender(String gender)
 	{
 		this.gender = gender;
 	}
@@ -120,11 +120,11 @@ public class User implements Serializable
 	{
 		this.bio = bio;
 	}
-	public String getStatus()
+	public Integer getStatus()
 	{
 		return status;
 	}
-	public void setStatus(String status)
+	public void setStatus(Integer status)
 	{
 		this.status = status;
 	}

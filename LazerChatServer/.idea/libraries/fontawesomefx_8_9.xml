@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="fontawesomefx-8.9">
+    <CLASSES>
+      <root url="jar://D:/lib/fontawesomefx-8.9.jar!/" />
+      <root url="jar://D:/lib/fontawesomefx-fontawesome-4.7.0-5.jar!/" />
+      <root url="jar://D:/lib/core-8.0.1.jar!/" />
+      <root url="jar://D:/lib/AnimationPackage.jar!/" />
+      <root url="jar://D:/lib/flow-8.0.1.jar!/" />
+      <root url="jar://D:/lib/jfoenix-8.0.8.jar!/" />
+      <root url="file://D:/lib/RMIIO Dependencies" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://D:/lib/RMIIO Dependencies" recursive="false" />
+  </library>
+</component>

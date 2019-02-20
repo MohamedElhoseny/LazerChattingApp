@@ -10,6 +10,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="fontawesomefx-8.9" level="project" />
+    <orderEntry type="library" name="LazerChatCommonService-0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: common:Services:0.0.1-SNAPSHOT">
         <CLASSES>

@@ -9,8 +9,5 @@
         <module name="LazerChatCommonService" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="LazerChatCommonService" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

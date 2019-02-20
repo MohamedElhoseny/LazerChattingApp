@@ -1,6 +1,6 @@
 package com.jets.LasserChat.controllers;
 
-import com.jets.LasserChat.views.controllers.StartupPaneController;
+import com.jets.LasserChat.views.controllers.StartupViewController;
 import com.jfoenix.controls.JFXDecorator;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
@@ -28,10 +28,10 @@ public class MainController extends Application
     public void start(Stage primaryStage) throws Exception
     {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\StartupPane.fxml");
+        File file = new File("C:\\Users\\hd\\Desktop\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\StartupPane.fxml");
         //Move controlling to another control with different responsibilty
-        StartupPaneController startupPaneController = new StartupPaneController(startupMainController);
-        fxmlLoader.setController(startupPaneController);
+        StartupViewController startupViewController = new StartupViewController(startupMainController);
+        fxmlLoader.setController(startupViewController);
         fxmlLoader.setLocation(file.toURL());
         Parent root = fxmlLoader.load();
 

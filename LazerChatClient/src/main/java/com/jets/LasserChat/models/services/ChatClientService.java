@@ -31,8 +31,9 @@ public class ChatClientService
 
     public void sendMessageToClients(Message message, int toUserId) {
         try {
+            //GET USER HANDSHAKING INTERFACE TO SEND MESSAGE
             if (clientList.containsKey(toUserId)) {
-                clientList.get(toUserId).receive(message);
+                clientList.get(toUserId).receive(message);   //RISKY
             } else {
                 System.out.println("can't find " + toUserId);
             }

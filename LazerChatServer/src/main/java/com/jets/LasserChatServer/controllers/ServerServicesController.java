@@ -27,7 +27,7 @@ public class ServerServicesController extends Application
         {
             userServices = new UserServicesImp();
             registerServices = new RegisterServicesImp();
-            registry = LocateRegistry.getRegistry();
+            registry = LocateRegistry.getRegistry("127.0.0.1");
             isSecondTimeServerStopped = false;
             System.out.println("Server is started .");
         } catch (RemoteException e) {
@@ -69,6 +69,7 @@ public class ServerServicesController extends Application
 
                 if (isSecondTimeServerStopped)
                     registerServices.startServer();
+
                 System.out.println("Server Started");
 
                 //update UI

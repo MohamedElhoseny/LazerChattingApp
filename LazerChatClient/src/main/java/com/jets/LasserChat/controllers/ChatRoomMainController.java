@@ -1,8 +1,8 @@
 package com.jets.LasserChat.controllers;
 import com.jets.LasserChat.models.services.ChatClientService;
 import com.jets.LasserChat.models.services.ChatServerService;
-import com.jets.LasserChat.models.services.HandshakingService;
-import com.jets.LasserChat.views.controllers.ChatRoomController;
+import com.jets.LasserChat.models.services.HandshakeServiceImp;
+import com.jets.LasserChat.views.controllers.ChatRoomViewController;
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.entity.Message;
 import com.jets.LazerChatCommonService.models.entity.User;
@@ -12,31 +12,29 @@ import java.rmi.RemoteException;
 public class ChatRoomMainController
 {
     //To communicate with server for register/unregister handshaking with user contacts
-    ChatServerService chatServerService;
+    private ChatServerService chatServerService;
 
     //for handshaking with contacts used by server to register / unregister new client to this user
-    HandshakeServices handshakeServices;
+    private HandshakeServices handshakeServices;
 
     //To communicate with contacts 'chatting services' handle handshaked clients of this user
-    ChatClientService chatClientService;
+    private ChatClientService chatClientService;
+
 
     //To communicate with view controller
-    ChatRoomController chatRoomViewController;
+    private ChatRoomViewController chatRoomViewController;
+    private boolean isServerStopped = false;
+    private User user;
 
-    boolean isServerStopped = false;
-    User user;
-
-    public ChatRoomMainController(ChatRoomController viewController)
+    public ChatRoomMainController(ChatRoomViewController viewController, User loginUser)
     {
-        try {
-            handshakeServices = new HandshakingService(this);
+        try
+        {
+            this.user = loginUser;
+            handshakeServices = new HandshakeServiceImp(this);
             chatClientService = new ChatClientService();
             chatServerService = new ChatServerService();
             chatRoomViewController = viewController;
-
-            user = new User();
-            user.setId(5);
-            user.setName("Ahmed22");
 
             //Calling server to register my handshake with all my online contacts
             chatServerService.register(user.getId(), handshakeServices);
@@ -57,7 +55,7 @@ public class ChatRoomMainController
 
 
 
-    /* THIS METHODS CALLED WHEN SERVER (THROUGH HandshakingService)
+    /* THIS METHODS CALLED WHEN SERVER (THROUGH HandshakeServiceImp)
      WANT TO REGISTER / UNREGISTER HANDSHAKING WITH CLIENT */
     public void displayMessage(Message receivedMessage) {
         chatRoomViewController.receive(receivedMessage);

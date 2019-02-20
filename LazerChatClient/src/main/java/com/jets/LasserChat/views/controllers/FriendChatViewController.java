@@ -1,5 +1,6 @@
 package com.jets.LasserChat.views.controllers;
 
+import com.jets.LasserChat.models.entity.Session;
 import com.jets.LazerChatCommonService.models.entity.User;
 import com.jfoenix.controls.JFXListView;
 import javafx.application.Platform;
@@ -107,7 +108,8 @@ public class FriendChatViewController implements Initializable
         friendListView.setOnMouseClicked((mouseEvent) -> {
             User selectedUser = friendListView.getSelectionModel().getSelectedItem();
             System.out.println("User selected to chatting : "+selectedUser);
-            chatRoomViewController.loadSessionData(selectedUser);
+            Session session = chatRoomViewController.loadSessionData(selectedUser);
+            chatRoomViewController.displaySessionData(session);
         });
 
 

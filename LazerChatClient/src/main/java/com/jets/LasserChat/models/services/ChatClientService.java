@@ -71,13 +71,15 @@ public class ChatClientService
     public Session lookupSession(User user, User selectedUser)
     {
         //IF current user already have a session with the selectedUser
-        if (userSessions.containsKey(selectedUser))
+        if (userSessions.containsKey(selectedUser)) {
+            System.out.println("User session already found with : " + selectedUser);
             return userSessions.get(selectedUser);
-        else{
+        }else{
             Session newSession = new Session();
             newSession.addParticipant(user);
             newSession.addParticipant(selectedUser);
             userSessions.put(selectedUser, newSession);
+            System.out.println("New session created with : " + selectedUser);
             return newSession;
         }
     }

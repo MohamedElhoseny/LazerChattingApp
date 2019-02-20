@@ -121,17 +121,20 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
     }
 
 
-    public void loadSessionData(User selectedUser)
+    public Session loadSessionData(User selectedUser)
+    {
+        this.userCurrentSession = chatRoomMainController.lookupSession(loginUser, selectedUser);
+        return userCurrentSession;
+    }
+
+    public void displaySessionData(Session selectedUserSession)
     {
         ChatSessionPane.getChildren().clear();
 
-        Session selectedUserSession = chatRoomMainController.lookupSession(loginUser, selectedUser);
-        this.userCurrentSession = selectedUserSession;
-        displaySessionData(selectedUserSession);
-    }
-    public void displaySessionData(Session selectedUserSession)
-    {
         List<Message> sessionMessages = selectedUserSession.getSessionMessages();
+        System.out.println("Number of messages in this session = "+sessionMessages.size());
+        System.out.println(selectedUserSession.getAvailableUsers());
+
         for (Message message: sessionMessages)
         {
             if (message.getUser() == loginUser)
@@ -300,12 +303,19 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
 
     /**
      * Called when the current user received a message from one of his friends
+     * if there is no session created with this client it must be created and
+     * session data will be initialized with data received
+     * else append messages to the session related to this sender
      *
      * @param newMessage the new delivered message
      */
     public void receiveMessageFromContact(Message newMessage)
     {
-        Platform.runLater(()->{
+        Session session = loadSessionData(newMessage.getUser());
+        session.getSessionMessages().add(newMessage);
+
+        Platform.runLater(()->
+        {
             ChatSessionPane.getChildren().add(new userMessagePane(newMessage.getMessageString(), false));
         });
     }

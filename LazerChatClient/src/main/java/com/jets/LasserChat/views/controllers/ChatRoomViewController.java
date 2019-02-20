@@ -41,8 +41,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+
 //must be in main controller
-public class ChatRoomViewController implements Initializable, NotifierServices  {
+public class ChatRoomViewController implements Initializable, NotifierServices {
     @FXML
     private Circle loginUserImage;
     @FXML
@@ -94,10 +95,10 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
     private User loginUser;
     private Message userMessage;
     private Session userCurrentSession;
+    private Session displayedSession;
 
     //Constructors
-    public ChatRoomViewController(User loginUser)
-    {
+    public ChatRoomViewController(User loginUser) {
         this.loginUser = loginUser;
         chatRoomMainController = new ChatRoomMainController(this, loginUser);
         menuList = new HashMap<>();
@@ -115,40 +116,38 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
         initAnouncementList(loginUser);
     }
 
-    public ObservableList<User> getUserFriendList()
-    {
+    public ObservableList<User> getUserFriendList() {
         return chatRoomMainController.getClientFriendList();
     }
 
 
-    public Session loadSessionData(User selectedUser)
-    {
+    public Session loadSessionData(User selectedUser) {
         this.userCurrentSession = chatRoomMainController.lookupSession(loginUser, selectedUser);
         return userCurrentSession;
     }
 
-    public void displaySessionData(Session selectedUserSession)
-    {
+    public void displaySessionData(Session selectedUserSession) {
         ChatSessionPane.getChildren().clear();
 
+            displayedSession = selectedUserSession;
+
         List<Message> sessionMessages = selectedUserSession.getSessionMessages();
-        System.out.println("Number of messages in this session = "+sessionMessages.size());
+        System.out.println("Number of messages in this session = " + sessionMessages.size());
         System.out.println(selectedUserSession.getAvailableUsers());
 
-        for (Message message: sessionMessages)
-        {
-            if (message.getUser() == loginUser)
-            {
-                Platform.runLater(()->{
+        for (Message message : sessionMessages) {
+            if (message.getUser() == loginUser) {
+                Platform.runLater(() -> {
                     ChatSessionPane.getChildren().add(new userMessagePane(message.getMessageString(), true));
                 });
-            }else {
-                Platform.runLater(()->{
+            } else {
+                Platform.runLater(() -> {
                     ChatSessionPane.getChildren().add(new userMessagePane(message.getMessageString(), false));
                 });
             }
         }
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //set default menuItem to FriendChat
@@ -181,7 +180,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
     @FXML
     void addContacts(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\AddContactPane.fxml");
+        File file = new File("F:\\ITI\\Java ITI 39\\project\\original project\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\AddContactPane.fxml");
         AddContactViewController addContactViewController = new AddContactViewController(this);
         fxmlLoader.setController(addContactViewController);
         try {
@@ -245,7 +244,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
     @FXML
     void startVoiceCall(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\VoiceCallPane.fxml");
+        File file = new File("F:\\ITI\\Java ITI 39\\project\\original project\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\VoiceCallPane.fxml");
         VoiceCallViewController voiceCallViewController = new VoiceCallViewController(this);
         fxmlLoader.setController(voiceCallViewController);
         try {
@@ -267,14 +266,11 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
     }
 
     @FXML
-    private void sendMessage(KeyEvent event)
-    {
-        if (event.getCode() == KeyCode.ENTER)
-        {
+    private void sendMessage(KeyEvent event) {
+        if (event.getCode() == KeyCode.ENTER) {
             String input = messageTF.getText().trim();
 
-            if (!input.isEmpty())
-            {
+            if (!input.isEmpty()) {
                 //set style for current message
                 setMessageStyle(input);
 
@@ -282,7 +278,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
                 userCurrentSession.getSessionMessages().add(userMessage);
 
                 //Send and update UI of other friend
-                for (User userInSession: userCurrentSession.getAvailableUsers())
+                for (User userInSession : userCurrentSession.getAvailableUsers())
                     chatRoomMainController.sendMessage(userMessage, userInSession);
 
                 //Update UI
@@ -309,19 +305,22 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
      *
      * @param newMessage the new delivered message
      */
-    public void receiveMessageFromContact(Message newMessage)
-    {
+    public void receiveMessageFromContact(Message newMessage) {
         Session session = loadSessionData(newMessage.getUser());
         session.getSessionMessages().add(newMessage);
 
-        Platform.runLater(()->
-        {
-            ChatSessionPane.getChildren().add(new userMessagePane(newMessage.getMessageString(), false));
-        });
+        if(displayedSession!=null){
+        if (newMessage.getUser().getId() == this.displayedSession.getUuId()) {
+            Platform.runLater(() ->
+            {
+                ChatSessionPane.getChildren().add(new userMessagePane(newMessage.getMessageString(), false));
+            });
+        }}
     }
 
     /**
      * Responsible for displaying bagdet icon number and message sound
+     *
      * @param fromUser the user that sent message
      */
     @Override
@@ -347,12 +346,10 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
     }
 
 
-
-
     //Initializing Panes Methods
     private void initUserRecentChatList(User loginUser) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\RecentChatPane.fxml");
+        File file = new File("F:\\ITI\\Java ITI 39\\project\\original project\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\RecentChatPane.fxml");
         RecentChatViewController recentChatViewController = new RecentChatViewController(this);
         fxmlLoader.setController(recentChatViewController);
         try {
@@ -366,7 +363,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
 
     private void initAnouncementList(User loginUser) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\ServerAnnouncementPane.fxml");
+        File file = new File("F:\\ITI\\Java ITI 39\\project\\original project\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\ServerAnnouncementPane.fxml");
         ServerAnnouncementViewController serverAnnouncementViewController = new ServerAnnouncementViewController(this);
         fxmlLoader.setController(serverAnnouncementViewController);
         try {
@@ -380,7 +377,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
 
     private void initUserFriendRequestList(User loginUser) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\FriendRequestPane.fxml");
+        File file = new File("F:\\ITI\\Java ITI 39\\project\\original project\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\FriendRequestPane.fxml");
         FriendRequestViewController friendRequestViewController = new FriendRequestViewController(this);
         fxmlLoader.setController(friendRequestViewController);
         try {
@@ -394,7 +391,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
 
     private void initUserGroupChatList(User loginUser) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\GroupChatPane.fxml");
+        File file = new File("F:\\ITI\\Java ITI 39\\project\\original project\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\GroupChatPane.fxml");
         GroupChatViewController groupChatViewController = new GroupChatViewController(this);
         fxmlLoader.setController(groupChatViewController);
         try {
@@ -408,7 +405,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
 
     private void initUserFriendList() {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\FriendChatPane.fxml");
+        File file = new File("F:\\ITI\\Java ITI 39\\project\\original project\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\FriendChatPane.fxml");
         FriendChatViewController friendChatViewController = new FriendChatViewController(this);
         fxmlLoader.setController(friendChatViewController);
         try {
@@ -421,9 +418,10 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
     }
 
 
-
     //Inner classes
-    private enum MenuItems {RECENTCHAT, FRIENDCHAT, GROUPCHAT, FRIENDREQUEST, ANNOUNCEMENT}
+    private enum MenuItems {
+        RECENTCHAT, FRIENDCHAT, GROUPCHAT, FRIENDREQUEST, ANNOUNCEMENT
+    }
 
     private class userMessagePane extends AnchorPane {
         protected final Circle profileImg;

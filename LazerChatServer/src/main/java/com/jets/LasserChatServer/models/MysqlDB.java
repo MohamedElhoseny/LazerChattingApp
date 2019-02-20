@@ -9,10 +9,10 @@ public class MysqlDB implements DatabaseInterface
 	
 	/* ANY CONFIGURATION MUST BE IN XML FILE */
     private static MysqlDB instance;
-    private String dbName = "projdb";
+    private String dbName = "project";
     private String dbURL = "jdbc:mysql://localhost:3306/" + dbName;
     private String dbUsername = "root";
-    private String dbPassword = "12131234";
+    private String dbPassword = "root";
     
     private Connection connection = null;
     private String query = null;

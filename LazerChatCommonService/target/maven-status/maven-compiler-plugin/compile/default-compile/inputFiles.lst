@@ -1,13 +1,11 @@
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\StatusServices.java
-E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\AnnouncementServices.java
-E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\UserServices.java
-E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\BackupChatServices.java
-E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\entity\Message.java
-E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\UserDAO.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\RegisterServices.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\entity\GroupCategory.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\RestoreChatServices.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\ContactServices.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\entity\User.java
-E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\UserDAOImplementation.java
+E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\AnnouncementServices.java
+E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\UserServices.java
+E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\BackupChatServices.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\dao\HandshakeServices.java
+E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatCommonService\src\main\java\com\jets\LazerChatCommonService\models\entity\Message.java

@@ -65,11 +65,11 @@
                   <Pagination fx:id="featurePagination" layoutX="64.0" layoutY="149.0" maxPageIndicatorCount="3" prefHeight="388.0" prefWidth="472.0" />
 
                   <StackPane fx:id="loginFormPane" layoutX="589.0" layoutY="136.0" prefHeight="401.0" prefWidth="385.0" visible="true">
-                      <fx:include fx:id="loginPane" source="LoginPane.fxml" />
+                      <fx:include fx:id="loginView" source="LoginPane.fxml" />
                   </StackPane>
 
                   <StackPane fx:id="registerationFormPane" layoutX="541.0" layoutY="70.0" prefHeight="483.0" prefWidth="486.0" visible="false">
-                      <fx:include fx:id="registrationPane" source="RegistrationPane.fxml" />
+                      <fx:include fx:id="registrationView" source="RegistrationPane.fxml" />
                   </StackPane>
 
                </children>

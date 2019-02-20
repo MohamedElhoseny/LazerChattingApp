@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import com.jfoenix.controls.JFXPasswordField?>
-<StackPane opacity="0.7" prefHeight="496.0" prefWidth="518.0" style="-fx-background-color: #2f5266;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jets.LasserChat.views.controllers.RegistrationPaneController">
+<StackPane opacity="0.7" prefHeight="496.0" prefWidth="518.0" style="-fx-background-color: #2f5266;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jets.LasserChat.views.controllers.RegistrationViewController">
    <effect>
       <DropShadow height="29.9" radius="19.6375" width="50.65" />
    </effect>

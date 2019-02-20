@@ -13,12 +13,16 @@ public class ServiceLocator
     public static Remote getService(String chosenService)
     {
         Remote service = cache.getService(chosenService);
-        if(service !=null)
+        //Service is already located in cashe
+        if(service != null)
             return service;
 
         Remote servicerequired = InitialContext.lookup(chosenService);
 
-        cache.addService(chosenService, servicerequired);
+        if (servicerequired == null)
+            System.out.println("new required Services is null");
+        else
+            cache.addService(chosenService, servicerequired);
 
         return servicerequired;
     }

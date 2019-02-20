@@ -1,9 +1,12 @@
 package com.jets.LasserChat.models.services;
 
+import com.jets.LasserChat.models.entity.Session;
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.entity.Message;
+import com.jets.LazerChatCommonService.models.entity.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
 import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,28 +16,36 @@ import java.util.Map;
  * */
 public class ChatClientService
 {
-    private Map<Integer, HandshakeServices> clientList;
+    private Map<User, HandshakeServices> clientList;
+    private ObservableList<User> userObservableList;
+    private Map<User, Session> userSessions;
 
     public ChatClientService() {
         clientList = new HashMap<>();
+        userObservableList = FXCollections.observableArrayList();
+        userSessions = new HashMap<>();
     }
 
-    public void addClient(int userId, HandshakeServices clientInterface) {
-        clientList.put(userId, clientInterface);
-        System.out.println(userId + ": Registered in My List");
+    public void addClient(User user, HandshakeServices clientInterface) {
+        clientList.put(user, clientInterface);
+        userObservableList.add(user);
+        System.out.println("User ID = "+ user.getId() + " : Registered in Your Friend List");
     }
 
-    public void removeClient(int userId) {
-        clientList.remove(userId);
-        System.out.println(userId + ": Un-Registered from My List");
+    public void removeClient(User user) {
+        clientList.remove(user);
+        userObservableList.remove(user);
+        System.out.println("User ID = "+ user.getId() + " : Un-Registered in Your Friend List");
     }
 
-    public void sendMessageToClients(Message message, int toUserId) {
+    public void sendMessageToClients(Message message, User toUser)
+    {
         try {
-            if (clientList.containsKey(toUserId)) {
-                clientList.get(toUserId).receive(message);
+            //GET USER HANDSHAKING INTERFACE TO SEND MESSAGE
+            if (clientList.containsKey(toUser)) {
+                clientList.get(toUser).receive(message);   //RISKY
             } else {
-                System.out.println("can't find " + toUserId);
+                System.out.println("can't find " + toUser);
             }
 
         } catch (RemoteException ex) {
@@ -42,22 +53,32 @@ public class ChatClientService
         }
     }
 
-    public void unregister(int userId) {
+    public void unregister(User user) {
         clientList.entrySet().stream().forEach(client -> {
             try {
-                client.getValue().unregister(userId);
+                client.getValue().unregister(user);
             } catch (RemoteException ex) {
                 ex.printStackTrace();
             }
         });
     }
 
-    public ObservableList<Integer> getFriendsList() {
-        ObservableList<Integer> users = FXCollections.observableArrayList();
-        clientList.forEach((userId, clientInterface) -> {
-            users.add(userId);
-        });
-        return users;
+    public ObservableList<User> getFriendsList()
+    {
+        return userObservableList;
     }
 
+    public Session lookupSession(User user, User selectedUser)
+    {
+        //IF current user already have a session with the selectedUser
+        if (userSessions.containsKey(selectedUser))
+            return userSessions.get(selectedUser);
+        else{
+            Session newSession = new Session();
+            newSession.addParticipant(user);
+            newSession.addParticipant(selectedUser);
+            userSessions.put(selectedUser, newSession);
+            return newSession;
+        }
+    }
 }

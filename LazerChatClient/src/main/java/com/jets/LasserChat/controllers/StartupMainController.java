@@ -1,8 +1,7 @@
 package com.jets.LasserChat.controllers;
 
 import com.jets.LasserChat.models.dao.ServiceLocator;
-import com.jets.LasserChat.views.controllers.ChatRoomController;
-import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
+import com.jets.LasserChat.views.controllers.ChatRoomViewController;
 import com.jets.LazerChatCommonService.models.dao.UserServices;
 import com.jets.LazerChatCommonService.models.entity.User;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +17,7 @@ public class StartupMainController
 {
     private MainController mainController;
     private UserServices userServices;
+    boolean isServerStopped = false;
 
     public StartupMainController(MainController mainController)
     {
@@ -27,15 +27,16 @@ public class StartupMainController
 
     public User loginService(String phone, String password)
     {
-        /*User loginUser = null;
+        User loginUser = null;
         try {
+            System.out.println("Phone = "+phone+" , password = "+password);
             loginUser = userServices.logIn(phone, password);
+
         } catch (RemoteException e) {
-            System.err.println("Error occur in userServices : "+e.getMessage());
+            System.err.println("Error occur in userServices : " + e.getMessage());
         }
 
-        return loginUser;*/
-        return new User();  //return dummy
+        return loginUser;
     }
 
 
@@ -61,9 +62,10 @@ public class StartupMainController
         FXMLLoader fxmlLoader = new FXMLLoader();
         File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\ChatRoomUI.fxml");
         //pass another reference from another controller instead of main to handle chat events
-        ChatRoomController chatRoomController = new ChatRoomController(loginUser);
-        fxmlLoader.setController(chatRoomController);
-        try {
+        ChatRoomViewController chatRoomViewController = new ChatRoomViewController(loginUser);
+        fxmlLoader.setController(chatRoomViewController);
+        try
+        {
             fxmlLoader.setLocation(file.toURL());
             Parent root = fxmlLoader.load();
             Stage primaryStage = mainController.getPrimaryStage();
@@ -71,6 +73,17 @@ public class StartupMainController
             primaryStage = new Stage();
             Scene scene = MainController.getDecoratedScene(primaryStage,root);
             primaryStage.setScene(scene);
+            /*primaryStage.setOnCloseRequest((event) -> {
+                event.consume();
+                if (!isServerStopped) {
+                    // if server is running will remove user from server and friends
+                    serverService.unregister(loginUser.getId());
+                } else {
+                    // if server is not running will remove user from friends
+                    chatClientService.unregister(loginUser.getId());
+                }
+                System.exit(0);
+            });*/
             primaryStage.show();
         }catch (IOException e){
             e.printStackTrace();

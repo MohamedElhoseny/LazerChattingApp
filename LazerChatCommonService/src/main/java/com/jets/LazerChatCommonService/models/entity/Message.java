@@ -7,7 +7,7 @@ public class Message implements Serializable {
 	private String messageString;
 	private MessageState state;
 	private MessageStyle messageStyle;
-	private User user;
+	private User toUser;
 
 	public Message() {
 		this.state = MessageState.UNDELIVERED;
@@ -37,11 +37,11 @@ public class Message implements Serializable {
 	}
 
 	public User getUser() {
-		return user;
+		return toUser;
 	}
 
 	public void setUser(User user) {
-		this.user = user;
+		this.toUser = user;
 	}
 
 	public MessageStyle getMessageStyle() {
@@ -53,11 +53,11 @@ public class Message implements Serializable {
 	}
 
 	//Inner classes
-	private enum MessageState {
+	public enum MessageState {
 		UNDELIVERED, DELIVERED, SEEN
 	};
 
-	private class MessageStyle {
+	public class MessageStyle {
 
 		private int size;
 		private String color;

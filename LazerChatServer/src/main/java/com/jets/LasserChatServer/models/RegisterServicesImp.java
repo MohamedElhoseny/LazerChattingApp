@@ -2,6 +2,7 @@ package com.jets.LasserChatServer.models;
 
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.dao.RegisterServices;
+import com.jets.LazerChatCommonService.models.entity.User;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -11,45 +12,52 @@ import java.util.Map;
 public class RegisterServicesImp extends UnicastRemoteObject implements RegisterServices
 {
     // ArrayList Contains all registered Clients
-    static Map<Integer, HandshakeServices> clientList;
+    static Map<User, HandshakeServices> clientList;
 
     public RegisterServicesImp() throws RemoteException {
         super();
         clientList = new HashMap<>();
     }
 
+    /**
+     * add client to online clients and handshaking with his/her friends
+     * @param user  user id of login user
+     * @param clientInterface   clientInterface used by other friends to communicate with this client
+     * @throws RemoteException  ..
+     */
     @Override
-    public void register(int userId, HandshakeServices clientInterface) throws RemoteException {
+    public void register(User user, HandshakeServices clientInterface) throws RemoteException {
         clientList.entrySet().stream().forEach(client -> {
             try {
                 // add all user in this map to new user
                 clientInterface.register(client.getKey(), client.getValue());
                 // add new user to all user in this map
-                client.getValue().register(userId, clientInterface);
+                client.getValue().register(user, clientInterface);
             } catch (RemoteException ex) {
                 ex.printStackTrace();
             }
         });
-        clientList.put(userId, clientInterface);
-        System.out.println(userId + ": Is Registered on Server");
+        //add client to online clients
+        clientList.put(user, clientInterface);
+        System.out.println(user + ": Is Registered on Server");
     }
 
     @Override
-    public void unregister(int userId) throws RemoteException {
+    public void unregister(User user) throws RemoteException {
         clientList.entrySet().stream().forEach(client -> {
             try {
                 // remove all user in this map from user
-                if (clientList.containsKey(userId)) {
-                    clientList.get(userId).unregister(client.getKey());
+                if (clientList.containsKey(user)) {
+                    clientList.get(user).unregister(client.getKey());
                 }
                 // remove user from all user in this map
-                client.getValue().unregister(userId);
+                client.getValue().unregister(user);
             } catch (RemoteException ex) {
                 ex.printStackTrace();
             }
         });
-        clientList.remove(userId);
-        System.out.println(userId + ": Is Removed from Server");
+        clientList.remove(user);
+        System.out.println(user + ": Is Removed from Server");
     }
 
 

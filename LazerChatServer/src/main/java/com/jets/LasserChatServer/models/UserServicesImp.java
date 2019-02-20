@@ -39,11 +39,11 @@ public class UserServicesImp extends UnicastRemoteObject implements UserServices
                 loginUser.setName((String) record.get(0)[3]);
                 loginUser.setEmail((String) record.get(0)[4]);
                 loginUser.setPicture((byte[]) record.get(0)[5]);
-                loginUser.setGender((Integer) record.get(0)[6]);
+                loginUser.setGender((String) record.get(0)[6]);
                 loginUser.setCountry((String) record.get(0)[7]);
-                loginUser.setDate((String) record.get(0)[8]);
+                loginUser.setDate(String.valueOf(record.get(0)[8]));
                 loginUser.setBio((String) record.get(0)[9]);
-                loginUser.setStatus((String) record.get(0)[10]);   //return int 'must join to get string value'
+                loginUser.setStatus((Integer) record.get(0)[10]);   //return int 'must join to get string value'
             }
         } catch (SQLException e) {
             e.printStackTrace();

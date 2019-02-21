@@ -20,7 +20,6 @@ public class UserServicesImp extends UnicastRemoteObject implements UserServices
     {
         User loginUser = userDAO.getUser(phone);
 
-        System.out.println(loginUser);
         if ((loginUser != null) && loginUser.getPassword().equals(password))
             return loginUser;
         else

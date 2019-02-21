@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,11 +23,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
@@ -34,6 +38,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.controlsfx.control.Notifications;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -50,7 +55,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
     @FXML
     private Circle loginUserStatus_Circle;
     @FXML
-    private JFXComboBox<?> loginUserStatus_CB;
+    private JFXComboBox<String> loginUserStatus_CB;
 
     @FXML
     private JFXTextField searchUserTF;
@@ -154,11 +159,23 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
         }
     }
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         //set default menuItem to FriendChat
         switchableScrollPane.setContent(menuList.get(MenuItems.FRIENDCHAT));
 
+        //set status states
+        ObservableList<String> status = FXCollections.observableArrayList();
+        status.add("Available");
+        status.add("Away");
+        status.add("Busy");
+        status.add("Offline");
+        loginUserStatus_CB.setItems(status);
+
+        //set user data
         loginUserName.setText(loginUser.getName());
+        Image img = new Image(new ByteArrayInputStream(loginUser.getPicture()));
+        loginUserImage.setFill(new ImagePattern(img));
     }
 
     @FXML
@@ -267,6 +284,29 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
 
     @FXML
     void updateProfile(ActionEvent event) {
+
+    }
+
+    @FXML
+    void changeUserStatus(ActionEvent event)
+    {
+        String selected = loginUserStatus_CB.getSelectionModel().getSelectedItem();
+        switch (selected)
+        {
+            case "Available":
+                loginUserStatus_Circle.setFill(Color.valueOf("#1fff4e"));
+                break;
+            case "Busy":
+                loginUserStatus_Circle.setFill(Color.valueOf("#ED8746"));
+                break;
+            case "Away":
+                loginUserStatus_Circle.setFill(Color.valueOf("#DF4735"));
+                break;
+            case "Offline":
+                loginUserStatus_Circle.setFill(Color.valueOf("#BCBCBC"));
+                break;
+        }
+        //Update server and notify friends
 
     }
 

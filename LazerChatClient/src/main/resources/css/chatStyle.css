@@ -1,6 +1,7 @@
 #status{
     -fx-prompt-text-fill: white;
     -fx-font-family: Arial;
+    -fx-text-fill: white;
 }
 
 #searchContact{

@@ -68,10 +68,11 @@ public class RegistrationViewController implements Initializable
             fileChooser.setTitle("Open File Chooser");
             fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg"));
             choosenImg = fileChooser.showOpenDialog(null);
-            stream = new FileInputStream(choosenImg);
-            imageFile = new Image(stream);
-            if (imageFile != null)
+            if (choosenImg != null) {
+                stream = new FileInputStream(choosenImg);
+                imageFile = new Image(stream);
                 userImgIV.setImage(imageFile);
+            }
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } finally {
@@ -107,10 +108,10 @@ public class RegistrationViewController implements Initializable
         user.setPicture(imgBytes);
 
         boolean registerAccepted = startupViewController.registerNewUser(user);
-        if (registerAccepted)
-            //dummy
+        if (registerAccepted) {
             System.out.println("Accepted");
-        else
+            startupViewController.showLoginForm();
+        }else
             //dummy
             System.out.println("Not Accepted !");
         //}

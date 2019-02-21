@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXColorPicker?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXSpinner?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -42,7 +43,10 @@
                                  </font>
                               </Label>
                               <Circle fx:id="loginUserStatus_Circle" fill="#1fff4e" layoutX="73.0" layoutY="53.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="47.0" />
-                              <JFXComboBox id="status" fx:id="loginUserStatus_CB" focusColor="#4d4d4d" layoutX="149.0" layoutY="41.0" prefHeight="25.0" prefWidth="84.0" promptText="Available" stylesheets="@/css/chatStyle.css" AnchorPane.bottomAnchor="1.0" />
+
+                              <JFXComboBox id="status" fx:id="loginUserStatus_CB" focusColor="#4d4d4d" layoutX="149.0" layoutY="41.0" onAction="#changeUserStatus" prefHeight="25.0" prefWidth="84.0" promptText="Available" stylesheets="@/css/chatStyle.css" AnchorPane.bottomAnchor="1.0">
+                                 
+                              </JFXComboBox>
                               <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="256.0" layoutY="20.0" mnemonicParsing="false" onAction="#updateProfile" scaleShape="false" style="-fx-background-color: transparent;" text="Button">
                                  <graphic>
                                     <FontAwesomeIconView fill="#e4dddd" glyphName="EDIT" size="1.5em" />
@@ -434,6 +438,7 @@
                                           </VBox>
                                        </children>
                                     </AnchorPane>
+                                    <JFXColorPicker />
                                  </children>
                                  <padding>
                                     <Insets left="20.0" top="20.0" />

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane opacity="0.68" prefHeight="420.0" prefWidth="385.0" style="-fx-background-color: #2f5266;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jets.LasserChat.views.controllers.LoginPaneController">
+<StackPane opacity="0.68" prefHeight="420.0" prefWidth="385.0" style="-fx-background-color: #2f5266;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jets.LasserChat.views.controllers.LoginViewController">
    <effect>
       <DropShadow height="29.9" radius="19.6375" width="50.65" />
    </effect>

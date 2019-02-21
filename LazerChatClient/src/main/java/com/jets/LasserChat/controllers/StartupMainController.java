@@ -28,8 +28,9 @@ public class StartupMainController
     public User loginService(String phone, String password)
     {
         User loginUser = null;
-        try {
-            System.out.println("Phone = "+phone+" , password = "+password);
+        try
+        {
+            System.out.println("Trying to login : Phone = "+phone+" , password = "+password);
             loginUser = userServices.logIn(phone, password);
 
         } catch (RemoteException e) {

@@ -22,30 +22,25 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class FriendChatViewController implements Initializable
-{
+public class FriendChatViewController implements Initializable {
     @FXML
     private JFXListView<User> friendListView;
     private ObservableList<User> friendList;
     private ChatRoomViewController chatRoomViewController;
 
-    public FriendChatViewController()
-    {
+    public FriendChatViewController() {
 
     }
 
-    public FriendChatViewController(ChatRoomViewController chatRoomViewController)
-    {
+    public FriendChatViewController(ChatRoomViewController chatRoomViewController) {
         this.chatRoomViewController = chatRoomViewController;
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources)
-    {
+    public void initialize(URL location, ResourceBundle resources) {
         //to make user choose only one element at time
         friendListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-        friendListView.setStyle("-fx-border-color: #40444A; -fx-background-color: #40444A;" +
-                "-fx-control-inner-background : #40444A");
+        friendListView.setStyle("-fx-border-color: #40444A; -fx-background-color: #40444A;" + "-fx-control-inner-background : #40444A");
 
 
         //Simple customization
@@ -55,43 +50,36 @@ public class FriendChatViewController implements Initializable
                 // Return ListCell after customizing its view
                 return new ListCell<User>()
                 {
-                    FriendItemPane contactNode;
+                    FriendItemPane contactNode = null;
 
                     @Override
-                    protected void updateItem(User item, boolean empty)
-                    {
+                    protected void updateItem(User item, boolean empty) {
                         super.updateItem(item, empty);
 
-                        if (item != null)
-                        {
-                            if (!empty)
-                            {
-                                Platform.runLater(() -> {
-                                    contactNode = new FriendItemPane(item);
+                        if (item != null) {
+                            if (!empty) {
+                                contactNode = new FriendItemPane(item);
 
-                                    //Update cell data item
-                                    this.setUserData(item);
-
-                                    //Update cell graphic Node
-                                    this.setGraphic(contactNode);
-                                });
-                            }else
-                            {
-                                this.contactNode = null;
+                                //Update cell data item
+                                this.setUserData(item);
+                                this.setItem(item);
+                                //Update cell graphic Node
+                                Platform.runLater(()-> setGraphic(contactNode));
+                            } else {
                                 this.setUserData(null);
                                 this.setGraphic(null);
+                                this.setItem(null);
                             }
-                        }else{
-                            this.contactNode = null;
+                        } else {
                             this.setUserData(null);
                             this.setGraphic(null);
+                            this.setItem(null);
                         }
 
                     }
 
                     @Override
-                    public void updateSelected(boolean selected)
-                    {
+                    public void updateSelected(boolean selected) {
                         super.updateSelected(selected);
                         if (this.isSelected()) {
                             this.setStyle("-fx-background-color: RED");
@@ -107,28 +95,27 @@ public class FriendChatViewController implements Initializable
 
         friendListView.setOnMouseClicked((mouseEvent) -> {
             User selectedUser = friendListView.getSelectionModel().getSelectedItem();
-            System.out.println("User selected to chatting : "+selectedUser);
-            Session session = chatRoomViewController.loadSessionData(selectedUser);
-            chatRoomViewController.displaySessionData(session);
+            if (selectedUser != null) {
+                System.out.println("User selected to chatting : " + selectedUser);
+                Session session = chatRoomViewController.loadSessionData(selectedUser);
+                chatRoomViewController.displaySessionData(session);
+            }
         });
 
 
         //Get user friend list to display it
         friendList = chatRoomViewController.getUserFriendList();
-
         friendListView.setItems(friendList);
     }
 
-    private class FriendItemPane extends AnchorPane
-    {
+    private class FriendItemPane extends AnchorPane {
         final Circle profileImg21;
         final Label label;
         final Circle circle;
         final Label label0;
         final Label label1;
 
-        public FriendItemPane(User user)
-        {
+        public FriendItemPane(User user) {
             profileImg21 = new Circle();
             label = new Label();
             circle = new Circle();

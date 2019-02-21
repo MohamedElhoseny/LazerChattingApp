@@ -127,6 +127,10 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
         return userCurrentSession;
     }
 
+    /**
+     * Responsible for displaying user session message to chatSessionChat
+     * @param selectedUserSession the user selected session
+     */
     public void displaySessionData(Session selectedUserSession)
     {
         ChatSessionPane.getChildren().clear();
@@ -266,6 +270,10 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
 
     }
 
+    /**
+     * Used when user want to send a message to the current user session selected by user
+     * @param event keyevent when user key pressed on ENTER
+     */
     @FXML
     private void sendMessage(KeyEvent event)
     {
@@ -282,12 +290,13 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
                 userCurrentSession.getSessionMessages().add(userMessage);
 
                 //Send and update UI of other friend
+                //Looping in order to maintain group chat also
+                //ChatMainController handle this to send message to others not including this user
                 for (User userInSession: userCurrentSession.getAvailableUsers())
                     chatRoomMainController.sendMessage(userMessage, userInSession);
 
-                //Update UI
+                //Update UI, must be called !
                 ChatSessionPane.getChildren().add(new userMessagePane(userMessage.getMessageString(), true));
-
 
                 //clear textfield
                 messageTF.clear();
@@ -311,13 +320,19 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
      */
     public void receiveMessageFromContact(Message newMessage)
     {
-        Session session = loadSessionData(newMessage.getUser());
-        session.getSessionMessages().add(newMessage);
+        Session senderSession = chatRoomMainController.lookupSession(loginUser, newMessage.getUser());
+        senderSession.getSessionMessages().add(newMessage);
 
-        Platform.runLater(()->
+        if (userCurrentSession != null)
         {
-            ChatSessionPane.getChildren().add(new userMessagePane(newMessage.getMessageString(), false));
-        });
+            if (senderSession.getId() == userCurrentSession.getId()) {
+                Platform.runLater(() -> {
+                    ChatSessionPane.getChildren().add(new userMessagePane(newMessage.getMessageString(), false));
+                });
+            }
+        } else {
+            System.out.println("A message received from another user !");
+        }
     }
 
     /**

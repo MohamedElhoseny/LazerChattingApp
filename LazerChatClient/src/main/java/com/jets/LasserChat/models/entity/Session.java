@@ -8,13 +8,15 @@ import com.jets.LazerChatCommonService.models.entity.User;
 
 public class Session
 {
-	private int uuId; //for search
+	private static int uuId = 0;
+	private int id;
 	private List<User> sessionUsers;
 	private List<Message> sessionMessages;
 	
 	public Session()
 	{
 		//generate uuId
+		id = ++uuId;
 		sessionMessages = new ArrayList<>();
 		sessionUsers = new ArrayList<>();
 	}
@@ -26,16 +28,17 @@ public class Session
 		this.sessionMessages = sessionMessages;
 	}
 
+
 	public void addParticipant(User user){
 		this.sessionUsers.add(user);
 	}
-	public int getUuId()
+	public int getId()
 	{
-		return uuId;
+		return id;
 	}
-	public void setUuId(int uuId)
+	public void setId(int id)
 	{
-		this.uuId = uuId;
+		this.id = id;
 	}
 	public List<User> getAvailableUsers()
 	{

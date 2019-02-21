@@ -16,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 
 import javax.imageio.ImageIO;
+import javax.imageio.stream.FileImageInputStream;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
@@ -43,10 +44,13 @@ public class RegistrationViewController implements Initializable
     private StartupViewController startupViewController;
     private RegisterValidation registerValidation;
     private File choosenImg;
+    private File defaultImg;
 
     public RegistrationViewController()
     {
         registerValidation = new RegisterValidation();
+        choosenImg = null;
+        defaultImg = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\resources\\images\\default-avatar.png");
     }
 
     public void injectMainController(StartupViewController startupViewController)
@@ -84,36 +88,31 @@ public class RegistrationViewController implements Initializable
     void registerUser(ActionEvent event)
     {
         //if (isAccept) {
-            User user = new User();
+        User user = new User();
+        user.setGender("male");
+        user.setName(userNameTF.getText());
+        user.setCountry(userCountryTF.getText());
+        user.setEmail(userEmailTF.getText());
+        user.setPhone(userPhoneTF.getText());
+        user.setPassword(userPasswordTF.getText());
+        user.setDate(userBirthdayDP.getValue().toString());
+        user.setBio(userBioTA.getText());
+        //convertImage
+        byte[] imgBytes;
+        if (choosenImg != null)
+            imgBytes = convertImageToBytes(choosenImg);
+        else
+            imgBytes = convertImageToBytes(defaultImg);
+
+        user.setPicture(imgBytes);
+
+        boolean registerAccepted = startupViewController.registerNewUser(user);
+        if (registerAccepted)
             //dummy
-            user.setId(1001);
-            user.setGender("Male");
-            user.setName(userNameTF.getText());
-            user.setCountry(userCountryTF.getText());
-            user.setEmail(userEmailTF.getText());
-            user.setPhone(userPhoneTF.getText());
-            user.setPassword(userPasswordTF.getText());
-            user.setDate(userBirthdayDP.getValue().toString());
-            user.setBio(userBioTA.getText());
-
-            try {
-                BufferedImage bufferedImage = ImageIO.read(choosenImg);
-                ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                ImageIO.write(bufferedImage, "jpg", bos);
-                byte[] imgBytes  = bos.toByteArray();
-
-                user.setPicture(imgBytes);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            boolean registerAccepted = startupViewController.registerNewUser(user);
-            if (registerAccepted)
-                //dummy
-                System.out.println("Accepted");
-            else
-                //dummy
-                System.out.println("Not Accepted !");
+            System.out.println("Accepted");
+        else
+            //dummy
+            System.out.println("Not Accepted !");
         //}
     }
 
@@ -164,19 +163,16 @@ public class RegistrationViewController implements Initializable
         });
     }
 
-    private byte[] convertImageToBytes(Image object)
+    private byte[] convertImageToBytes(File choosenImg)
     {
-        /*BufferedImage image = null;
+        BufferedImage image = null;
         try {
-            image = ImageIO.read();
+            image = ImageIO.read(choosenImg);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ImageIO.write(image, "png", baos);
-            byte[] res=baos.toByteArray();
-            return res;
+            return baos.toByteArray();
         } catch (IOException e) {
-            e.printStackTrace();
             return null;
-        }*/
-        return null;
+        }
     }
 }

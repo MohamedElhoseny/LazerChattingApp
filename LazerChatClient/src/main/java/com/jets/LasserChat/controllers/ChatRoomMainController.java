@@ -61,8 +61,6 @@ public class ChatRoomMainController
     public void receiveMessage(Message receivedMessage) throws RemoteException {
         chatRoomViewController.receiveMessageFromContact(receivedMessage);
     }
-    /* THIS METHODS CALLED WHEN SERVER (THROUGH HandshakeServiceImp)
-     WANT TO REGISTER / UNREGISTER HANDSHAKING WITH CLIENT */
 
 
     public ObservableList<User> getClientFriendList(){

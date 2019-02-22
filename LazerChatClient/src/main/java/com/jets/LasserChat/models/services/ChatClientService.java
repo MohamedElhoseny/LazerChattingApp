@@ -42,12 +42,8 @@ public class ChatClientService
     {
         try {
             //GET USER HANDSHAKING INTERFACE TO SEND MESSAGE
-            if (clientList.containsKey(toUser)) {
-                clientList.get(toUser).receive(message);   //RISKY
-            } else {
-                System.out.println("can't find " + toUser);
-            }
-
+            if (clientList.containsKey(toUser))
+                clientList.get(toUser).receive(message);
         } catch (RemoteException ex) {
             ex.printStackTrace();
         }

@@ -17,6 +17,7 @@ import javafx.stage.FileChooser;
 
 import javax.imageio.ImageIO;
 import javax.imageio.stream.FileImageInputStream;
+import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
@@ -123,45 +124,35 @@ public class RegistrationViewController implements Initializable
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources)
-    {
-        userNameTF.textProperty().addListener(e->{
-            if( registerValidation.validateName(userNameTF.getText()))
-                startupViewController.setTrueFlag(name_error);
-            else
-                startupViewController.setFalseFlag(name_error);
+    public void initialize(URL location, ResourceBundle resources) {
+        userNameTF.textProperty().addListener(e -> {
+            if (registerValidation.validateName(userNameTF.getText())) startupViewController.setTrueFlag(name_error);
+            else startupViewController.setFalseFlag(name_error);
         });
-        userCountryTF.textProperty().addListener(e->{
-            if (registerValidation.validateName(userCountryTF.getText()))
-                startupViewController.setTrueFlag(country_error);
-            else
-                startupViewController.setFalseFlag(country_error);
+        userCountryTF.textProperty().addListener(e -> {
+            if (registerValidation.validateName(userCountryTF.getText())) startupViewController.setTrueFlag(country_error);
+            else startupViewController.setFalseFlag(country_error);
         });
-        userEmailTF.textProperty().addListener(e->{
-            if( registerValidation.validateEmail(userEmailTF.getText()))
-                startupViewController.setTrueFlag(email_error);
-            else
-                startupViewController.setFalseFlag(email_error);
+        userEmailTF.textProperty().addListener(e -> {
+            if (registerValidation.validateEmail(userEmailTF.getText())) startupViewController.setTrueFlag(email_error);
+            else startupViewController.setFalseFlag(email_error);
         });
-        userPhoneTF.textProperty().addListener(e->{
-            if(registerValidation.validatePhone(userPhoneTF.getText()))
-                startupViewController.setTrueFlag(phone_error);
+        userPhoneTF.textProperty().addListener(e -> {
+            if (registerValidation.validatePhone(userPhoneTF.getText())) startupViewController.setTrueFlag(phone_error);
 
-            else
-                startupViewController.setFalseFlag(phone_error);
+            else startupViewController.setFalseFlag(phone_error);
         });
-        userPasswordTF.textProperty().addListener(e->{
-            if(registerValidation.validatePassword(userPasswordTF.getText()))
-                startupViewController.setTrueFlag(password_error);
-            else
-                startupViewController.setFalseFlag(password_error);
+        userPasswordTF.textProperty().addListener(e -> {
+            if (registerValidation.validatePassword(userPasswordTF.getText())) startupViewController.setTrueFlag(password_error);
+            else startupViewController.setFalseFlag(password_error);
         });
-        userConfirmPasswordTF.textProperty().addListener(e->{
-            if(registerValidation.matchPassword(userPasswordTF.getText(), userConfirmPasswordTF.getText()))
-                startupViewController.setTrueFlag(confirmPassword_error);
-            else
-                startupViewController.setFalseFlag(confirmPassword_error);
+        userConfirmPasswordTF.textProperty().addListener(e -> {
+            if (registerValidation.matchPassword(userPasswordTF.getText(), userConfirmPasswordTF.getText())) startupViewController.setTrueFlag(confirmPassword_error);
+            else startupViewController.setFalseFlag(confirmPassword_error);
         });
+        userGenderCB.getItems().add("Male");
+        userGenderCB.getItems().add("Female");
+        userGenderCB.getSelectionModel().select(0);
     }
 
     private byte[] convertImageToBytes(File choosenImg)

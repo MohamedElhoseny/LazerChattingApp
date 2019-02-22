@@ -1,6 +1,6 @@
 package com.jets.LasserChat.controllers;
 
-import com.jets.LasserChat.models.dao.ServiceLocator;
+import com.jets.LasserChat.models.remote.ServiceLocator;
 import com.jets.LasserChat.views.controllers.ChatRoomViewController;
 import com.jets.LazerChatCommonService.models.dao.UserServices;
 import com.jets.LazerChatCommonService.models.entity.User;
@@ -74,17 +74,6 @@ public class StartupMainController
             primaryStage = new Stage();
             Scene scene = MainController.getDecoratedScene(primaryStage,root);
             primaryStage.setScene(scene);
-            /*primaryStage.setOnCloseRequest((event) -> {
-                event.consume();
-                if (!isServerStopped) {
-                    // if server is running will remove user from server and friends
-                    serverService.unregister(loginUser.getId());
-                } else {
-                    // if server is not running will remove user from friends
-                    chatClientService.unregister(loginUser.getId());
-                }
-                System.exit(0);
-            });*/
             primaryStage.show();
         }catch (IOException e){
             e.printStackTrace();

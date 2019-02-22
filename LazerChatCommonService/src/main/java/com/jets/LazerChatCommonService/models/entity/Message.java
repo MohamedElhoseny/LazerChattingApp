@@ -5,9 +5,18 @@ import java.io.Serializable;
 public class Message implements Serializable {
 
 	private String messageString;
+	private String date_time;
 	private MessageState state;
 	private MessageStyle messageStyle;
 	private User toUser;
+
+	public String getDate_time() {
+		return date_time;
+	}
+
+	public void setDate_time(String date_time) {
+		this.date_time = date_time;
+	}
 
 	public Message() {
 		this.state = MessageState.UNDELIVERED;

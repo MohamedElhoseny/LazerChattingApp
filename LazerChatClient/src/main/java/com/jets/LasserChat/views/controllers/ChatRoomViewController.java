@@ -3,10 +3,12 @@ package com.jets.LasserChat.views.controllers;
 import com.jets.LasserChat.controllers.ChatRoomMainController;
 import com.jets.LasserChat.models.entity.Session;
 import com.jets.LasserChat.models.services.NotifierServices;
+import com.jets.LasserChat.views.models.userMessagePane;
 import com.jets.LazerChatCommonService.models.entity.Message;
 import com.jets.LazerChatCommonService.models.entity.User;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -17,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.NodeOrientation;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -37,17 +40,15 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.controlsfx.control.Notifications;
-
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
+
 //must be in main controller
-public class ChatRoomViewController implements Initializable, NotifierServices  {
+public class ChatRoomViewController implements Initializable, NotifierServices
+{
     @FXML
     private Circle loginUserImage;
     @FXML
@@ -126,38 +127,6 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
     }
 
 
-    public Session loadSessionData(User selectedUser)
-    {
-        this.userCurrentSession = chatRoomMainController.lookupSession(loginUser, selectedUser);
-        return userCurrentSession;
-    }
-
-    /**
-     * Responsible for displaying user session message to chatSessionChat
-     * @param selectedUserSession the user selected session
-     */
-    public void displaySessionData(Session selectedUserSession)
-    {
-        ChatSessionPane.getChildren().clear();
-
-        List<Message> sessionMessages = selectedUserSession.getSessionMessages();
-        System.out.println("Number of messages in this session = "+sessionMessages.size());
-        System.out.println(selectedUserSession.getAvailableUsers());
-
-        for (Message message: sessionMessages)
-        {
-            if (message.getUser() == loginUser)
-            {
-                Platform.runLater(()->{
-                    ChatSessionPane.getChildren().add(new userMessagePane(message.getMessageString(), true));
-                });
-            }else {
-                Platform.runLater(()->{
-                    ChatSessionPane.getChildren().add(new userMessagePane(message.getMessageString(), false));
-                });
-            }
-        }
-    }
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -310,6 +279,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
 
     }
 
+    /////////////////////////// Chatting Services /////////////////////////////////////
     /**
      * Used when user want to send a message to the current user session selected by user
      * @param event keyevent when user key pressed on ENTER
@@ -327,7 +297,9 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
                 setMessageStyle(input);
 
                 //Add message to sessionMessageList
-                userCurrentSession.getSessionMessages().add(userMessage);
+                userCurrentSession.addMessageToSession(userMessage);
+                System.out.println("Your message saved to the current session see Session details : ");
+                System.err.println(userCurrentSession);
 
                 //Send and update UI of other friend
                 //Looping in order to maintain group chat also
@@ -336,10 +308,10 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
                     chatRoomMainController.sendMessage(userMessage, userInSession);
 
                 //Update UI, must be called !
-                ChatSessionPane.getChildren().add(new userMessagePane(userMessage.getMessageString(), true));
-
-                //clear textfield
-                messageTF.clear();
+                Platform.runLater(()->{
+                    ChatSessionPane.getChildren().add(new userMessagePane(userMessage, true));
+                    messageTF.clear();
+                });
             }
         }
     }
@@ -361,17 +333,48 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
     public void receiveMessageFromContact(Message newMessage)
     {
         Session senderSession = chatRoomMainController.lookupSession(loginUser, newMessage.getUser());
-        senderSession.getSessionMessages().add(newMessage);
+        senderSession.addMessageToSession(newMessage);
 
         if (userCurrentSession != null)
         {
-            if (senderSession.getId() == userCurrentSession.getId()) {
+            if (senderSession == userCurrentSession) {
                 Platform.runLater(() -> {
-                    ChatSessionPane.getChildren().add(new userMessagePane(newMessage.getMessageString(), false));
+                    ChatSessionPane.getChildren().add(new userMessagePane(newMessage, false));
                 });
             }
         } else {
             System.out.println("A message received from another user !");
+        }
+    }
+
+    Session loadSessionData(User selectedUser)
+    {
+        this.userCurrentSession = chatRoomMainController.lookupSession(loginUser, selectedUser);
+        return userCurrentSession;
+    }
+
+    /**
+     * Responsible for displaying user session message to chatSessionChat
+     * @param selectedUserSession the user selected session
+     */
+    void displaySessionData(Session selectedUserSession)
+    {
+        ChatSessionPane.getChildren().clear();
+
+        System.err.println(selectedUserSession);
+
+        List<Message> sessionMessages = selectedUserSession.getSessionMessages();
+
+        for (Message current : sessionMessages) {
+            if (current.getUser() == loginUser) {
+                Platform.runLater(() -> {
+                    ChatSessionPane.getChildren().add(new userMessagePane(current, true));
+                });
+            } else {
+                Platform.runLater(() -> {
+                    ChatSessionPane.getChildren().add(new userMessagePane(current, false));
+                });
+            }
         }
     }
 
@@ -461,7 +464,8 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
         }
     }
 
-    private void initUserFriendList() {
+    private void initUserFriendList()
+    {
         FXMLLoader fxmlLoader = new FXMLLoader();
         File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\FriendChatPane.fxml");
         FriendChatViewController friendChatViewController = new FriendChatViewController(this);
@@ -479,69 +483,4 @@ public class ChatRoomViewController implements Initializable, NotifierServices  
 
     //Inner classes
     private enum MenuItems {RECENTCHAT, FRIENDCHAT, GROUPCHAT, FRIENDREQUEST, ANNOUNCEMENT}
-
-    private class userMessagePane extends AnchorPane {
-        protected final Circle profileImg;
-        protected final VBox vBox;
-        protected final Label label;
-        protected final HBox hBox;
-        protected final FontAwesomeIconView fontAwesomeIconView;
-        protected final Label label0;
-
-        public userMessagePane(String messageString, boolean isSentbyMe) {
-
-            profileImg = new Circle();
-            vBox = new VBox();
-            label = new Label();
-            hBox = new HBox();
-            fontAwesomeIconView = new FontAwesomeIconView();
-            label0 = new Label();
-
-            if (isSentbyMe)
-                setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
-            else
-                setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
-
-            setPickOnBounds(false);
-            setPrefWidth(510.0);
-
-            AnchorPane.setLeftAnchor(profileImg, 17.0);
-            AnchorPane.setTopAnchor(profileImg, 0.0);
-            profileImg.setLayoutX(35.0);
-            profileImg.setLayoutY(18.0);
-            profileImg.setRadius(18.0);
-            profileImg.setStroke(javafx.scene.paint.Color.BLACK);
-            profileImg.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
-
-            AnchorPane.setLeftAnchor(vBox, 60.0);
-            AnchorPane.setRightAnchor(vBox, -3.0);
-            AnchorPane.setTopAnchor(vBox, 2.0);
-            vBox.setLayoutX(60.0);
-            vBox.setLayoutY(7.0);
-            vBox.setPrefWidth(453.0);
-
-            label.setMaxWidth(200.0);
-            label.setStyle("-fx-background-color: #9CCC65; -fx-border-color: gray; -fx-border-radius: 10; -fx-background-radius: 10;");
-            label.setText(messageString);
-            label.setTextFill(javafx.scene.paint.Color.WHITE);
-            label.setWrapText(true);
-            label.setFont(new Font("MT Extra", 14.0));
-            label.setPadding(new Insets(10.0));
-
-
-            label0.setAlignment(javafx.geometry.Pos.CENTER);
-            label0.setText("4 : 30 PM");
-            label0.setPadding(new Insets(0.0, 0.0, 0.0, 10.0));
-            hBox.setPadding(new Insets(2.0, 0.0, 0.0, 5.0));
-            VBox.setMargin(hBox, new Insets(0.0));
-
-            getChildren().add(profileImg);
-            vBox.getChildren().add(label);
-            hBox.getChildren().add(fontAwesomeIconView);
-            hBox.getChildren().add(label0);
-            vBox.getChildren().add(hBox);
-            getChildren().add(vBox);
-
-        }
-    }
 }

@@ -410,7 +410,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices
     //Initializing Panes Methods
     private void initUserRecentChatList(User loginUser) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\RecentChatPane.fxml");
+        File file = new File("src/main/java/com/jets/LasserChat/views/fxml/RecentChatPane.fxml");
         RecentChatViewController recentChatViewController = new RecentChatViewController(this);
         fxmlLoader.setController(recentChatViewController);
         try {
@@ -424,7 +424,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices
 
     private void initAnouncementList(User loginUser) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\ServerAnnouncementPane.fxml");
+        File file = new File("src/main/java/com/jets/LasserChat/views/fxml/ServerAnnouncementPane.fxml");
         ServerAnnouncementViewController serverAnnouncementViewController = new ServerAnnouncementViewController(this);
         fxmlLoader.setController(serverAnnouncementViewController);
         try {
@@ -438,7 +438,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices
 
     private void initUserFriendRequestList(User loginUser) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\FriendRequestPane.fxml");
+        File file = new File("src/main/java/com/jets/LasserChat/views/fxml/FriendRequestPane.fxml");
         FriendRequestViewController friendRequestViewController = new FriendRequestViewController(this);
         fxmlLoader.setController(friendRequestViewController);
         try {
@@ -452,7 +452,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices
 
     private void initUserGroupChatList(User loginUser) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\GroupChatPane.fxml");
+        File file = new File("src/main/java/com/jets/LasserChat/views/fxml/GroupChatPane.fxml");
         GroupChatViewController groupChatViewController = new GroupChatViewController(this);
         fxmlLoader.setController(groupChatViewController);
         try {
@@ -467,7 +467,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices
     private void initUserFriendList()
     {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\FriendChatPane.fxml");
+        File file = new File("src/main/java/com/jets/LasserChat/views/fxml/FriendChatPane.fxml");
         FriendChatViewController friendChatViewController = new FriendChatViewController(this);
         fxmlLoader.setController(friendChatViewController);
         try {

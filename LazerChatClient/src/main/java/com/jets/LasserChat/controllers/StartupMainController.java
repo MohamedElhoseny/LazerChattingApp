@@ -61,7 +61,7 @@ public class StartupMainController
     public void openChatRoomScene(User loginUser)
     {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\ChatRoomUI.fxml");
+        File file = new File("src/main/java/com/jets/LasserChat/views/fxml/ChatRoomUI.fxml");
         //pass another reference from another controller instead of main to handle chat events
         ChatRoomViewController chatRoomViewController = new ChatRoomViewController(loginUser);
         fxmlLoader.setController(chatRoomViewController);

@@ -28,7 +28,7 @@ public class MainController extends Application
     public void start(Stage primaryStage) throws Exception
     {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\StartupPane.fxml");
+        File file = new File("src/main/java/com/jets/LasserChat/views/fxml/StartupPane.fxml");
         //Move controlling to another control with different responsibilty
         StartupViewController startupViewController = new StartupViewController(startupMainController);
         fxmlLoader.setController(startupViewController);

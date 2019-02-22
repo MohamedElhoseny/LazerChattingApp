@@ -19,9 +19,7 @@ public class User implements Serializable
 	
 	//Constructors
 	public User()
-	{
-		System.out.println("Constructing user object ..");
-	}
+	{}
 	public User(int id, String phone, String password, String name, String email, byte[] picture, String gender,
 			String country, String date, String bio, Integer status)
 	{
@@ -132,17 +130,12 @@ public class User implements Serializable
 	@Override
 	public boolean equals(Object obj)
 	{
-		User anotherUser = (User) obj;
-		if (anotherUser != null)
-			return anotherUser.getId() == anotherUser.getId();
-		else
+		if (obj instanceof User){
+			User anotherUser = (User) obj;
+			return this.getId() == anotherUser.getId();
+		}else
 			return false;
 	}
-
-//	@Override
-//	public boolean equals(Object obj) {
-//		return super.equals(obj);
-//	}
 
 	@Override
 	public int hashCode() {

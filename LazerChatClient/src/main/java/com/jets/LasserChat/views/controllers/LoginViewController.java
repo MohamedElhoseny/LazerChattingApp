@@ -72,6 +72,7 @@ public class LoginViewController implements Initializable
 
         if (loginUser != null)
         {
+            System.out.println("New User is login to app : "+loginUser);
             startupViewController.startChatRoom(loginUser);
         }
         else

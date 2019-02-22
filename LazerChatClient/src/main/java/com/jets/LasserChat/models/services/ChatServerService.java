@@ -1,6 +1,6 @@
 package com.jets.LasserChat.models.services;
 
-import com.jets.LasserChat.models.dao.ServiceLocator;
+import com.jets.LasserChat.models.remote.ServiceLocator;
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.dao.RegisterServices;
 import com.jets.LazerChatCommonService.models.entity.User;

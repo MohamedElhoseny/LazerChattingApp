@@ -1,6 +1,6 @@
 package com.jets.LasserChat.controllers;
 
-import com.jets.LasserChat.views.controllers.StartupPaneController;
+import com.jets.LasserChat.views.controllers.StartupViewController;
 import com.jfoenix.controls.JFXDecorator;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
@@ -30,8 +30,8 @@ public class MainController extends Application
         FXMLLoader fxmlLoader = new FXMLLoader();
         File file = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\java\\com\\jets\\LasserChat\\views\\fxml\\StartupPane.fxml");
         //Move controlling to another control with different responsibilty
-        StartupPaneController startupPaneController = new StartupPaneController(startupMainController);
-        fxmlLoader.setController(startupPaneController);
+        StartupViewController startupViewController = new StartupViewController(startupMainController);
+        fxmlLoader.setController(startupViewController);
         fxmlLoader.setLocation(file.toURL());
         Parent root = fxmlLoader.load();
 
@@ -64,21 +64,26 @@ public class MainController extends Application
         return scene;
     }
 
-    public Stage getPrimaryStage(){
+    public Stage getPrimaryStage()
+    {
         return this.primaryStage;
     }
+
     @Override
-    public void init() throws Exception {
+    public void init() throws Exception
+    {
         super.init();
         System.out.println("JavaFX Launcher Thread ..");
     }
     @Override
-    public void stop() throws Exception {
+    public void stop() throws Exception
+    {
         super.stop();
         System.out.println("Application is stopped !");
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args)
+    {
         launch(args);
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXColorPicker?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXSpinner?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -42,7 +43,10 @@
                                  </font>
                               </Label>
                               <Circle fx:id="loginUserStatus_Circle" fill="#1fff4e" layoutX="73.0" layoutY="53.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="47.0" />
-                              <JFXComboBox id="status" fx:id="loginUserStatus_CB" focusColor="#4d4d4d" layoutX="149.0" layoutY="41.0" prefHeight="25.0" prefWidth="84.0" promptText="Available" stylesheets="@/css/chatStyle.css" AnchorPane.bottomAnchor="1.0" />
+
+                              <JFXComboBox id="status" fx:id="loginUserStatus_CB" focusColor="#4d4d4d" layoutX="149.0" layoutY="41.0" onAction="#changeUserStatus" prefHeight="25.0" prefWidth="84.0" promptText="Available" stylesheets="@/css/chatStyle.css" AnchorPane.bottomAnchor="1.0">
+                                 
+                              </JFXComboBox>
                               <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="256.0" layoutY="20.0" mnemonicParsing="false" onAction="#updateProfile" scaleShape="false" style="-fx-background-color: transparent;" text="Button">
                                  <graphic>
                                     <FontAwesomeIconView fill="#e4dddd" glyphName="EDIT" size="1.5em" />
@@ -88,7 +92,7 @@
                <left>
                   <BorderPane prefHeight="465.0" prefWidth="297.0" BorderPane.alignment="CENTER">
                      <center>
-                        <ScrollPane fx:id="switchableScrollPane" fitToHeight="true" fitToWidth="true" pickOnBounds="false" prefHeight="328.0" prefWidth="248.0" style="-fx-background-color: #40444A;">
+                        <ScrollPane fx:id="switchableScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pickOnBounds="false" prefHeight="328.0" prefWidth="248.0" style="-fx-background-color: #40444A;">
 
                         </ScrollPane>
                      </center>
@@ -272,7 +276,7 @@
                      <center>
                         <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
                            <content>
-                              <VBox pickOnBounds="false" prefHeight="453.0" prefWidth="538.0" style="-fx-background-color: #F2F8F8;">
+                              <VBox fx:id="ChatSessionPane" pickOnBounds="false" prefHeight="453.0" prefWidth="538.0" style="-fx-background-color: #F2F8F8;">
                                  <children>
                                     <AnchorPane prefWidth="510.0">
                                        <children>
@@ -434,6 +438,7 @@
                                           </VBox>
                                        </children>
                                     </AnchorPane>
+                                    <JFXColorPicker />
                                  </children>
                                  <padding>
                                     <Insets left="20.0" top="20.0" />
@@ -504,7 +509,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </Button>
-                                    <TextField alignment="CENTER" prefHeight="41.0" prefWidth="335.0" promptText="Type something to send ..." style="-fx-background-color: transparent; -fx-border-color: gray; -fx-border-radius: 20;">
+                                    <TextField fx:id="messageTF" alignment="CENTER" onKeyPressed="#sendMessage" prefHeight="41.0" prefWidth="335.0" promptText="Type something to send ..." style="-fx-background-color: transparent; -fx-border-color: gray; -fx-border-radius: 20;">
                                        <font>
                                           <Font size="16.0" />
                                        </font>

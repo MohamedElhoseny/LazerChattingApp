@@ -10,20 +10,18 @@ public class User implements Serializable
 	private String password;
 	private String name;
 	private String email;
-	private Object picture;
-	private int gender;
+	private byte[] picture;
+	private String gender;
 	private String country;
 	private String date;
 	private String bio;
-	private String status;
+	private Integer status;
 	
 	//Constructors
 	public User()
-	{
-		System.out.println("Constructing user object ..");
-	}
-	public User(int id, String phone, String password, String name, String email, Object picture, int gender,
-			String country, String date, String bio, String status)
+	{}
+	public User(int id, String phone, String password, String name, String email, byte[] picture, String gender,
+			String country, String date, String bio, Integer status)
 	{
 		super();
 		this.id = id;
@@ -80,19 +78,19 @@ public class User implements Serializable
 	{
 		this.email = email;
 	}
-	public Object getPicture()
+	public byte[] getPicture()
 	{
 		return picture;
 	}
-	public void setPicture(Object picture)
+	public void setPicture(byte[] picture)
 	{
 		this.picture = picture;
 	}
-	public int getGender()
+	public String getGender()
 	{
 		return gender;
 	}
-	public void setGender(int gender)
+	public void setGender(String gender)
 	{
 		this.gender = gender;
 	}
@@ -120,14 +118,32 @@ public class User implements Serializable
 	{
 		this.bio = bio;
 	}
-	public String getStatus()
+	public Integer getStatus()
 	{
 		return status;
 	}
-	public void setStatus(String status)
+	public void setStatus(Integer status)
 	{
 		this.status = status;
 	}
-	
-	
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (obj instanceof User){
+			User anotherUser = (User) obj;
+			return this.getId() == anotherUser.getId();
+		}else
+			return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return id;
+	}
+
+	@Override
+	public String toString() {
+		return "User [ id = "+id+", name = "+name+" ]";
+	}
 }

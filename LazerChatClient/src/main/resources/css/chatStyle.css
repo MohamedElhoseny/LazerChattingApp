@@ -1,6 +1,7 @@
 #status{
     -fx-prompt-text-fill: white;
     -fx-font-family: Arial;
+    -fx-text-fill: white;
 }
 
 #searchContact{
@@ -25,12 +26,14 @@
 
 .loginPassword{
     -fx-prompt-text-fill: silver;
+    -fx-text-fill: white;
     -fx-font-style: italic;
     -fx-font-size: 17px;
 }
 
 .loginPhone{
     -fx-prompt-text-fill: silver;
+    -fx-text-fill: white;
     -fx-font-style: italic;
     -fx-font-size: 17px;
     -jfx-focus-color: #609699;

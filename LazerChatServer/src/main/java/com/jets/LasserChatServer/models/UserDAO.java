@@ -6,6 +6,7 @@ import java.util.List;
 
 
 public interface UserDAO {
+
     public List<User> getAllUsers();
 
     public void registerNewUser(User user);
@@ -14,6 +15,8 @@ public interface UserDAO {
 
     public User getUser(String phone);
 
-    public List<User> getUserFriends(String phone);
+    public List<User>  getUserFriends(String phone);
+
+    public boolean updateUserStatues (User user);
 
 }

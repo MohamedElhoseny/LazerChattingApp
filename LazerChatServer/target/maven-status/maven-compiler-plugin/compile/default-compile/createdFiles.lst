@@ -2,10 +2,10 @@ com\jets\LasserChatServer\controllers\ServerServicesController.class
 com\jets\LasserChatServer\models\ManageServer.class
 com\jets\LasserChatServer\models\ManageUser.class
 com\jets\LasserChatServer\models\UserDAO.class
-com\jets\LasserChatServer\models\DatabaseInterface.class
 com\jets\LasserChatServer\models\DataMining.class
 com\jets\LasserChatServer\models\StatuesServicesImp.class
-com\jets\LasserChatServer\models\UserServicesImp.class
 com\jets\LasserChatServer\models\UserDAOImplementation.class
 com\jets\LasserChatServer\models\RegisterServicesImp.class
 com\jets\LasserChatServer\models\MysqlDB.class
+com\jets\LasserChatServer\models\DatabaseInterface.class
+com\jets\LasserChatServer\models\UserServicesImp.class

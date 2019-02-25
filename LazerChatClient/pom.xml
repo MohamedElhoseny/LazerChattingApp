@@ -33,7 +33,6 @@
             <version>1.0</version>
         </dependency>
 
-
         <!-- Add commonServices Jar -->
         <dependency>
             <groupId>common</groupId>
@@ -42,6 +41,7 @@
             <scope>system</scope>
             <systemPath>E:/FCIH/ITI/JavaSE/Project/LazerChattingApp/LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT-jar-with-dependencies.jar</systemPath>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->
         <dependency>
             <groupId>org.controlsfx</groupId>
@@ -82,6 +82,7 @@
             <scope>system</scope>
             <systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/AnimationPackage.jar</systemPath>
         </dependency>
+        <!-- File transfer -->
         <dependency>
             <groupId>com.healthmarketscience.rmiio</groupId>
             <artifactId>rmiio</artifactId>

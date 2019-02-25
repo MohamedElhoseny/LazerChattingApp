@@ -4,6 +4,7 @@ import com.jets.LasserChat.models.entity.Session;
 import com.jets.LasserChat.models.remote.ServiceLocator;
 import com.jets.LasserChat.models.services.*;
 import com.jets.LasserChat.views.controllers.ChatRoomViewController;
+import com.jets.LazerChatCommonService.models.dao.ContactServices;
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.dao.UserServices;
 import com.jets.LazerChatCommonService.models.entity.Message;
@@ -11,6 +12,8 @@ import com.jets.LazerChatCommonService.models.entity.User;
 import javafx.collections.ObservableList;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.rmi.RemoteException;
 import java.util.List;
 
@@ -30,6 +33,10 @@ public class ChatRoomMainController
 
     private UserServices userServices;
 
+    private ContactServices contactServices;
+
+    private NotifierServerServices notifierServerServices;
+
     //To communicate with view controller
     private ChatRoomViewController chatRoomViewController;
     private boolean isServerStopped = false;
@@ -45,6 +52,8 @@ public class ChatRoomMainController
             chatClientService = new ChatClientService();
             chatServerService = new ChatServerService();
             backupChatServices = new BackupChatServicesImp();
+            contactServices = (ContactServices) ServiceLocator.getService("ContactServices");
+            notifierServerServices = new NotifierServerServices();
             chatRoomViewController = viewController;
             //Calling server to register my handshake with all my online contacts
             chatServerService.register(user, handshakeServices);
@@ -126,5 +135,84 @@ public class ChatRoomMainController
             isAccepted = false;
         }
         return isAccepted;
+    }
+
+    public void unRegister(String status) {
+        if (!isServerStopped) {
+            // if server is running will remove user from server and friends
+            chatServerService.unregister(user);
+        } else {
+            // if server is not running will remove user from friends
+            chatClientService.unregister(user);
+        }
+        saveUserInformation(status);
+    }
+
+    private void saveUserInformation(String status) {
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter("userInformation.txt");
+            writer.println(user.getPhone());
+            writer.println(user.getPassword());
+            writer.println(status);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            if (writer != null)
+                writer.close();
+        }
+    }
+
+    public boolean checkIfUserExist(User newContact) {
+        try {
+            return contactServices.checkIfUserExist(newContact);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean addNewContact(User loginUser, User newContact) {
+        try {
+            return contactServices.addContact(loginUser, newContact);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean checkIfFriends(User loginUser, User newContact) {
+        try {
+            return contactServices.isFriend(loginUser, newContact);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public void notifyFriendRequest(User fromUser) {
+        chatRoomViewController.notifyFriendRequest(fromUser);
+    }
+
+    public void notifyFriendsRequest(User loginUser, User newContact) {
+        notifierServerServices.notifyFriendsRequest(loginUser, newContact);
+    }
+
+    public boolean addFriendRequest(User loginUser, User newContact) {
+        try {
+            return contactServices.addFriendRequest(loginUser, newContact);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean checkIfPending(User loginUser, User newContact) {
+        try {
+            return contactServices.isPending(loginUser, newContact);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

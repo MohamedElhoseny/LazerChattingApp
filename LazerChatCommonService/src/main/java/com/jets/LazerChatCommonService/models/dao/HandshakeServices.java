@@ -19,4 +19,7 @@ public interface HandshakeServices extends Remote
     void receiveFile(User toUser , RemoteInputStream ristream, String name, String extension) throws RemoteException;
 
     void serverStop() throws RemoteException;
+
+    /* Notify user only about receive a new friend request */
+    void notifyFriendRequest(User fromUser) throws RemoteException;
 }

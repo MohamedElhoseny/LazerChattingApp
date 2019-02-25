@@ -249,7 +249,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
     void addContacts(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader();
         File file = new File("src/main/java/com/jets/LasserChat/views/fxml/AddContactPane.fxml");
-        AddContactViewController addContactViewController = new AddContactViewController(this);
+        AddContactViewController addContactViewController = new AddContactViewController(this,loginUser);
         fxmlLoader.setController(addContactViewController);
         try {
             fxmlLoader.setLocation(file.toURL());
@@ -281,6 +281,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
 
     @FXML
     void logOut(ActionEvent event) {
+        chatRoomMainController.unRegister("false");
 
     }
 
@@ -699,10 +700,6 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
 
     }
 
-    @Override
-    public void notifyFriendRequest(User fromUser) {
-
-    }
     //</editor-fold>
 
     //<editor-fold desc="Initializing User info panes Methods">
@@ -788,6 +785,42 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
         chattedUserPhone_R.setText(selectedUser.getPhone());
         Image img = new Image(new ByteArrayInputStream(selectedUser.getPicture()));
         profileImg_R.setFill(new ImagePattern(img));
+    }
+
+    public void closeChatRoomPane() {
+        chatRoomMainController.unRegister("true");
+    }
+
+    public void closeAddContactPane() {
+        addContactPane.setVisible(false);
+    }
+
+    public boolean checkIfUserExist(User newContact) {
+        return chatRoomMainController.checkIfUserExist(newContact);
+    }
+
+    public boolean addNewContact(User loginUser, User newContact) {
+        return chatRoomMainController.addNewContact(loginUser, newContact);
+    }
+
+    public boolean checkIfFriends(User loginUser, User newContact) {
+        return chatRoomMainController.checkIfFriends(loginUser, newContact);
+    }
+
+    public void notifyFriendsRequest(User loginUser, User newContact) {
+        chatRoomMainController.notifyFriendsRequest(loginUser, newContact);
+    }
+
+    public boolean addFriendRequest(User loginUser, User newContact) {
+        return chatRoomMainController.addFriendRequest(loginUser, newContact);
+    }
+
+    public boolean checkIfPending(User loginUser, User newContact) {
+        return chatRoomMainController.checkIfPending(loginUser,newContact);
+    }
+
+    public void notifyFriendRequest(User fromUser) {
+        System.out.println(fromUser.getName());
     }
 
     //Inner classes

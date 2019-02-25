@@ -14,7 +14,7 @@ import java.util.Map;
 public class RegisterServicesImp extends UnicastRemoteObject implements RegisterServices
 {
     // ArrayList Contains all registered Clients
-    private static Map<User, HandshakeServices> clientList;
+    static Map<User, HandshakeServices> clientList;
     private List<User> friendsList;
     private UserDAOImplementation userDAOImplementation;
 

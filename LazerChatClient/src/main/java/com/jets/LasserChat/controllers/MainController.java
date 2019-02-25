@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXDecorator;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -75,11 +76,15 @@ public class MainController extends Application
         super.init();
         System.out.println("JavaFX Launcher Thread ..");
     }
+
     @Override
-    public void stop() throws Exception
-    {
+    public void stop() throws Exception {
         super.stop();
+        System.out.println("Unregistering client...");
+        startupMainController.closeChatRoomPane();
         System.out.println("Application is stopped !");
+        Platform.exit();
+        System.exit(0);
     }
 
     public static void main(String[] args)

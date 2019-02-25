@@ -1,34 +1,41 @@
 package com.jets.LasserChat.views.controllers;
 
+import com.jets.LasserChat.controllers.MainController;
 import com.jets.LasserChat.models.entity.Session;
-import com.jets.LasserChat.views.models.FriendItemPane;
 import com.jets.LasserChat.views.models.GroupItemPane;
 import com.jets.LazerChatCommonService.models.entity.User;
 import com.jfoenix.controls.JFXListView;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GroupChatViewController implements Initializable
 {
-
-    @FXML private JFXListView<Session> groupListView;
+    @FXML
+    private ListView<Session> groupListView;
 
     private ChatRoomViewController chatRoomViewController;
     private ObservableList<Session> groups;
     private Session currentSession;
 
-    public GroupChatViewController()
-    {}
+    public GroupChatViewController() {
+    }
 
     public GroupChatViewController(ChatRoomViewController chatRoomViewController)
     {
@@ -52,7 +59,8 @@ public class GroupChatViewController implements Initializable
                     GroupItemPane groupNode = null;
 
                     @Override
-                    protected void updateItem(Session item, boolean empty) {
+                    protected void updateItem(Session item, boolean empty)
+                    {
                         super.updateItem(item, empty);
 
                         if (item != null) {
@@ -63,7 +71,7 @@ public class GroupChatViewController implements Initializable
                                 this.setUserData(item);
                                 this.setItem(item);
                                 //Update cell graphic Node
-                                Platform.runLater(()-> setGraphic(groupNode));
+                                Platform.runLater(() -> setGraphic(groupNode));
                             } else {
                                 this.setUserData(null);
                                 this.setGraphic(null);
@@ -78,7 +86,8 @@ public class GroupChatViewController implements Initializable
                     }
 
                     @Override
-                    public void updateSelected(boolean selected) {
+                    public void updateSelected(boolean selected)
+                    {
                         super.updateSelected(selected);
                         if (this.isSelected()) {
                             this.setStyle("-fx-background-color: RED");
@@ -96,24 +105,50 @@ public class GroupChatViewController implements Initializable
     }
 
     @FXML
-    void selectFriendSession(MouseEvent event)
+    void selectGroupSession(MouseEvent event)
     {
         Session selectedSession = groupListView.getSelectionModel().getSelectedItem();
-        if (selectedSession != null)
-        {
-            if (currentSession == selectedSession)
-            {
+        if (selectedSession != null) {
+            if (currentSession == selectedSession) {
                 System.out.println("User select same group to chat.");
-            }else{
+            } else {
                 currentSession = selectedSession;
                 chatRoomViewController.displaySessionData(selectedSession);
-                System.out.println("The current session group selected : "+selectedSession);
+                System.out.println("The current session group selected : " + selectedSession);
             }
         }
     }
 
-    public void addNewGroupSession(Session newGroupSession)
+
+    @FXML
+    void addNewGroupChat(ActionEvent event)
     {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        File file = new File("src/main/java/com/jets/LasserChat/views/fxml/CreateGroupChatPane.fxml");
+        CreateChatViewController createChatViewController = new CreateChatViewController(this);
+        fxmlLoader.setController(createChatViewController);
+        try {
+            fxmlLoader.setLocation(file.toURL());
+            Parent root = fxmlLoader.load();
+            Stage newStage = new Stage();
+            Scene decoratorScene = MainController.getDecoratedScene(newStage, root);
+            newStage.setScene(decoratorScene);
+            newStage.show();
+            newStage.setOnCloseRequest(e -> {
+                e.consume();
+                newStage.close();
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public ObservableList<User> getFriendList() {
+        return chatRoomViewController.getUserFriendList();
+    }
+
+    public void addNewGroupSession(Session newGroupSession) {
         this.groups.add(newGroupSession);
     }
 }

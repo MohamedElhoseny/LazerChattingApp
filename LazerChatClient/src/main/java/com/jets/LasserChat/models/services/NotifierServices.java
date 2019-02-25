@@ -17,6 +17,4 @@ public interface NotifierServices extends Remote
 	void notifyStatus(User fromUserStatus);
 	/* Notify user only about retrieval of a new file */
 	void notifyFileRequest(User fromUser, File senderFile);
-	/* Notify user only about receive a new friend request */
-	void notifyFriendRequest(User fromUser);
 }

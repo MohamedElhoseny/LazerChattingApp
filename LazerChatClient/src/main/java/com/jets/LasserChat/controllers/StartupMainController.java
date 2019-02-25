@@ -18,6 +18,7 @@ public class StartupMainController
     private MainController mainController;
     private UserServices userServices;
     boolean isServerStopped = false;
+    private ChatRoomViewController chatRoomViewController;
 
     public StartupMainController(MainController mainController)
     {
@@ -63,7 +64,7 @@ public class StartupMainController
         FXMLLoader fxmlLoader = new FXMLLoader();
         File file = new File("src/main/java/com/jets/LasserChat/views/fxml/ChatRoomUI.fxml");
         //pass another reference from another controller instead of main to handle chat events
-        ChatRoomViewController chatRoomViewController = new ChatRoomViewController(loginUser);
+        chatRoomViewController = new ChatRoomViewController(loginUser);
         fxmlLoader.setController(chatRoomViewController);
         try
         {
@@ -80,4 +81,8 @@ public class StartupMainController
         }
     }
 
+    public void closeChatRoomPane() {
+        if (chatRoomViewController != null)
+            chatRoomViewController.closeChatRoomPane();
+    }
 }

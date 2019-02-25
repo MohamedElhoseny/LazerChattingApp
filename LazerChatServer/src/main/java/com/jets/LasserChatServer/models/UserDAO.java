@@ -15,8 +15,19 @@ public interface UserDAO {
 
     public User getUser(String phone);
 
-    public List<User>  getUserFriends(String phone);
+    public List<User> getUserFriends(String phone);
 
-    public boolean updateUserStatues (User user);
+    public boolean updateUserStatues(User user);
+
+    public boolean isExist(User user);
+
+    public boolean addFriend(User user, User newFriend);
+
+    public boolean isFriend(User user1, User user2);
+
+    public boolean addFriendRequest(User fromUser, User toUser);
+
+    public boolean isPending(User fromUser, User toUser);
+
 
 }

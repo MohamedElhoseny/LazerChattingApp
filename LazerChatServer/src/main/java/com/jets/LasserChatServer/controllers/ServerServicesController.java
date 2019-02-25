@@ -1,8 +1,6 @@
 package com.jets.LasserChatServer.controllers;
 
-import com.jets.LasserChatServer.models.RegisterServicesImp;
-import com.jets.LasserChatServer.models.StatuesServicesImp;
-import com.jets.LasserChatServer.models.UserServicesImp;
+import com.jets.LasserChatServer.models.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,6 +17,8 @@ public class ServerServicesController extends Application
     private UserServicesImp userServices;
     private RegisterServicesImp registerServices;
     private StatuesServicesImp statusServices;
+    private ContactServicesImp contactServices;
+    private FriendRequestNotifierServicesImp friendRequestNotifierServices;
     private Registry registry;
     private boolean isSecondTimeServerStopped;
 
@@ -30,6 +30,8 @@ public class ServerServicesController extends Application
             userServices = new UserServicesImp();
             registerServices = new RegisterServicesImp();
             statusServices = new StatuesServicesImp();
+            contactServices = new ContactServicesImp();
+            friendRequestNotifierServices = new FriendRequestNotifierServicesImp();
             registry = LocateRegistry.getRegistry();
             isSecondTimeServerStopped = false;
             System.out.println("Server is started .");
@@ -53,6 +55,8 @@ public class ServerServicesController extends Application
                 registry.unbind("UserServices");
                 registry.unbind("RegisterServices");
                 registry.unbind("StatuesServices");
+                registry.unbind("ContactServices");
+                registry.unbind("FriendRequestNotifierServices");
                 registerServices.clearMap();
                 isSecondTimeServerStopped = true;
 
@@ -71,7 +75,8 @@ public class ServerServicesController extends Application
                 registry.rebind("UserServices", userServices);
                 registry.rebind("RegisterServices", registerServices);
                 registry.rebind("StatuesServices",statusServices);
-
+                registry.rebind("ContactServices", contactServices);
+                registry.rebind("FriendRequestNotifierServices", friendRequestNotifierServices);
                 if (isSecondTimeServerStopped)
                     registerServices.startServer();
 

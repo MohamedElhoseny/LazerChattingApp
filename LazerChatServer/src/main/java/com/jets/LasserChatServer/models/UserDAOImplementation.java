@@ -105,9 +105,7 @@ public class UserDAOImplementation implements UserDAO {
     @Override
     public void updateUser(User user) {
 
-        String query = "update user set password= ? ,name= ? ,email= ? ,picture= ? ,"
-                + "gender= ? ,country= ? ,birthdate= ?,bio= ? "
-                + "where phone= ? ;";
+        String query = "update user set password= ? ,name= ? ,email= ? ,picture= ? ," + "gender= ? ,country= ? ,birthdate= ?,bio= ? " + "where phone= ? ;";
         try {
             statement = connection.prepareStatement(query);
             statement.setString(1, user.getPassword());
@@ -167,14 +165,7 @@ public class UserDAOImplementation implements UserDAO {
         List<User> friends = new ArrayList<>();
         try {
 
-            query = "select u.* from user u "
-                    + " join groupcontact g "
-                    + " on u.id=g.uid "
-                    + " or u.id=g.rid "
-                    + " join user f "
-                    + " on (f.id=g.uid and f.id <> u.id) "
-                    + " or (f.id=g.rid and f.id <> u.id) "
-                    + " where f.phone= '" + phone + "';";
+            query = "select u.* from user u " + " join groupcontact g " + " on u.id=g.uid " + " or u.id=g.rid " + " join user f " + " on (f.id=g.uid and f.id <> u.id) " + " or (f.id=g.rid and f.id <> u.id) " + " where f.phone= '" + phone + "';";
 
             statement = connection.prepareStatement(query);
             resultList = statement.executeQuery();
@@ -206,8 +197,7 @@ public class UserDAOImplementation implements UserDAO {
     @Override
     public boolean updateUserStatues(User user) {
         boolean isUpdated = false;
-        query = "update user set sid= ? "
-                + " where phone= ? ;";
+        query = "update user set sid= ? " + " where phone= ? ;";
 
         try {
             statement = connection.prepareStatement(query);
@@ -226,5 +216,128 @@ public class UserDAOImplementation implements UserDAO {
 
     }
 
+    @Override
+    public boolean isExist(User user) {
 
+        boolean isExist = false;
+        List<User> users = getAllUsers();
+        for (User user1 : users) {
+            if (user1.getPhone().equals(user.getPhone())) {
+                isExist = true;
+                break;
+            }
+        }
+        return isExist;
+    }
+
+    @Override
+    public boolean addFriend(User user, User newFriend) {
+        User user1 = getUser(user.getPhone());
+        User user2 = getUser(newFriend.getPhone());
+        int check = 0;
+        query = "insert into groupcontact( uid , rid ) values( ? , ? )";
+        try {
+            statement = connection.prepareStatement(query);
+            statement.setInt(1, user1.getId());
+            statement.setInt(2, user2.getId());
+
+            check = statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (check == 1) {
+            deletFriendRequest(user1, user2);
+            deletFriendRequest(user2, user1);
+            return true;
+        } else return false;
+
+    }
+
+    @Override
+    public boolean isFriend(User user1, User user2) {
+        boolean isFriend = false;
+        User fristUser = getUser(user1.getPhone());
+        User secondUser = getUser(user2.getPhone());
+
+        query = "select uid,rid from groupcontact";
+        try {
+            statement = connection.prepareStatement(query);
+            resultList = statement.executeQuery();
+            while (resultList.next()) {
+                int uid = resultList.getInt("uid");
+                int rid = resultList.getInt("rid");
+                if ((uid == fristUser.getId() && rid == secondUser.getId()) || (uid == secondUser.getId() && rid == fristUser.getId())) {
+                    isFriend = true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return isFriend;
+
+    }
+
+    @Override
+    public boolean addFriendRequest(User fromUser, User toUser) {
+        User secondUser = getUser(toUser.getPhone());
+        int check = 0;
+        query = "insert into friendrequest( fromUser , toUser , state ) values( ? , ? , ? )";
+        try {
+            statement = connection.prepareStatement(query);
+            statement.setInt(1, fromUser.getId());
+            statement.setInt(2, secondUser.getId());
+            statement.setInt(3, 1);
+
+            check = statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (check == 1) {
+
+            return true;
+        } else return false;
+    }
+
+    @Override
+    public boolean isPending(User fromUser, User toUser) {
+        boolean ispending = false;
+        User fristUser = getUser(fromUser.getPhone());
+        User secondUser = getUser(toUser.getPhone());
+        query = "select * from friendrequest";
+        try {
+            statement = connection.prepareStatement(query);
+            resultList = statement.executeQuery();
+            while (resultList.next()) {
+                int id1 = resultList.getInt("fromUser");
+                int id2 = resultList.getInt("toUser");
+                int state = resultList.getInt("state");
+                if ((fristUser.getId() == id1 && secondUser.getId() == id2)) {
+                    if (state == 1) {
+                        ispending = true;
+                        break;
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ispending;
+    }
+
+    private void deletFriendRequest(User fromuser, User touser) {
+        User fristUser = getUser(fromuser.getPhone());
+        User secondUser = getUser(touser.getPhone());
+        query = "delete from friendrequest where fromUser= ? and toUser= ?";
+        try {
+            statement = connection.prepareStatement(query);
+            statement.setInt(1, fristUser.getId());
+            statement.setInt(2, secondUser.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 }

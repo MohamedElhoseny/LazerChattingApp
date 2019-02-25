@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox minHeight="200.0" minWidth="200.0" prefHeight="431.0" prefWidth="254.0" spacing="5.0" style="-fx-background-color: #40444A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox minHeight="200.0" minWidth="200.0" prefHeight="431.0" prefWidth="254.0" spacing="10.0" style="-fx-background-color: #40444A;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="254.0" spacing="5.0" style="-fx-border-color: transparent  transparent gray transparent;">
+      <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="254.0" spacing="10.0" style="-fx-border-color: transparent  transparent gray transparent;">
          <children>
-            <JFXButton contentDisplay="GRAPHIC_ONLY" textFill="WHITE">
+            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#addNewGroupChat" textFill="WHITE">
                <graphic>
                   <FontAwesomeIconView fill="#43ff50" glyphName="PLUS_CIRCLE" size="25" />
                </graphic>
@@ -25,16 +25,21 @@
             </Label>
          </children>
          <VBox.margin>
-            <Insets />
+            <Insets bottom="5.0" />
          </VBox.margin>
          <padding>
             <Insets left="15.0" />
          </padding>
       </HBox>
-      <JFXListView fx:id="groupListView" onMouseClicked="#selectFriendSession" style="-fx-background-color: #40444A;">
+      <ListView fx:id="groupListView" onMouseClicked="#selectGroupSession" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
          <padding>
             <Insets top="10.0" />
          </padding>
-      </JFXListView>
+      </ListView>
+      
+
    </children>
+   <padding>
+      <Insets top="5.0" />
+   </padding>
 </VBox>

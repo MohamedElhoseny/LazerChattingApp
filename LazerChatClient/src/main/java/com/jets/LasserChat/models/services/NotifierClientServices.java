@@ -25,8 +25,4 @@ public class NotifierClientServices extends UnicastRemoteObject implements Notif
 
     }
 
-    @Override
-    public void notifyFriendRequest(User fromUser) {
-
-    }
 }

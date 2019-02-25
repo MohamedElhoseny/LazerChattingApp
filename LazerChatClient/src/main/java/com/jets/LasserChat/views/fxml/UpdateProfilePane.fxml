@@ -14,10 +14,10 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="360.0" prefWidth="550.0" style="-fx-background-color: #40444A; -fx-border-color: gray; -fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="360.0" prefWidth="550.0" style="-fx-background-color: #40444A; -fx-border-color: gray; -fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Circle fx:id="profileImg3" fill="WHITE" layoutX="123.0" layoutY="108.0" radius="69.0" stroke="BLACK" strokeType="INSIDE" />
-      <JFXButton layoutX="54.0" layoutY="205.0" prefHeight="31.0" prefWidth="149.0" style="-fx-border-color: silver;" text="Change Profile Image" textFill="WHITE">
+      <Circle fx:id="userImgIV" fill="WHITE" layoutX="123.0" layoutY="108.0" radius="69.0" stroke="BLACK" strokeType="INSIDE" />
+      <JFXButton layoutX="54.0" layoutY="205.0" onAction="#changeProfileImage" prefHeight="31.0" prefWidth="149.0" style="-fx-border-color: silver;" text="Change Profile Image" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
@@ -41,45 +41,41 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField GridPane.columnIndex="1" />
+            <TextField fx:id="userNameTF" GridPane.columnIndex="1" />
             <Label prefHeight="21.0" prefWidth="95.0" text="Email" textFill="WHITE" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="userEmailTF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label layoutX="10.0" layoutY="59.0" prefHeight="21.0" prefWidth="95.0" text="Phone" textFill="WHITE" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField disable="true" editable="false" layoutX="104.0" layoutY="57.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="userPhoneTF" disable="true" editable="false" layoutX="104.0" layoutY="57.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label layoutX="10.0" layoutY="117.0" prefHeight="21.0" prefWidth="95.0" text="Country" textFill="WHITE" GridPane.rowIndex="3">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField layoutX="104.0" layoutY="70.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="userCountryTF" layoutX="104.0" layoutY="70.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label layoutX="10.0" layoutY="160.0" prefHeight="21.0" prefWidth="95.0" text="Date" textFill="WHITE" GridPane.rowIndex="5">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXDatePicker defaultColor="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <JFXDatePicker fx:id="userBirthdayDP" defaultColor="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label layoutX="10.0" layoutY="160.0" prefHeight="21.0" prefWidth="95.0" text="Password" textFill="WHITE" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <PasswordField fx:id="userPasswordTF" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="505.0" layoutY="14.0">
-         <graphic>
-            <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="20.0" />
-         </graphic>
-      </JFXButton>
-      <JFXButton layoutX="54.0" layoutY="275.0" prefHeight="39.0" prefWidth="149.0" style="-fx-background-color: #3CCF6D;" text="Save My Info" textFill="WHITE">
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="505.0" layoutY="14.0" />
+      <JFXButton layoutX="54.0" layoutY="275.0" onAction="#saveUpdatedInfo" prefHeight="39.0" prefWidth="149.0" style="-fx-background-color: #3CCF6D;" text="Save My Info" textFill="WHITE">
          <graphic>
             <FontAwesomeIconView fill="WHITE" glyphName="CLOUD" size="20.0" />
          </graphic>

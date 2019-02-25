@@ -19,7 +19,11 @@ public class Message implements Serializable {
 	}
 
 	public Message() {
+
 		this.state = MessageState.UNDELIVERED;
+		this.date_time="12-02-2017";
+		MessageStyle messageStyle=new MessageStyle();
+		this.messageStyle=messageStyle;
 	}
 
 	public Message(String messageString, MessageState state, MessageStyle messageStyle) {
@@ -66,7 +70,7 @@ public class Message implements Serializable {
 		UNDELIVERED, DELIVERED, SEEN
 	};
 
-	public class MessageStyle {
+	public class MessageStyle implements Serializable  {
 
 		private int size;
 		private String color;
@@ -76,7 +80,7 @@ public class Message implements Serializable {
 		private boolean isUnderline;
 
 		public MessageStyle() {
-			// krokiii
+			// default
 			this.size = 12;
 			this.color = "black";
 			this.fontFamily = "console";
@@ -145,5 +149,9 @@ public class Message implements Serializable {
 			this.isUnderline = isUnderline;
 		}
 
+		@Override
+		public String toString() {
+			return "MessageStyle[ size : "+size+", color : "+color+", family : "+fontFamily+"]";
+		}
 	}
 }

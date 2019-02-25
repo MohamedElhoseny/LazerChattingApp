@@ -1,6 +1,7 @@
 package com.jets.LasserChatServer.controllers;
 
 import com.jets.LasserChatServer.models.RegisterServicesImp;
+import com.jets.LasserChatServer.models.StatuesServicesImp;
 import com.jets.LasserChatServer.models.UserServicesImp;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -17,6 +18,7 @@ public class ServerServicesController extends Application
     //Server services impl
     private UserServicesImp userServices;
     private RegisterServicesImp registerServices;
+    private StatuesServicesImp statusServices;
     private Registry registry;
     private boolean isSecondTimeServerStopped;
 
@@ -27,7 +29,8 @@ public class ServerServicesController extends Application
         {
             userServices = new UserServicesImp();
             registerServices = new RegisterServicesImp();
-            registry = LocateRegistry.getRegistry("127.0.0.1");
+            statusServices = new StatuesServicesImp();
+            registry = LocateRegistry.getRegistry();
             isSecondTimeServerStopped = false;
             System.out.println("Server is started .");
         } catch (RemoteException e) {
@@ -49,6 +52,7 @@ public class ServerServicesController extends Application
                 //unbinding services
                 registry.unbind("UserServices");
                 registry.unbind("RegisterServices");
+                registry.unbind("StatuesServices");
                 registerServices.clearMap();
                 isSecondTimeServerStopped = true;
 
@@ -66,6 +70,7 @@ public class ServerServicesController extends Application
                 //Registering services
                 registry.rebind("UserServices", userServices);
                 registry.rebind("RegisterServices", registerServices);
+                registry.rebind("StatuesServices",statusServices);
 
                 if (isSecondTimeServerStopped)
                     registerServices.startServer();

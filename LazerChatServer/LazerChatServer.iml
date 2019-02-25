@@ -13,13 +13,12 @@
     <orderEntry type="module-library">
       <library name="Maven: common:Services:0.0.1-SNAPSHOT">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT.jar!/" />
+          <root url="jar://$MODULE_DIR$/../LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT-jar-with-dependencies.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.13" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.6.1" level="project" />
   </component>

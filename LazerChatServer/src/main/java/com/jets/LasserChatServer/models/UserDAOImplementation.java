@@ -11,9 +11,9 @@ import java.util.List;
 public class UserDAOImplementation implements UserDAO {
     private static UserDAOImplementation instance;
     private String dbName = "projdb";
-    private String dbURL = "jdbc:mysql://localhost:3333/" + dbName;
+    private String dbURL = "jdbc:mysql://localhost:3306/" + dbName;
     private String dbUsername = "root";
-    private String dbPassword = "12345678";
+    private String dbPassword = "12131234";
 
     private Connection connection = null;
     private String query = null;

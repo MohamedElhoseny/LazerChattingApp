@@ -10,8 +10,8 @@ public class Session
 {
 	private static int uuId = 0;
 	private int id;
-	private List<User> sessionUsers;
-	private List<Message> sessionMessages;
+	private ArrayList<User> sessionUsers;
+	private ArrayList<Message> sessionMessages;
 	
 	public Session()
 	{
@@ -22,7 +22,7 @@ public class Session
 		this.sessionUsers = new ArrayList<>();
 		this.id = uuId;
 	}
-	public Session(int id, List<User> availableUsers, List<Message> sessionMessages)
+	public Session(int id, ArrayList<User> availableUsers, ArrayList<Message> sessionMessages)
 	{
 		super();
 		this.id = id;
@@ -42,11 +42,11 @@ public class Session
 	{
 		this.id = id;
 	}
-	public void setAvailableUsers(List<User> availableUsers)
+	public void setAvailableUsers(ArrayList<User> availableUsers)
 	{
 		this.sessionUsers = availableUsers;
 	}
-	public void setSessionMessages(List<Message> sessionMessages)
+	public void setSessionMessages(ArrayList<Message> sessionMessages)
 	{
 		this.sessionMessages = sessionMessages;
 	}
@@ -84,5 +84,10 @@ public class Session
 			return session.getId() == this.getId();
 		}
 		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return this.getId();
 	}
 }

@@ -1,58 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.ImageView?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-
 
 <AnchorPane minHeight="200.0" minWidth="200.0" prefHeight="431.0" prefWidth="254.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane prefHeight="431.0" prefWidth="254.0" vbarPolicy="ALWAYS" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <content>
-            <VBox fx:id="friendRequestPane" alignment="TOP_CENTER" fillWidth="false" minHeight="200.0" minWidth="200.0" pickOnBounds="false" prefHeight="531.0" prefWidth="239.0" style="-fx-background-color: #40444A;">
-               <children>
-                  <AnchorPane maxHeight="253.0" maxWidth="241.0" minHeight="253.0" minWidth="241.0" style="-fx-border-color: transparent  gray gray transparent;" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label alignment="TOP_LEFT" layoutX="27.0" layoutY="156.0" prefHeight="98.0" prefWidth="212.0" text="Server anouncing text is here Server anouncing text is here Server anouncing text is here " textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="154.0">
-                           <font>
-                              <Font name="Arial Black" size="12.0" />
-                           </font>
-                        </Label>
-                        <StackPane layoutX="27.0" layoutY="14.0" prefHeight="128.0" prefWidth="195.0" style="-fx-border-color: silver;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="14.0">
-                           <children>
-                              <ImageView fitHeight="126.0" fitWidth="188.0" pickOnBounds="true" />
-                           </children>
-                        </StackPane>
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-                  <AnchorPane layoutX="9.0" layoutY="10.0" maxHeight="253.0" maxWidth="241.0" minHeight="253.0" minWidth="241.0" style="-fx-border-color: transparent  gray gray transparent;">
-                     <children>
-                        <Label alignment="TOP_LEFT" layoutX="27.0" layoutY="156.0" prefHeight="98.0" prefWidth="212.0" text="Server anouncing text is here Server anouncing text is here Server anouncing text is here " textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="154.0">
-                           <font>
-                              <Font name="Arial Black" size="12.0" />
-                           </font>
-                        </Label>
-                        <StackPane layoutX="27.0" layoutY="14.0" prefHeight="128.0" prefWidth="195.0" style="-fx-border-color: silver;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="14.0">
-                           <children>
-                              <ImageView fitHeight="126.0" fitWidth="188.0" pickOnBounds="true" />
-                           </children>
-                        </StackPane>
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </AnchorPane>
-               </children>
-            </VBox>
-         </content>
-      </ScrollPane>
+      <JFXListView fx:id="announceListView" prefHeight="431.0" prefWidth="254.0" style="-fx-background-color: #40444A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </JFXListView>
    </children>
 </AnchorPane>

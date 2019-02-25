@@ -1,8 +1,6 @@
 package com.jets.LasserChat.models.services;
 
-import com.jets.LasserChat.models.services.NotifierServices;
 import com.jets.LazerChatCommonService.models.entity.User;
-
 import java.io.File;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

@@ -12,5 +12,5 @@ public interface StatusServices extends Remote
 	 * Client has responsibility to use Notifier interface to call notifyStatus
 	 * to update his statue to friends
 	 * */
-	void setUserStatus(User myUser) throws RemoteException;
+	boolean setUserStatus(User myUser) throws RemoteException;
 }

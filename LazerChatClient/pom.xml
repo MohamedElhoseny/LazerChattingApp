@@ -1,109 +1,92 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.jets</groupId>
-	<artifactId>LazerChat</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+    <groupId>com.jets</groupId>
+    <artifactId>LazerChat</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-	<name>LazerChat</name>
-	<url>http://maven.apache.org</url>
+    <name>LazerChat</name>
+    <url>http://maven.apache.org</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
-	<dependencies>
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
-		<!-- Add commonServices Jar -->
-		<dependency>
-			<groupId>common</groupId>
-			<artifactId>Services</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>system</scope>
-			<systemPath>E:/FCIH/ITI/JavaSE/Project/LazerChattingApp/LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT.jar</systemPath>
-		</dependency>
+    <dependencies>
 
-		<!-- Add FileSending dependencies -->
-		<dependency>
-			<groupId>commons</groupId>
-			<artifactId>logging</artifactId>
-			<version>1.2</version>
-			<scope>system</scope>
-			<systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/RMIIO Dependencies/commons-logging-1.2.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>commons</groupId>
-			<artifactId>hamcrest</artifactId>
-			<version>1.2</version>
-			<scope>system</scope>
-			<systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/RMIIO Dependencies/hamcrest-core-1.3.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>commons</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2</version>
-			<scope>system</scope>
-			<systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/RMIIO Dependencies/log4j-1.2.17.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>commons</groupId>
-			<artifactId>rmiio</artifactId>
-			<version>2.1.2</version>
-			<scope>system</scope>
-			<systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/RMIIO Dependencies/rmiio-2.1.2.jar</systemPath>
-		</dependency>
+        <!-- Chatbot Jar -->
+        <dependency>
+            <groupId>com.github.haggaishachar</groupId>
+            <artifactId>program-ab</artifactId>
+            <version>1.0</version>
+        </dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->
-		<dependency>
-			<groupId>org.controlsfx</groupId>
-			<artifactId>controlsfx</artifactId>
-			<version>8.40.12</version>
-		</dependency>
 
-		<!-- Add Jfoenix Jar -->
-		<dependency>
-			<groupId>com.jfoenix</groupId>
-			<artifactId>jfoenix</artifactId>
-			<version>8.0.8</version>
-		</dependency>
+        <!-- Add commonServices Jar -->
+        <dependency>
+            <groupId>common</groupId>
+            <artifactId>Services</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>E:/FCIH/ITI/JavaSE/Project/LazerChattingApp/LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT-jar-with-dependencies.jar</systemPath>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>8.40.12</version>
+        </dependency>
 
-		<!-- Add FontAwesomeFX glyphs Jar -->
-		<dependency>
-			<groupId>fontawesomefx</groupId>
-			<artifactId>commons</artifactId>
-			<version>8.15</version>
-			<scope>system</scope>
-			<systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/fontawesomefx-commons-8.15.jar</systemPath>
-		</dependency>
+        <!-- Add Jfoenix Jar -->
+        <dependency>
+            <groupId>com.jfoenix</groupId>
+            <artifactId>jfoenix</artifactId>
+            <version>8.0.8</version>
+        </dependency>
 
-		<!-- Add FontAwesome Jar -->
-		<dependency>
-			<groupId>fontawesomefx</groupId>
-			<artifactId>fontawesome</artifactId>
-			<version>4.7.0</version>
-			<scope>system</scope>
-			<systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/fontawesomefx-fontawesome-4.7.0-5.jar</systemPath>
-		</dependency>
+        <!-- Add FontAwesomeFX glyphs Jar -->
+        <dependency>
+            <groupId>fontawesomefx</groupId>
+            <artifactId>commons</artifactId>
+            <version>8.15</version>
+            <scope>system</scope>
+            <systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/fontawesomefx-commons-8.15.jar</systemPath>
+        </dependency>
 
-		<!-- Add FontAwesome Jar -->
-		<dependency>
-			<groupId>AnimationFX</groupId>
-			<artifactId>simpleAnimations</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/AnimationPackage.jar</systemPath>
-		</dependency>
+        <!-- Add FontAwesome Jar -->
+        <dependency>
+            <groupId>fontawesomefx</groupId>
+            <artifactId>fontawesome</artifactId>
+            <version>4.7.0</version>
+            <scope>system</scope>
+            <systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/fontawesomefx-fontawesome-4.7.0-5.jar</systemPath>
+        </dependency>
 
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <!-- Add FontAwesome Jar -->
+        <dependency>
+            <groupId>AnimationFX</groupId>
+            <artifactId>simpleAnimations</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>E:/FCIH/ITI/JavaSE/Project/UI/lib/AnimationPackage.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.healthmarketscience.rmiio</groupId>
+            <artifactId>rmiio</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+
+    </dependencies>
 </project>

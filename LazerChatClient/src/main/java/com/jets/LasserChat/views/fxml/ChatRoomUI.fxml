@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXColorPicker?>
 <?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXSpinner?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
@@ -20,9 +18,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.RadialGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
@@ -213,7 +208,7 @@
                            <children>
                               <HBox alignment="CENTER_RIGHT" layoutX="345.0" prefHeight="67.0" prefWidth="167.0" spacing="10.0" style="-fx-background-color: #F2F8F8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#fileTransferChooser" style="-fx-background-color: transparent;" text="Button">
+                                    <Button fx:id="loadFile" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#chooseFile" style="-fx-background-color: transparent;" text="Button">
                                        <graphic>
                                           <FontAwesomeIconView fill="#9e9797" glyphName="FOLDER" size="1.5em" />
                                        </graphic>
@@ -247,7 +242,7 @@
                               </HBox>
                               <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="-8.0" prefHeight="67.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label text="Chris Marina">
+                                    <Label fx:id="friendNameL" text="Chris Marina">
                                        <font>
                                           <Font name="Berlin Sans FB" size="21.0" />
                                        </font>
@@ -277,169 +272,6 @@
                         <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
                            <content>
                               <VBox fx:id="ChatSessionPane" pickOnBounds="false" prefHeight="453.0" prefWidth="538.0" style="-fx-background-color: #F2F8F8;">
-                                 <children>
-                                    <AnchorPane prefWidth="510.0">
-                                       <children>
-                                          <Circle fx:id="profileImg1111" layoutX="32.0" layoutY="21.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="3.0">
-                                             <fill>
-                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                                                   <stops>
-                                                      <Stop color="BLACK" />
-                                                      <Stop color="WHITE" offset="1.0" />
-                                                   </stops>
-                                                </RadialGradient>
-                                             </fill>
-                                          </Circle>
-                                          <VBox layoutX="57.0" layoutY="3.0" pickOnBounds="false" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="3.0">
-                                             <children>
-                                                <Label minWidth="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10; -fx-background-radius: 10;" text=" Where are you ? Where are you ? Where are you ?" wrapText="true">
-                                                   <font>
-                                                      <Font name="System Italic" size="14.0" />
-                                                   </font>
-                                                   <padding>
-                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                                   </padding>
-                                                </Label>
-                                                <HBox>
-                                                   <children>
-                                                      <FontAwesomeIconView fill="#2bc630" glyphName="CHECK_CIRCLE" size="1.3em" />
-                                                      <Label alignment="CENTER" text="4 : 30 PM">
-                                                         <padding>
-                                                            <Insets left="10.0" />
-                                                         </padding>
-                                                      </Label>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets left="5.0" />
-                                                   </VBox.margin>
-                                                   <padding>
-                                                      <Insets top="2.0" />
-                                                   </padding>
-                                                </HBox>
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane layoutX="10.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="false" prefWidth="510.0">
-                                       <children>
-                                          <Circle fx:id="profileImg11111" layoutX="35.0" layoutY="18.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="0.0">
-                                             <fill>
-                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                                                   <stops>
-                                                      <Stop color="BLACK" />
-                                                      <Stop color="#e45959" offset="1.0" />
-                                                   </stops>
-                                                </RadialGradient>
-                                             </fill>
-                                          </Circle>
-                                          <VBox layoutX="60.0" layoutY="7.0" prefWidth="453.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="2.0">
-                                             <children>
-                                                <Label maxWidth="200.0" style="-fx-background-color: #9CCC65; -fx-border-color: gray; -fx-border-radius: 10; -fx-background-radius: 10;" text="Where are you ?" textFill="WHITE" wrapText="true">
-                                                   <font>
-                                                      <Font name="MT Extra" size="14.0" />
-                                                   </font>
-                                                   <padding>
-                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                                   </padding>
-                                                </Label>
-                                                <HBox>
-                                                   <children>
-                                                      <FontAwesomeIconView fill="#2bc630" glyphName="CHECK_CIRCLE" size="1.3em" />
-                                                      <Label alignment="CENTER" text="4 : 30 PM">
-                                                         <padding>
-                                                            <Insets left="10.0" />
-                                                         </padding>
-                                                      </Label>
-                                                   </children>
-                                                   <padding>
-                                                      <Insets left="5.0" top="2.0" />
-                                                   </padding>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                </HBox>
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane layoutX="10.0" layoutY="20.0" prefHeight="82.0" prefWidth="510.0">
-                                       <children>
-                                          <Circle fx:id="profileImg11112" layoutX="32.0" layoutY="21.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="3.0">
-                                             <fill>
-                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                                                   <stops>
-                                                      <Stop color="BLACK" />
-                                                      <Stop color="WHITE" offset="1.0" />
-                                                   </stops>
-                                                </RadialGradient>
-                                             </fill>
-                                          </Circle>
-                                          <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0">
-                                             <children>
-                                                <FontAwesomeIconView fill="#92a892" glyphName="CHECK_CIRCLE" size="1.3em" />
-                                                <Label alignment="CENTER" text="4 : 30 PM">
-                                                   <padding>
-                                                      <Insets left="10.0" />
-                                                   </padding>
-                                                </Label>
-                                             </children>
-                                             <padding>
-                                                <Insets top="2.0" />
-                                             </padding>
-                                          </HBox>
-                                          <VBox layoutX="57.0" layoutY="3.0" prefWidth="453.0" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="3.0">
-                                             <children>
-                                                <AnchorPane maxWidth="-Infinity" prefHeight="54.0" prefWidth="200.0" style="-fx-background-color: White; -fx-border-color: silver; -fx-background-radius: 10; -fx-border-radius: 10;" VBox.vgrow="NEVER">
-                                                   <children>
-                                                      <Label alignment="CENTER" layoutX="-2.0" maxWidth="200.0" prefHeight="61.0" prefWidth="57.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10;" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                         <font>
-                                                            <Font name="System Italic" size="14.0" />
-                                                         </font>
-                                                         <padding>
-                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                                         </padding>
-                                                         <graphic>
-                                                            <FontAwesomeIconView glyphName="FILE" size="3em">
-                                                               <fill>
-                                                                  <LinearGradient endX="1.0" endY="1.0">
-                                                                     <stops>
-                                                                        <Stop color="#836565" />
-                                                                        <Stop color="WHITE" offset="1.0" />
-                                                                     </stops>
-                                                                  </LinearGradient>
-                                                               </fill></FontAwesomeIconView>
-                                                         </graphic>
-                                                      </Label>
-                                                      <Label layoutX="59.0" layoutY="4.0" prefHeight="25.0" prefWidth="138.0" text="project.rar" AnchorPane.topAnchor="3.0">
-                                                         <font>
-                                                            <Font size="16.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <Button contentDisplay="GRAPHIC_ONLY" layoutX="68.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button">
-                                                         <graphic>
-                                                            <FontAwesomeIconView fill="#39cd2e" glyphName="CHECK" size="2em" />
-                                                         </graphic>
-                                                         <cursor>
-                                                            <Cursor fx:constant="HAND" />
-                                                         </cursor>
-                                                      </Button>
-                                                      <Button contentDisplay="GRAPHIC_ONLY" layoutX="105.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button">
-                                                         <graphic>
-                                                            <FontAwesomeIconView fill="#ff2323" glyphName="CLOSE" size="2em" />
-                                                         </graphic>
-                                                         <cursor>
-                                                            <Cursor fx:constant="HAND" />
-                                                         </cursor>
-                                                      </Button>
-                                                      <JFXSpinner layoutX="153.0" layoutY="7.0" prefWidth="37.0" />
-                                                   </children>
-                                                </AnchorPane>
-                                             </children>
-                                          </VBox>
-                                       </children>
-                                    </AnchorPane>
-                                    <JFXColorPicker />
-                                 </children>
                                  <padding>
                                     <Insets left="20.0" top="20.0" />
                                  </padding>
@@ -457,25 +289,25 @@
                                           <Font name="Arial" size="11.0" />
                                        </font>
                                     </Label>
-                                    <ToggleButton mnemonicParsing="false" text="B">
+                                    <ToggleButton fx:id="bold_Btn" mnemonicParsing="false" text="B">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
                                     </ToggleButton>
-                                    <ToggleButton layoutX="105.0" layoutY="14.0" mnemonicParsing="false" text="I">
+                                    <ToggleButton fx:id="italic_Btn" layoutX="105.0" layoutY="14.0" mnemonicParsing="false" text="I">
                                        <font>
                                           <Font name="System Bold Italic" size="12.0" />
                                        </font>
                                     </ToggleButton>
-                                    <ToggleButton layoutX="141.0" layoutY="14.0" mnemonicParsing="false" text="U" underline="true">
+                                    <ToggleButton fx:id="underline_Btn" layoutX="141.0" layoutY="14.0" mnemonicParsing="false" text="U" underline="true">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
                                     </ToggleButton>
-                                    <ComboBox prefHeight="25.0" prefWidth="64.0" promptText="12" style="-fx-background-color: White; -fx-border-color: gray;" />
-                                    <ComboBox layoutX="205.0" layoutY="13.0" prefHeight="27.0" prefWidth="84.0" promptText="Arial" style="-fx-background-color: White; -fx-border-color: gray;" />
-                                    <ColorPicker prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: white; -fx-border-color: gray;" />
-                                    <JFXButton contentDisplay="GRAPHIC_ONLY" style="-fx-border-color: silver;" text="Button">
+                                    <ComboBox fx:id="size_CB" prefHeight="25.0" prefWidth="64.0" promptText="12" style="-fx-background-color: White; -fx-border-color: gray;" />
+                                    <ComboBox fx:id="family_CB" layoutX="205.0" layoutY="13.0" prefHeight="27.0" prefWidth="84.0" promptText="Arial" style="-fx-background-color: White; -fx-border-color: gray;" />
+                                    <ColorPicker fx:id="colorPicker" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+                                    <JFXButton fx:id="chatBotBtn" contentDisplay="GRAPHIC_ONLY" onAction="#openCloseChatBot" style="-fx-border-color: silver;" text="Button">
                                        <graphic>
                                           <FontAwesomeIconView glyphName="REDDIT_ALIEN" size="14.0" />
                                        </graphic>
@@ -501,7 +333,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </Button>
-                                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button">
+                                    <Button fx:id="customizeMessage_Btn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button">
                                        <graphic>
                                           <FontAwesomeIconView fill="#9e9797" glyphName="PENCIL" size="1.5em" />
                                        </graphic>
@@ -514,7 +346,7 @@
                                           <Font size="16.0" />
                                        </font>
                                     </TextField>
-                                    <JFXButton contentDisplay="GRAPHIC_ONLY" prefHeight="38.0" prefWidth="49.0">
+                                    <JFXButton fx:id="like_Btn" contentDisplay="GRAPHIC_ONLY" prefHeight="38.0" prefWidth="49.0">
                                        <graphic>
                                           <FontAwesomeIconView fill="#55ae4b" glyphName="THUMBS_UP" size="3em" />
                                        </graphic>
@@ -536,7 +368,7 @@
                   </BorderPane>
                   <VBox alignment="TOP_CENTER" layoutX="511.0" layoutY="6.0" prefHeight="598.0" prefWidth="226.0" spacing="14.0" style="-fx-background-color: WHITE; -fx-border-color: silver;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Circle fx:id="profileImg31" fill="WHITE" radius="77.0" stroke="#d0d0d0" strokeType="INSIDE">
+                        <Circle fx:id="profileImg_R" fill="WHITE" radius="77.0" stroke="#d0d0d0" strokeType="INSIDE">
                            <VBox.margin>
                               <Insets top="50.0" />
                            </VBox.margin>

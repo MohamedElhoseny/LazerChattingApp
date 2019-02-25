@@ -1,5 +1,6 @@
 package com.jets.LasserChat.models.services;
 
+import com.healthmarketscience.rmiio.RemoteInputStream;
 import com.jets.LasserChat.models.entity.Session;
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.entity.Message;
@@ -7,6 +8,7 @@ import com.jets.LazerChatCommonService.models.entity.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.io.File;
 import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,13 +40,13 @@ public class ChatClientService
         System.out.println("User ID = "+ user.getId() + " : Un-Registered in Your Friend List");
     }
 
-    public void sendMessageToClients(Message message, User toUser)
-    {
+    public void sendMessageToClients(Message message, User toUser) {
         try {
             //GET USER HANDSHAKING INTERFACE TO SEND MESSAGE
             if (clientList.containsKey(toUser))
-                clientList.get(toUser).receive(message);
-        } catch (RemoteException ex) {
+                clientList.get(toUser).receiveMessage(message);
+        } catch (RemoteException ex)
+        {
             ex.printStackTrace();
         }
     }
@@ -59,15 +61,34 @@ public class ChatClientService
         });
     }
 
+    /**
+     * send file to client
+     * */
+    public void sendFileToClients(User toUser ,RemoteInputStream ristream, String name, String extension)
+    {
+        try {
+            //GET USER HANDSHAKING INTERFACE TO SEND MESSAGE
+            if (clientList.containsKey(toUser)) {
+                clientList.get(toUser).receiveFile(toUser  ,ristream,  name,  extension);
+
+            } else {
+                System.out.println("can't find " + toUser);
+            }
+
+        } catch (RemoteException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     public ObservableList<User> getFriendsList()
     {
         return userObservableList;
     }
 
-    public Session lookupSession(User user, User selectedUser)
-    {
+    public Session lookupSession(User user, User selectedUser) {
         //IF current user already have a session with the selectedUser
-        if (userSessions.containsKey(selectedUser)) {
+        if (userSessions.containsKey(selectedUser))
+        {
             System.out.println("User session already found with : " + selectedUser);
             return userSessions.get(selectedUser);
         }else{

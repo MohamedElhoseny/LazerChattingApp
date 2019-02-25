@@ -1,40 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="LazerChatCommonService:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e4ce57f-ba71-41ee-8d66-03fc63a73e8d" name="Default Changelist" comment="">
+    <list default="true" id="84064aee-3410-463b-8da7-1720fde2015c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__com_github_haggaishachar_program_ab_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__com_healthmarketscience_rmiio_rmiio_2_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__com_jfoenix_jfoenix_8_0_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__joda_time_joda_time_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__net_reduls_sanmoku_sanmoku_0_0_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__net_reduls_sanmoku_sanmoku_feature_ex_0_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_2_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__org_controlsfx_controlsfx_8_40_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__org_json_json_20090211.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_7_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/LazerChat.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/entity/BodyType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/entity/MessageType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/entity/MessagesType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/entity/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/services/BackupChatServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/services/BackupChatServicesImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/services/ChatBotServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/controllers/UpdateProfileViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/models/AnnouncementItemPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/models/FileMessagePane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/models/GroupItemPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/models/MessagePane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/bot_profile.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/client_profile.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/contactaction.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/date.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/dialog.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/familiar.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/help.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/inappropriate.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/inquiry.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/insults.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/ontology.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/oob.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/personality.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/picture.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/profanity.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/reductions1.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/reductions_update.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/save.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/sraix.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/testjp.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/that.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/train.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/udc.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/update.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/update.save" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aiml/utilities.aiml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/bot_profile.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/client_profile.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/contactaction.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/date.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/dialog.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/familiar.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/help.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/inappropriate.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/inquiry.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/insults.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/learnf.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/ontology.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/oob.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/personality.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/picture.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/profanity.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/reductions1.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/reductions_update.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/sraix.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/testjp.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/that.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/train.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/udc.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/update.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/aimlif/utilities.aiml.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/config/copyright.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/config/denormal.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/config/gender.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/config/normal.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/config/person.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/config/person2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/config/predicates.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/config/properties.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/maps/familiarpredicate.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/maps/gendername.external" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/maps/gendername.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/maps/number2ordinal.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/maps/ordinal2number.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/maps/profile2predicate.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/maps/verb2sp2verb1sp.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/bird.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/color.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/digit.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/familiarname.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/fastfood.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/language.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/mammal.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/mammalfeature.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/name.external" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/name.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/ordinal.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/place.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/preposition.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/profile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/verb2sp.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/resources/bots/super/sets/verb2st.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/StatuesServicesImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../LazerChatClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/controllers/StartupMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/controllers/StartupMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/controllers/ChatRoomMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/controllers/ChatRoomMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/dao/Cache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/dao/InitialContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/dao/ServiceLocator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/entity/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/entity/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/services/ChatClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/services/ChatClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/services/FileClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/services/FileServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/services/HandshakeServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/services/HandshakeServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/services/NotifierClientServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/models/services/NotifierClientServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/controllers/ChatRoomViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/controllers/ChatRoomViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/controllers/FriendChatViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/controllers/FriendChatViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/controllers/RegistrationViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/controllers/RegistrationViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/controllers/StartupMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/controllers/StartupMainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/entity/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/entity/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController$MenuItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController$MenuItems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController$userMessagePane.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController$userMessagePane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$FriendItemPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$FriendItemPane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/RegistrationViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/RegistrationViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/controllers/GroupChatViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/controllers/GroupChatViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/fxml/ChatRoomUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/fxml/ChatRoomUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/fxml/GroupChatPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/fxml/GroupChatPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/fxml/ServerAnnouncementPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/fxml/ServerAnnouncementPane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/fxml/UpdateProfilePane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatClient/src/main/java/com/jets/LasserChat/views/fxml/UpdateProfilePane.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/META-INF/LazerChat.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/controllers/ChatRoomMainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/controllers/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/controllers/StartupMainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/dao/Cache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/dao/InitialContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/dao/ServiceLocator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/entity/Session.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/services/CallClientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/services/CallServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/services/ChatClientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/services/ChatServerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/services/FileClientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/services/FileServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/services/HandshakeServiceImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/services/NotifierClientServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/models/services/NotifierServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/AddContactViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController$MenuItems.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController$userMessagePane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$FriendItemPane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/FriendRequestViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/GroupChatViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/LoginViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/RecentChatViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/RegistrationViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/StartupViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/VideoCallViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/controllers/VoiceCallViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/utility/LoginValidation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/com/jets/LasserChat/views/utility/RegisterValidation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/css/chatStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/images/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/images/default-avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatClient/target/classes/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LazerChatCommonService_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LazerChatCommonService.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/LazerChatCommonService_jar/LazerChatCommonService.jar" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/LazerChatCommonService_jar/LazerChatCommonService.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/BackupChatServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/HandshakeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/HandshakeServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/StatusServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/StatusServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/entity/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/LazerChatCommonService-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/LazerChatCommonService-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/dao/BackupChatServices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/dao/HandshakeServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/dao/HandshakeServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/dao/StatusServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/dao/StatusServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/dao/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/dao/UserDAOImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/entity/Message$MessageState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/entity/Message$MessageState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/entity/Message$MessageStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/entity/Message$MessageStyle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/entity/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/entity/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LazerChatCommonService/models/entity/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/.idea/libraries/Maven__junit_junit_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../LazerChatServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/LazerChatServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/LazerChatServer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/controllers/ServerServicesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/controllers/ServerServicesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/RegisterServicesImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/RegisterServicesImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/UserDAOImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/UserDAOImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/UserServicesImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/UserServicesImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserDAOImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserDAOImplementation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserServicesImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserServicesImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/controllers/ServerServicesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/DataMining.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/DatabaseInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/ManageServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/ManageUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/MysqlDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/RegisterServicesImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserDAOImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserServicesImp.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,15 +229,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/entity/Message.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="84" column="33" lean-forward="true" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
+              <folding>
+                <element signature="e#2993#2994#0" expanded="true" />
+                <element signature="e#3010#3011#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -60,22 +251,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/d.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/Service.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/InitialContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/UserServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/StatusServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/RestoreChatServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/ContactServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/BackupChatServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/AnnouncementServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/entity/GroupCategory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/UserDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/UserDAOImplementation.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/HandshakeServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/RegisterServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/entity/Message.java" />
       </list>
     </option>
@@ -99,29 +276,22 @@
           <item name="LazerChatCommonService" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="LazerChatCommonService" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="x" value="-3" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,6 +337,26 @@
             <path>
               <item name="LazerChatCommonService" type="b2602c69:ProjectViewProjectNode" />
               <item name="LazerChatCommonService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="LazerChatCommonService" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LazerChatCommonService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatCommonService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="LazerChatCommonService" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LazerChatCommonService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatCommonService" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -175,69 +365,23 @@
               <item name="target" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="LazerChatCommonService" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="LazerChatCommonService" type="58d84e3e:PackageViewProjectNode" />
-              <item name="LazerChatCommonService" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="LazerChatCommonService" type="58d84e3e:PackageViewProjectNode" />
-              <item name="LazerChatCommonService" type="616d4139:PackageViewModuleNode" />
-              <item name="com.jets.LazerChatCommonService" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="LazerChatCommonService" type="58d84e3e:PackageViewProjectNode" />
-              <item name="LazerChatCommonService" type="616d4139:PackageViewModuleNode" />
-              <item name="com.jets.LazerChatCommonService" type="1f31426a:PackageElementNode" />
-              <item name="models" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="LazerChatCommonService" type="58d84e3e:PackageViewProjectNode" />
-              <item name="LazerChatCommonService" type="616d4139:PackageViewModuleNode" />
-              <item name="com.jets.LazerChatCommonService" type="1f31426a:PackageElementNode" />
-              <item name="models" type="1f31426a:PackageElementNode" />
-              <item name="dao" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="LazerChatCommonService" type="58d84e3e:PackageViewProjectNode" />
-              <item name="LazerChatCommonService" type="616d4139:PackageViewModuleNode" />
-              <item name="com.jets.LazerChatCommonService" type="1f31426a:PackageElementNode" />
-              <item name="models" type="1f31426a:PackageElementNode" />
-              <item name="entity" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550748585622" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LazerChatServer" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551073217568" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LazerChatClient/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.jets.LazerChatCommonService.models.entity" />
-    </key>
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -294,237 +438,81 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2e4ce57f-ba71-41ee-8d66-03fc63a73e8d" name="Default Changelist" comment="" />
-      <created>1550233096688</created>
+      <changelist id="84064aee-3410-463b-8da7-1720fde2015c" name="Default Changelist" comment="" />
+      <created>1551065456187</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1550233096688</updated>
-      <workItem from="1550233099407" duration="2541000" />
-      <workItem from="1550449400009" duration="962000" />
-      <workItem from="1550450393554" duration="512000" />
-      <workItem from="1550451704580" duration="34000" />
-      <workItem from="1550453012761" duration="448000" />
-      <workItem from="1550453638452" duration="6457000" />
-      <workItem from="1550462258067" duration="1145000" />
-      <workItem from="1550471241104" duration="1033000" />
-      <workItem from="1550483627908" duration="124000" />
-      <workItem from="1550484210315" duration="2615000" />
-      <workItem from="1550499438770" duration="4507000" />
-      <workItem from="1550554127609" duration="1162000" />
-      <workItem from="1550558547354" duration="676000" />
-      <workItem from="1550559448927" duration="2241000" />
-      <workItem from="1550573587723" duration="32000" />
-      <workItem from="1550583601760" duration="4000" />
-      <workItem from="1550583887247" duration="712000" />
-      <workItem from="1550588101354" duration="2954000" />
-      <workItem from="1550593873528" duration="2008000" />
-      <workItem from="1550601425377" duration="5901000" />
-      <workItem from="1550611654600" duration="3116000" />
-      <workItem from="1550639684435" duration="762000" />
-      <workItem from="1550672988463" duration="828000" />
-      <workItem from="1550682922091" duration="618000" />
-      <workItem from="1550730787068" duration="956000" />
+      <updated>1551065456187</updated>
+      <workItem from="1551065457709" duration="4901000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42348000" />
+    <option name="totallyTimeSpent" value="4901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info id="Designer" order="0" />
-      <window_info id="Image Layers" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4983871" visible="true" weight="0.23071104" />
-      <window_info id="Learn" order="6" weight="0.32980332" />
-      <window_info id="Structure" order="7" sideWeight="0.5016129" side_tool="true" weight="0.28214827" />
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Learn" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.34032258" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Messages" weight="0.32866043" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3548387" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.7009346" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49848714" visible="true" weight="0.31129032" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015129" side_tool="true" weight="0.32903227" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32850242" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="right" id="Maven" visible="true" weight="0.1860817" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.21028744" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Designer" order="0" />
-      <window_info id="Image Layers" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info id="Learn" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.27155825" />
-      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="right" id="Maven" order="0" />
-      <window_info anchor="right" id="Palette" order="1" />
-      <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/ClientServices.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/ServerServices.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/Service.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/InitialContext.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/entity/GroupCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/BackupChatServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="77" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/ContactServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="88" selection-start-line="16" selection-start-column="88" selection-end-line="16" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/RestoreChatServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/StatusServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/UserServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/UserDAO.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/UserDAOImplementation.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/AnnouncementServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/RegisterServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-109">
-          <caret line="147" column="19" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
-          <folding>
-            <element signature="e#5748#5749#0" expanded="true" />
-            <element signature="e#5784#5785#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/dao/HandshakeServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="357">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/entity/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+        <state relative-caret-position="174">
+          <caret line="84" column="33" lean-forward="true" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
           <folding>
-            <element signature="e#1024#1025#0" expanded="true" />
-            <element signature="e#1063#1064#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LazerChatCommonService/models/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <element signature="method#User#1;class#User#0" />
-            <element signature="method#equals#0;class#User#0" />
-            <element signature="e#2375#2387#0" />
+            <element signature="e#2993#2994#0" expanded="true" />
+            <element signature="e#3010#3011#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -535,12 +523,10 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>LazerChatCommonService:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -608,7 +594,6 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: junit:junit:3.8.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

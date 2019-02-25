@@ -1,10 +1,10 @@
 package com.jets.LasserChat.models.services;
 
+import com.healthmarketscience.rmiio.RemoteInputStream;
 import com.jets.LasserChat.controllers.ChatRoomMainController;
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.entity.Message;
 import com.jets.LazerChatCommonService.models.entity.User;
-
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -13,7 +13,7 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class HandshakeServiceImp extends UnicastRemoteObject implements HandshakeServices
 {
-    ChatRoomMainController chatRoomMainController;
+    private ChatRoomMainController chatRoomMainController;
 
     public HandshakeServiceImp(ChatRoomMainController chatRoomController) throws RemoteException
     {
@@ -32,10 +32,15 @@ public class HandshakeServiceImp extends UnicastRemoteObject implements Handshak
     }
 
     @Override
-    public void receive(Message message) throws RemoteException {
+    public void receiveMessage(Message message) throws RemoteException {
         chatRoomMainController.receiveMessage(message);
     }
 
+    @Override
+    public void receiveFile(User toUser, RemoteInputStream ristream, String name, String extension)  throws RemoteException {
+        chatRoomMainController.reciveFile( toUser,  ristream,  name, extension);
+
+    }
     @Override
     public void serverStop() throws RemoteException {
         chatRoomMainController.serverStop();

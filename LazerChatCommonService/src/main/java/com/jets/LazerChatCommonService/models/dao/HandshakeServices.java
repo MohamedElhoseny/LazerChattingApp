@@ -1,8 +1,10 @@
 package com.jets.LazerChatCommonService.models.dao;
 
+import com.healthmarketscience.rmiio.RemoteInputStream;
 import com.jets.LazerChatCommonService.models.entity.Message;
 import com.jets.LazerChatCommonService.models.entity.User;
 
+import java.io.File;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
@@ -12,7 +14,9 @@ public interface HandshakeServices extends Remote
 
     void unregister(User user) throws RemoteException;
 
-    void receive(Message receivedMessage) throws RemoteException;
+    void receiveMessage(Message receivedMessage) throws RemoteException;
+
+    void receiveFile(User toUser , RemoteInputStream ristream, String name, String extension) throws RemoteException;
 
     void serverStop() throws RemoteException;
 }

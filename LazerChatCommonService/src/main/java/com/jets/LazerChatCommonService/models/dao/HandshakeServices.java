@@ -1,6 +1,7 @@
 package com.jets.LazerChatCommonService.models.dao;
 
 import com.healthmarketscience.rmiio.RemoteInputStream;
+import com.jets.LazerChatCommonService.models.entity.Annoncement;
 import com.jets.LazerChatCommonService.models.entity.Message;
 import com.jets.LazerChatCommonService.models.entity.User;
 
@@ -18,8 +19,11 @@ public interface HandshakeServices extends Remote
 
     void receiveFile(User toUser , RemoteInputStream ristream, String name, String extension) throws RemoteException;
 
+    void receiveAnnoncement(Annoncement annoncement) throws RemoteException;
     void serverStop() throws RemoteException;
 
     /* Notify user only about receive a new friend request */
     void notifyFriendRequest(User fromUser) throws RemoteException;
+
+
 }

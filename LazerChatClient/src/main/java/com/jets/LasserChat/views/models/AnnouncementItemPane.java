@@ -1,5 +1,6 @@
 package com.jets.LasserChat.views.models;
 
+import com.jets.LazerChatCommonService.models.entity.Annoncement;
 import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -17,7 +18,7 @@ public class AnnouncementItemPane extends AnchorPane
     protected final StackPane stackPane;
     protected final ImageView announceImg;
 
-    public AnnouncementItemPane(String announceString, byte[] announcePic)
+    public AnnouncementItemPane(Annoncement announcement)
     {
         announceText = new Label();
         stackPane = new StackPane();
@@ -38,7 +39,9 @@ public class AnnouncementItemPane extends AnchorPane
         announceText.setLayoutY(156.0);
         announceText.setPrefHeight(98.0);
         announceText.setPrefWidth(212.0);
-        announceText.setText(announceString);
+        announceText.setText(announcement.getAnnoncementText());
+        Image img = new Image(new ByteArrayInputStream(announcement.getImage()));
+        announceImg.setImage(img);
         announceText.setTextFill(javafx.scene.paint.Color.WHITE);
         announceText.setWrapText(true);
         announceText.setFont(new Font("Arial Black", 12.0));
@@ -52,11 +55,11 @@ public class AnnouncementItemPane extends AnchorPane
         stackPane.setPrefWidth(195.0);
         stackPane.setStyle("-fx-border-color: silver;");
 
-        Image img = new Image(new ByteArrayInputStream(announcePic));
+        //Image img = new Image(new ByteArrayInputStream(announcePic));
+        //announceImg.setImage(img);
         announceImg.setFitHeight(126.0);
         announceImg.setFitWidth(188.0);
         announceImg.setPickOnBounds(true);
-        announceImg.setImage(img);
         announceImg.setPreserveRatio(false);
         setCursor(Cursor.HAND);
 

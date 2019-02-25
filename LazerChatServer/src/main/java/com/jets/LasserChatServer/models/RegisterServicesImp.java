@@ -2,8 +2,14 @@ package com.jets.LasserChatServer.models;
 
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.dao.RegisterServices;
+import com.jets.LazerChatCommonService.models.entity.Annoncement;
 import com.jets.LazerChatCommonService.models.entity.User;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -104,6 +110,37 @@ public class RegisterServicesImp extends UnicastRemoteObject implements Register
         });*/
     }
 
+    public void broadcast(Annoncement annoncement) {
+        File defaultImg = new File("C:\\Users\\omdae\\Desktop\\admin.jpg");
+        byte[]img= convertImageToBytes(defaultImg);
+        annoncement.setImage(img);
+        if (!clientList.isEmpty()){
+            clientList.entrySet().stream().forEach(userHandshakeServicesEntry -> {
+                try {
+
+                    HandshakeServices clientServices = userHandshakeServicesEntry.getValue();
+
+                    clientServices.receiveAnnoncement(annoncement);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+
+    }
+
+    private byte[] convertImageToBytes(File choosenImg)
+    {
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(choosenImg);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ImageIO.write(image, "jpg", baos);
+            return baos.toByteArray();
+        } catch (IOException e) {
+            return null;
+        }
+    }
     public void clearMap() {
         clientList.clear();
     }

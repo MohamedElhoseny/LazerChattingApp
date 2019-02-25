@@ -20,6 +20,7 @@ E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\je
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\views\controllers\LoginViewController.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\views\controllers\AddContactViewController.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\models\services\CallServices.java
+E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\models\services\NotifierServerServices.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\views\controllers\UpdateProfileViewController.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\models\entity\MessagesType.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\views\controllers\VideoCallViewController.java
@@ -33,6 +34,7 @@ E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\je
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\views\utility\LoginValidation.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\views\controllers\FriendRequestViewController.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\controllers\MainController.java
+E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\views\controllers\CreateChatViewController.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\models\services\ChatBotServices.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\models\services\NotifierClientServices.java
 E:\FCIH\ITI\JavaSE\Project\LazerChattingApp\LazerChatClient\src\main\java\com\jets\LasserChat\views\models\FileMessagePane.java

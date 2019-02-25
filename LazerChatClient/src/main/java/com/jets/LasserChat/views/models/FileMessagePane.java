@@ -3,14 +3,11 @@ package com.jets.LasserChat.views.models;
 import com.jets.LazerChatCommonService.models.entity.Message;
 import com.jets.LazerChatCommonService.models.entity.User;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXSpinner;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.geometry.Insets;
 import javafx.geometry.NodeOrientation;
-import javafx.scene.Cursor;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -18,11 +15,12 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
-import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
+import javafx.stage.DirectoryChooser;
 
+import javax.management.Notification;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 
@@ -50,6 +48,10 @@ public class FileMessagePane extends AnchorPane implements MessagePane
     User senderUser;
     String sendingFile;
 
+   public static String savePath=null;
+   public static boolean responce=false;
+
+  public FileMessagePane(){}
 
     public FileMessagePane(User user, String senderFile, boolean isSentbyMe)
     {
@@ -78,7 +80,7 @@ public class FileMessagePane extends AnchorPane implements MessagePane
         profileImg.setLayoutX(32.0);
         profileImg.setLayoutY(21.0);
         profileImg.setRadius(18.0);
-        profileImg.setStroke(javafx.scene.paint.Color.BLACK);
+        profileImg.setStroke(Color.BLACK);
         profileImg.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
 
         AnchorPane.setLeftAnchor(vBox, 57.0);
@@ -212,6 +214,8 @@ public class FileMessagePane extends AnchorPane implements MessagePane
         sendingFile = null;
         fileState.setText("File cancelled.");
         fileState.setVisible(true);
+        responce=true;
+
     }
 
     /***
@@ -219,13 +223,35 @@ public class FileMessagePane extends AnchorPane implements MessagePane
      */
     private void acceptSendingFile()
     {
+
         hBox.setVisible(false);
         spinner.setVisible(true);
         fileState.setText("File is sending..");
         fileState.setVisible(true);
+
+        //choose directory and send it to main controller
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+
+        directoryChooser.setTitle("choose Location you Want to save file ");
+
+        //Show open file dialog
+        File file = directoryChooser.showDialog(null);
+
+        if (file != null) {
+            savePath=file.getPath();
+        }
+        responce=true;
+
     }
 
-    private void initComponentEvent() {
+    public void notifySendingFile()
+    {
+        spinner.setVisible(false);
+
+    }
+
+    private void initComponentEvent()
+    {
         acceptBtn.setOnAction(e -> {
             acceptSendingFile();
         });
@@ -250,5 +276,12 @@ public class FileMessagePane extends AnchorPane implements MessagePane
                 msgState.setFill(Color.valueOf("#a2aba2"));
                 break;
         }
+    }
+
+    public String getDirectory(){
+        return savePath;
+    }
+    public boolean isResponce(){
+        return responce;
     }
 }

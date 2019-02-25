@@ -1,11 +1,18 @@
 package com.jets.LasserChatServer.controllers;
 
 import com.jets.LasserChatServer.models.*;
+import com.jets.LazerChatCommonService.models.entity.Annoncement;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -45,7 +52,9 @@ public class ServerServicesController extends Application
     {
         BorderPane root = new BorderPane();
         Button start = new Button("Start");
-        Button stop = new Button("Stop");
+        Button stop  = new Button("Stop");
+        Button send  = new Button("send");
+
         stop.setDisable(true);
 
         stop.setOnAction((event) -> {
@@ -90,8 +99,18 @@ public class ServerServicesController extends Application
             }
         });
 
+        send.setOnAction((event)->{
+            Annoncement annoncement = new Annoncement();
+            File defaultImg = new File("C:\\Users\\omdae\\Desktop\\admin.jpg");
+            byte[] img = convertImageToBytes(defaultImg);
+            annoncement.setImage(img);
+            annoncement.setAnnoncementText("Hello Maiiii in Annoncemet zft 3la dma8yyy");
+            registerServices.broadcast(annoncement);
+        });
+
         root.setLeft(start);
         root.setRight(stop);
+        root.setBottom(send);
         Scene scene = new Scene(root, 200, 200);
         primaryStage.setTitle("Server");
         primaryStage.setScene(scene);
@@ -102,7 +121,18 @@ public class ServerServicesController extends Application
         primaryStage.show();
     }
 
-
+    private byte[] convertImageToBytes(File choosenImg)
+    {
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(choosenImg);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ImageIO.write(image, "jpg", baos);
+            return baos.toByteArray();
+        } catch (IOException e) {
+            return null;
+        }
+    }
     public static void main(String[] args){
         launch(args);
     }

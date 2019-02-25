@@ -12,14 +12,13 @@ import com.jets.LasserChat.models.services.NotifierServices;
 import com.jets.LasserChat.views.models.FileMessagePane;
 import com.jets.LasserChat.views.models.TextMessagePane;
 import com.jets.LazerChatCommonService.models.dao.StatusServices;
+import com.jets.LazerChatCommonService.models.entity.Annoncement;
 import com.jets.LazerChatCommonService.models.entity.Message;
 import com.jets.LazerChatCommonService.models.entity.User;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -46,6 +45,8 @@ import java.io.*;
 import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 //must be in main controller
 public class ChatRoomViewController implements Initializable, NotifierServices {
@@ -103,24 +104,34 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
     private VBox ChatSessionPane;
 
     //Customizing message components
-    @FXML private ToggleButton bold_Btn;
-    @FXML private ToggleButton italic_Btn;
-    @FXML private ToggleButton underline_Btn;
-    @FXML private ComboBox<String> size_CB;
-    @FXML private ComboBox<String> family_CB;
-    @FXML private ColorPicker colorPicker;
-    @FXML private Button customizeMessage_Btn;
-    @FXML private JFXButton like_Btn;
+    @FXML
+    private ToggleButton bold_Btn;
+    @FXML
+    private ToggleButton italic_Btn;
+    @FXML
+    private ToggleButton underline_Btn;
+    @FXML
+    private ComboBox<String> size_CB;
+    @FXML
+    private ComboBox<String> family_CB;
+    @FXML
+    private ColorPicker colorPicker;
+    @FXML
+    private Button customizeMessage_Btn;
+    @FXML
+    private JFXButton like_Btn;
 
     private ChatRoomMainController chatRoomMainController;
+    private ServerAnnouncementViewController serverAnnouncementViewController;
     private Map<MenuItems, Parent> menuList;
     private User loginUser;
     private Message userMessage;
     private Session userCurrentSession;
+    private StatusServices statusServices;
     private ChatBotServices chatBotServices;
     private boolean isChatBotEnable = false;
+    private String name;
     private int currentStatue = 1;
-    private StatusServices statusServices;
 
     //Constructors
     public ChatRoomViewController(User loginUser) {
@@ -139,8 +150,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources)
-    {
+    public void initialize(URL location, ResourceBundle resources) {
         //set default menuItem to FriendChat
         switchableScrollPane.setContent(menuList.get(MenuItems.FRIENDCHAT));
 
@@ -154,14 +164,14 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
 
         //set customizing setting
         ObservableList<String> sizes = FXCollections.observableArrayList();
-        for (int i = 10; i < 60; i+=5)
+        for (int i = 10; i < 60; i += 5)
             sizes.addAll(String.valueOf(i));
 
         size_CB.setItems(sizes);
         size_CB.getSelectionModel().select(0);
 
         ObservableList<String> families = FXCollections.observableArrayList();
-        families.addAll("Arial","Arial Black", "Consolas", "Eras Bold ITC", "Segoe UI", "Tahoma");
+        families.addAll("Arial", "Arial Black", "Consolas", "Eras Bold ITC", "Segoe UI", "Tahoma");
         family_CB.setItems(families);
         family_CB.getSelectionModel().select(0);
 
@@ -171,48 +181,39 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
         Image img = new Image(new ByteArrayInputStream(loginUser.getPicture()));
         loginUserImage.setFill(new ImagePattern(img));
 
-        bold_Btn.setOnAction(e->
-        {
+        bold_Btn.setOnAction(e -> {
             StringBuilder stringBuilder = new StringBuilder(messageTF.getStyle());
-            if (bold_Btn.isSelected())
-                stringBuilder.append("-fx-font-weight : bold; ");
-            else
-                stringBuilder.append("-fx-font-weight : normal; ");
+            if (bold_Btn.isSelected()) stringBuilder.append("-fx-font-weight : bold; ");
+            else stringBuilder.append("-fx-font-weight : normal; ");
 
             messageTF.setStyle(stringBuilder.toString());
         });
 
-        italic_Btn.setOnAction(e->
-        {
+        italic_Btn.setOnAction(e -> {
             StringBuilder stringBuilder = new StringBuilder(messageTF.getStyle());
-            if (italic_Btn.isSelected())
-                stringBuilder.append("-fx-font-style : italic; ");
-            else
-                stringBuilder.append("-fx-font-style : normal; ");
+            if (italic_Btn.isSelected()) stringBuilder.append("-fx-font-style : italic; ");
+            else stringBuilder.append("-fx-font-style : normal; ");
 
             messageTF.setStyle(stringBuilder.toString());
         });
 
-        underline_Btn.setOnAction(e->
-        {
+        underline_Btn.setOnAction(e -> {
             StringBuilder stringBuilder = new StringBuilder(messageTF.getStyle());
-            if (underline_Btn.isSelected())
-                stringBuilder.append("-fx-underline: true; ");
-            else
-                stringBuilder.append("-fx-underline: false; ");
+            if (underline_Btn.isSelected()) stringBuilder.append("-fx-underline: true; ");
+            else stringBuilder.append("-fx-underline: false; ");
 
             messageTF.setStyle(stringBuilder.toString());
         });
 
-        size_CB.setOnAction(e->{
+        size_CB.setOnAction(e -> {
             messageTF.setStyle(messageTF.getStyle() + "-fx-font-size: " + size_CB.getSelectionModel().getSelectedItem() + "; ");
         });
 
-        family_CB.setOnAction(e->{
+        family_CB.setOnAction(e -> {
             messageTF.setStyle(messageTF.getStyle() + "-fx-font-family: " + family_CB.getSelectionModel().getSelectedItem() + "; ");
         });
 
-        colorPicker.setOnAction(e->{
+        colorPicker.setOnAction(e -> {
             String hex = Integer.toHexString(colorPicker.getValue().hashCode());
             messageTF.setStyle(messageTF.getStyle() + "-fx-text-fill: " + hex + "; ");
         });
@@ -225,7 +226,8 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
 
     //<editor-fold desc= "Events handling">
     @FXML
-    void switchListPane(ActionEvent event) {
+    void switchListPane(ActionEvent event)
+    {
         Button btnClicked = (Button) event.getSource();
         switch (btnClicked.getId()) {
             case "friendChatBtn":
@@ -249,7 +251,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
     void addContacts(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader();
         File file = new File("src/main/java/com/jets/LasserChat/views/fxml/AddContactPane.fxml");
-        AddContactViewController addContactViewController = new AddContactViewController(this,loginUser);
+        AddContactViewController addContactViewController = new AddContactViewController(this, loginUser);
         fxmlLoader.setController(addContactViewController);
         try {
             fxmlLoader.setLocation(file.toURL());
@@ -282,7 +284,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
     @FXML
     void logOut(ActionEvent event) {
         chatRoomMainController.unRegister("false");
-
+        System.exit(0);
     }
 
     @FXML
@@ -349,6 +351,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
         FileChooser fileChooser = new FileChooser();
         File selectedFile = fileChooser.showOpenDialog(new Stage());
 
+
         if (selectedFile != null) {
             ChatSessionPane.getChildren().add(new FileMessagePane(loginUser, selectedFile.getName(), true));
 
@@ -356,42 +359,53 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
             System.out.println("File name " + fullName);
             String fileName = selectedFile.getName();
 
-            try {
-                String extention = fullName.substring(fullName.lastIndexOf(".") + 1);
 
-                // System.out.println(extention);
-                String name = fileName.substring(0, fileName.lastIndexOf("."));
+            ExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 
-                System.out.println("Sending file " + name);
+            Runnable task = () -> {
 
-                // setup the remote input stream.  note, the client here is actually
-                // acting as an RMI server (very confusing, i know).  this code sets up an
-                // RMI server in the client, which the RemoteFileServer will then
-                // interact with to get the file data.
-                SimpleRemoteInputStream istream = new SimpleRemoteInputStream(new FileInputStream(fullName));
+                SimpleRemoteInputStream istream = null;
                 try {
+                    String extention = fullName.substring(fullName.lastIndexOf(".") + 1);
+
+                    // System.out.println(extention);
+                    name = fileName.substring(0, fileName.lastIndexOf("."));
+
+                    System.out.println("Sending file " + name);
+
+                    // setup the remote input stream.  note, the client here is actually
+                    // acting as an RMI server (very confusing, i know).  this code sets up an
+                    // RMI server in the client, which the RemoteFileServer will then
+                    // interact with to get the file data.
+
+                    istream = new SimpleRemoteInputStream(new FileInputStream(fullName));
+                    ExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+
+
                     // call the remote method on the server.  the server will actually
                     // interact with the RMI "server" we started above to retrieve the
                     // file data
+
                     for (User userInSession : userCurrentSession.getAvailableUsers()) {
                         if (userInSession.getId() != loginUser.getId()) {
+
                             chatRoomMainController.sendFile(userInSession, istream.export(), name, extention);
                         }
                     }
-                } catch (RemoteException ex) {
-                    ex.printStackTrace();
+                } catch (RemoteException | FileNotFoundException e) {
+                    e.printStackTrace();
                 } finally {
                     // always make a best attempt to shutdown RemoteInputStream
-                    istream.close();
+                    if (istream != null) istream.close();
                 }
-
                 System.out.println("Finished sending file " + name);
-            } catch (FileNotFoundException ex) {
-                ex.printStackTrace();
-            }
+            };
 
+            executorService.submit(task);
+            executorService.shutdown();
 
         }
+
     }
 
     void updateProfileData(User loginUser) {
@@ -485,8 +499,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
      *
      * @param messageString represent message
      */
-    private void setMessageStyle(String messageString)
-    {
+    private void setMessageStyle(String messageString) {
         userMessage = new Message();
         userMessage.setMessageString(messageString);
         userMessage.setState(Message.MessageState.UNDELIVERED);
@@ -495,23 +508,20 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
         //Define style
         Message.MessageStyle messageStyle = userMessage.new MessageStyle();
 
-        if (bold_Btn.isSelected())
-            messageStyle.setBold(true);
+        if (bold_Btn.isSelected()) messageStyle.setBold(true);
 
-        if (italic_Btn.isSelected())
-            messageStyle.setItalic(true);
+        if (italic_Btn.isSelected()) messageStyle.setItalic(true);
 
-        if (underline_Btn.isSelected())
-            messageStyle.setUnderline(true);
+        if (underline_Btn.isSelected()) messageStyle.setUnderline(true);
 
         String hex = Integer.toHexString(colorPicker.getValue().hashCode());
         messageStyle.setColor(hex);
         messageStyle.setFontFamily(family_CB.getSelectionModel().getSelectedItem());
-        System.out.println("size = "+size_CB.getSelectionModel().getSelectedItem());
+        System.out.println("size = " + size_CB.getSelectionModel().getSelectedItem());
         messageStyle.setSize(Integer.parseInt(size_CB.getSelectionModel().getSelectedItem()));
 
         //set style selected to message
-        System.out.println("Style customized to current message : "+messageStyle);
+        System.out.println("Style customized to current message : " + messageStyle);
         userMessage.setMessageStyle(messageStyle);
     }
 
@@ -580,8 +590,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
      * send file to client
      */
 
-    public void receiveFileFromContact(User toUser, RemoteInputStream ristream, String name, String extension)
-    {
+    public void receiveFileFromContact(User toUser, RemoteInputStream ristream, String name, String extension) {
 
         Session senderSession = chatRoomMainController.lookupSession(loginUser, toUser);
 
@@ -589,53 +598,61 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
             System.out.println("I am Here in session " + senderSession.getId() + ">>>>>" + userCurrentSession.getId());
             //  if (senderSession.getId() == userCurrentSession.getId()) {
 
+            FileMessagePane fileMessagePane = new FileMessagePane();
+
             Platform.runLater(() -> {
-                ChatSessionPane.getChildren().add(new FileMessagePane(toUser,name+"."+extension, false));
+                ChatSessionPane.getChildren().add(new FileMessagePane(toUser, name + "." + extension, false));
             });
-            InputStream istream = null;
-            try {
-                System.out.println("start traansfer file  ");
-                istream = RemoteInputStreamClient.wrap(ristream);
-                FileOutputStream ostream = null;
+            while (!fileMessagePane.isResponce()) {
+            }
+            if (fileMessagePane.getDirectory() == null) {
+                System.out.println("Rejected");
+            } else {
+                InputStream istream = null;
                 try {
-                    File file = new File("C:\\Users\\omdae\\Downloads");
-                    File tempFile = File.createTempFile(name, ".".concat(extension), file);
-                    ostream = new FileOutputStream(tempFile);
-                    System.out.println("Writing file " + tempFile);
-
-                    byte[] buf = new byte[1024];
-
-                    int bytesRead = 0;
-                    while ((bytesRead = istream.read(buf)) >= 0) {
-                        ostream.write(buf, 0, bytesRead);
-                    }
-                    ostream.flush();
-
-                    System.out.println("Finished writing file " + tempFile);
-
-                } finally {
+                    System.out.println("start traansfer file  ");
+                    // istream is instance varable to use it in lamda expresion
+                    istream = RemoteInputStreamClient.wrap(ristream);
+                    FileOutputStream ostream = null;
                     try {
-                        istream.close();
+                        File file = new File(fileMessagePane.getDirectory());
+                        File tempFile = File.createTempFile(name, ".".concat(extension), file);
+                        ostream = new FileOutputStream(tempFile);
+                        System.out.println("Writing file " + tempFile);
+
+                        byte[] buf = new byte[1024];
+
+                        int bytesRead = 0;
+                        while ((bytesRead = istream.read(buf)) >= 0) {
+                            ostream.write(buf, 0, bytesRead);
+                        }
+                        ostream.flush();
+
+                        System.out.println("Finished writing file " + tempFile);
+
                     } finally {
-                        if (ostream != null) {
-                            ostream.close();
+                        try {
+                            istream.close();
+                        } finally {
+                            if (ostream != null) {
+                                ostream.close();
+                            }
                         }
                     }
-                }
 
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            } finally {
-                try {
-                    if (istream != null) {
-                        istream.close();
-                    }
                 } catch (IOException ex) {
                     ex.printStackTrace();
+                } finally {
+                    try {
+                        if (istream != null) {
+                            istream.close();
+                        }
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 }
-            }
 
-            // }
+            }
         } else {
             System.out.println("A file received from another user !");
         }
@@ -720,7 +737,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
     private void initAnouncementList(User loginUser) {
         FXMLLoader fxmlLoader = new FXMLLoader();
         File file = new File("src/main/java/com/jets/LasserChat/views/fxml/ServerAnnouncementPane.fxml");
-        ServerAnnouncementViewController serverAnnouncementViewController = new ServerAnnouncementViewController(this);
+        serverAnnouncementViewController = new ServerAnnouncementViewController(this);
         fxmlLoader.setController(serverAnnouncementViewController);
         try {
             fxmlLoader.setLocation(file.toURL());
@@ -748,7 +765,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
     private void initUserGroupChatList(User loginUser) {
         FXMLLoader fxmlLoader = new FXMLLoader();
         File file = new File("src/main/java/com/jets/LasserChat/views/fxml/GroupChatPane.fxml");
-        GroupChatViewController groupChatViewController = new GroupChatViewController(this);
+        GroupChatViewController groupChatViewController = new GroupChatViewController(this, loginUser);
         fxmlLoader.setController(groupChatViewController);
         try {
             fxmlLoader.setLocation(file.toURL());
@@ -774,7 +791,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
     }
     //</editor-fold>
 
-    public void loadFriendData(User selectedUser) {
+    private void loadFriendData(User selectedUser) {
         friendNameL.setText(selectedUser.getName());
         //friendStatusL.setText(selectedUser.getStatus().toString());
         chattedUserName_R.setText(selectedUser.getName());
@@ -791,36 +808,40 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
         chatRoomMainController.unRegister("true");
     }
 
-    public void closeAddContactPane() {
+    void closeAddContactPane() {
         addContactPane.setVisible(false);
     }
 
-    public boolean checkIfUserExist(User newContact) {
+    boolean checkIfUserExist(User newContact) {
         return chatRoomMainController.checkIfUserExist(newContact);
     }
 
-    public boolean addNewContact(User loginUser, User newContact) {
+    boolean addNewContact(User loginUser, User newContact) {
         return chatRoomMainController.addNewContact(loginUser, newContact);
     }
 
-    public boolean checkIfFriends(User loginUser, User newContact) {
+    boolean checkIfFriends(User loginUser, User newContact) {
         return chatRoomMainController.checkIfFriends(loginUser, newContact);
     }
 
-    public void notifyFriendsRequest(User loginUser, User newContact) {
+    void notifyFriendsRequest(User loginUser, User newContact) {
         chatRoomMainController.notifyFriendsRequest(loginUser, newContact);
     }
 
-    public boolean addFriendRequest(User loginUser, User newContact) {
+    boolean addFriendRequest(User loginUser, User newContact) {
         return chatRoomMainController.addFriendRequest(loginUser, newContact);
     }
 
-    public boolean checkIfPending(User loginUser, User newContact) {
-        return chatRoomMainController.checkIfPending(loginUser,newContact);
+    boolean checkIfPending(User loginUser, User newContact) {
+        return chatRoomMainController.checkIfPending(loginUser, newContact);
     }
 
     public void notifyFriendRequest(User fromUser) {
         System.out.println(fromUser.getName());
+    }
+
+    public void recieveAnnoncement(Annoncement annoncement) {
+        serverAnnouncementViewController.recieveAnnoncement(annoncement);
     }
 
     //Inner classes

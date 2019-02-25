@@ -7,6 +7,7 @@ com\jets\LazerChatCommonService\models\dao\UserServices.class
 com\jets\LazerChatCommonService\models\dao\FriendRequestNotifierServices.class
 com\jets\LazerChatCommonService\models\dao\AnnouncementServices.class
 com\jets\LazerChatCommonService\models\dao\StatusServices.class
+com\jets\LazerChatCommonService\models\entity\Annoncement.class
 com\jets\LazerChatCommonService\models\dao\RestoreChatServices.class
 com\jets\LazerChatCommonService\models\dao\HandshakeServices.class
 com\jets\LazerChatCommonService\models\entity\Message.class

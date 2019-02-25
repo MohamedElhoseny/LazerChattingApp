@@ -42,13 +42,6 @@
             <systemPath>E:/FCIH/ITI/JavaSE/Project/LazerChattingApp/LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT-jar-with-dependencies.jar</systemPath>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->
-        <dependency>
-            <groupId>org.controlsfx</groupId>
-            <artifactId>controlsfx</artifactId>
-            <version>8.40.12</version>
-        </dependency>
-
         <!-- Add Jfoenix Jar -->
         <dependency>
             <groupId>com.jfoenix</groupId>
@@ -89,5 +82,11 @@
             <version>2.1.2</version>
         </dependency>
 
+        <!-- controlsfx for notification -->
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>8.40.12</version>
+        </dependency>
     </dependencies>
 </project>

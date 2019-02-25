@@ -2,9 +2,12 @@ package com.jets.LasserChat.views.controllers;
 
 import com.jets.LasserChat.models.entity.Session;
 import com.jets.LasserChat.views.models.AnnouncementItemPane;
-import com.jets.LasserChat.views.models.GroupItemPane;
+
+import com.jets.LazerChatCommonService.models.entity.Annoncement;
 import com.jfoenix.controls.JFXListView;
+
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,22 +15,29 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
 import javafx.util.Callback;
 
+
+import java.io.File;
+
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ServerAnnouncementViewController implements Initializable
 {
     @FXML
-    private JFXListView<String> announceListView;
+    private JFXListView<Annoncement> announceListView;
 
     private ChatRoomViewController chatRoomViewController;
-    private ObservableList announcements;
+    private ObservableList<Annoncement> announcements;
+    private  Annoncement annoncement;
 
     public ServerAnnouncementViewController(){}
     public ServerAnnouncementViewController(ChatRoomViewController chatRoomViewController){
         this.chatRoomViewController = chatRoomViewController;
+        announcements = FXCollections.observableArrayList();
     }
 
 
@@ -38,21 +48,21 @@ public class ServerAnnouncementViewController implements Initializable
         announceListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         announceListView.setStyle("-fx-border-color: #40444A; -fx-background-color: #40444A;" + "-fx-control-inner-background : #40444A");
         //Simple customization
-        announceListView.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
+        announceListView.setCellFactory(new Callback<ListView<Annoncement>, ListCell<Annoncement>>() {
             @Override
-            public ListCell<String> call(ListView<String> param) {
+            public ListCell<Annoncement> call(ListView<Annoncement> param) {
                 // Return ListCell after customizing its view
-                return new ListCell<String>()
+                return new ListCell<Annoncement>()
                 {
                     AnnouncementItemPane announceNode = null;
 
                     @Override
-                    protected void updateItem(String item, boolean empty) {
+                    protected void updateItem(Annoncement item, boolean empty) {
                         super.updateItem(item, empty);
 
                         if (item != null) {
                             if (!empty) {
-                                announceNode = new AnnouncementItemPane(item, null);
+                                announceNode = new AnnouncementItemPane(item);
 
                                 //Update cell data item
                                 this.setUserData(item);
@@ -89,7 +99,18 @@ public class ServerAnnouncementViewController implements Initializable
         announceListView.setItems(announcements);
     }
 
-    public void addAnnouncementPane(String announceString) {
-        announcements.add(announceString);
+
+    public void recieveAnnoncement(Annoncement annoncement) {
+        announcements.add(annoncement);
+
+        File audio=new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\resources\\sounds\\slow-spring-board.mp3");
+        AudioClip audioClip= null;
+        try {
+            audioClip = new AudioClip(audio.toURL().toExternalForm());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        audioClip.play();
     }
+
 }

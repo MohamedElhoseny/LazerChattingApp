@@ -6,6 +6,7 @@ import com.jets.LasserChat.views.models.GroupItemPane;
 import com.jets.LazerChatCommonService.models.entity.User;
 import com.jfoenix.controls.JFXListView;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,15 +33,18 @@ public class GroupChatViewController implements Initializable
 
     private ChatRoomViewController chatRoomViewController;
     private ObservableList<Session> groups;
-    private Session currentSession;
+    private Session currentGroupSession;
+    private User loginUser;
 
     public GroupChatViewController() {
     }
 
-    public GroupChatViewController(ChatRoomViewController chatRoomViewController)
+    public GroupChatViewController(ChatRoomViewController chatRoomViewController, User loginUser)
     {
         this.chatRoomViewController = chatRoomViewController;
-        currentSession = new Session();
+        this.loginUser = loginUser;
+        this.groups = FXCollections.observableArrayList();
+        currentGroupSession = new Session();
     }
 
     @Override
@@ -109,16 +113,15 @@ public class GroupChatViewController implements Initializable
     {
         Session selectedSession = groupListView.getSelectionModel().getSelectedItem();
         if (selectedSession != null) {
-            if (currentSession == selectedSession) {
+            if (currentGroupSession == selectedSession) {
                 System.out.println("User select same group to chat.");
             } else {
-                currentSession = selectedSession;
+                currentGroupSession = selectedSession;
                 chatRoomViewController.displaySessionData(selectedSession);
                 System.out.println("The current session group selected : " + selectedSession);
             }
         }
     }
-
 
     @FXML
     void addNewGroupChat(ActionEvent event)
@@ -143,12 +146,18 @@ public class GroupChatViewController implements Initializable
         }
     }
 
-
-    public ObservableList<User> getFriendList() {
+    ObservableList<User> getFriendList() {
         return chatRoomViewController.getUserFriendList();
     }
 
-    public void addNewGroupSession(Session newGroupSession) {
+
+    void addNewGroupSession(Session newGroupSession)
+    {
+        newGroupSession.getAvailableUsers().add(loginUser);
         this.groups.add(newGroupSession);
+    }
+
+    void receiveGroupInvitation(Session newGroupSession){
+        this.groups.addAll(newGroupSession);
     }
 }

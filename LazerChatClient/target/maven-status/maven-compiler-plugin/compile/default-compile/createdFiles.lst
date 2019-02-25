@@ -14,6 +14,7 @@ com\jets\LasserChat\views\controllers\VideoCallViewController.class
 com\jets\LasserChat\views\controllers\FriendChatViewController$1.class
 com\jets\LasserChat\models\entity\BodyType.class
 com\jets\LasserChat\views\utility\LoginValidation.class
+com\jets\LasserChat\models\services\NotifierServerServices.class
 com\jets\LasserChat\views\controllers\ServerAnnouncementViewController$1$1.class
 com\jets\LasserChat\views\models\FriendItemPane.class
 com\jets\LasserChat\views\controllers\ServerAnnouncementViewController$1.class
@@ -33,6 +34,7 @@ com\jets\LasserChat\views\controllers\StartupViewController.class
 com\jets\LasserChat\views\models\GroupItemPane.class
 com\jets\LasserChat\views\controllers\ServerAnnouncementViewController.class
 com\jets\LasserChat\views\controllers\LoginViewController.class
+com\jets\LasserChat\views\controllers\CreateChatViewController$FriendItemPane.class
 com\jets\LasserChat\views\controllers\RegistrationViewController.class
 com\jets\LasserChat\views\controllers\FriendRequestViewController.class
 com\jets\LasserChat\controllers\ChatRoomMainController.class
@@ -45,6 +47,7 @@ com\jets\LasserChat\models\services\ChatBotServices.class
 com\jets\LasserChat\views\models\AnnouncementItemPane.class
 com\jets\LasserChat\models\remote\InitialContext.class
 com\jets\LasserChat\models\remote\ServiceLocator.class
+com\jets\LasserChat\views\controllers\CreateChatViewController.class
 com\jets\LasserChat\controllers\MainController.class
 com\jets\LasserChat\models\services\ChatServerService.class
 com\jets\LasserChat\views\models\FileMessagePane.class

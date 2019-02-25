@@ -15,7 +15,7 @@ public class FriendItemPane extends AnchorPane {
     final Circle profileImg;
     final Label label;
     final Circle circle;
-    final Label label0;
+    final Label state;
     final Label label1;
 
     public FriendItemPane(User user)
@@ -23,7 +23,7 @@ public class FriendItemPane extends AnchorPane {
         profileImg = new Circle();
         label = new Label();
         circle = new Circle();
-        label0 = new Label();
+        state = new Label();
         label1 = new Label();
 
         setPrefHeight(72.0);
@@ -52,13 +52,13 @@ public class FriendItemPane extends AnchorPane {
         circle.setStroke(javafx.scene.paint.Color.BLACK);
         circle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
 
-        label0.setLayoutX(92.0);
-        label0.setLayoutY(36.0);
-        label0.setPrefHeight(24.0);
-        label0.setPrefWidth(49.0);
-        label0.setText("Busy");
-        label0.setTextFill(javafx.scene.paint.Color.WHITE);
-        label0.setFont(new Font("Arial", 12.0));
+        state.setLayoutX(92.0);
+        state.setLayoutY(36.0);
+        state.setPrefHeight(24.0);
+        state.setPrefWidth(49.0);
+        state.setText("Busy");
+        state.setTextFill(javafx.scene.paint.Color.WHITE);
+        state.setFont(new Font("Arial", 12.0));
 
         AnchorPane.setRightAnchor(label1, 20.0);
         label1.setAlignment(javafx.geometry.Pos.CENTER);
@@ -73,11 +73,29 @@ public class FriendItemPane extends AnchorPane {
         label1.setFont(new Font("System Bold", 12.0));
         setCursor(Cursor.HAND);
 
+        /* Customizing pane*/
         getChildren().add(profileImg);
         getChildren().add(label);
         getChildren().add(circle);
-        getChildren().add(label0);
+        getChildren().add(state);
         getChildren().add(label1);
 
+    }
+
+    public void setUserState(int state)
+    {
+        switch (state){
+            case 1:
+                this.state.setText("available");
+                break;
+            case 2:
+                this.state.setText("busy");
+                break;
+            case 3:
+                this.state.setText("away");
+                break;
+            case 4:
+                break;
+        }
     }
 }

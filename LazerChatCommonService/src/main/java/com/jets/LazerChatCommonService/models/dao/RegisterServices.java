@@ -1,5 +1,6 @@
 package com.jets.LazerChatCommonService.models.dao;
 
+import com.jets.LazerChatCommonService.models.entity.Annoncement;
 import com.jets.LazerChatCommonService.models.entity.User;
 
 import java.rmi.Remote;

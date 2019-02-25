@@ -3,6 +3,7 @@ package com.jets.LasserChat.models.services;
 import com.healthmarketscience.rmiio.RemoteInputStream;
 import com.jets.LasserChat.controllers.ChatRoomMainController;
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
+import com.jets.LazerChatCommonService.models.entity.Annoncement;
 import com.jets.LazerChatCommonService.models.entity.Message;
 import com.jets.LazerChatCommonService.models.entity.User;
 import java.rmi.RemoteException;
@@ -41,8 +42,19 @@ public class HandshakeServiceImp extends UnicastRemoteObject implements Handshak
         chatRoomMainController.reciveFile( toUser,  ristream,  name, extension);
 
     }
+
+    @Override
+    public void receiveAnnoncement(Annoncement annoncement) throws RemoteException {
+        chatRoomMainController.recieveAnnoncement(annoncement);
+    }
+
     @Override
     public void serverStop() throws RemoteException {
         chatRoomMainController.serverStop();
+    }
+
+    @Override
+    public void notifyFriendRequest(User user) throws RemoteException {
+        chatRoomMainController.notifyFriendRequest(user);
     }
 }

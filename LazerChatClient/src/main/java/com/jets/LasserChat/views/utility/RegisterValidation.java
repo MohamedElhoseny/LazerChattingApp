@@ -36,7 +36,10 @@ public class RegisterValidation {
     }
 
     public  boolean validatePhone(String phone){
-        matcher = VALID_PHONE_REGEX.matcher(phone);
+        if (phone.length() > 11)
+            return false;
+        else
+            matcher = VALID_PHONE_REGEX.matcher(phone);
         return matcher.find();
     }
        

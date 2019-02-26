@@ -18,17 +18,22 @@ public class UserServicesImp extends UnicastRemoteObject implements UserServices
     @Override
     public User logIn(String phone, String password)
     {
-        User loginUser = userDAO.getUser(phone);
+        User loginUser = userDAO.getUser(phone);  //read user as in offline state
 
         if ((loginUser != null) && loginUser.getPassword().equals(password))
+        {
+            loginUser.setStatus(1);  //set online state
+            userDAO.updateUserStatues(loginUser);
             return loginUser;
+        }
         else
             return null;
     }
 
     @Override
     public void logOut(User user) {
-
+        user.setStatus(4);
+        userDAO.updateUserStatues(user);
     }
 
     @Override

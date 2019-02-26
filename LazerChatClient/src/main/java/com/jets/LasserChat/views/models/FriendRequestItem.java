@@ -38,7 +38,6 @@ public class FriendRequestItem extends AnchorPane {
 
         setPrefHeight(85.0);
         setPrefWidth(246.0);
-        setStyle("-fx-border-color: transparent transparent gray gray;");
 
         profileImg.setLayoutX(39.0);
         profileImg.setLayoutY(36.0);

@@ -5,7 +5,9 @@ import com.jets.LazerChatCommonService.models.entity.User;
 import java.io.ByteArrayInputStream;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class UserDAOImplementation implements UserDAO
@@ -66,7 +68,7 @@ public class UserDAOImplementation implements UserDAO
                 user.setDate(resultList.getDate("birthdate").toString());
                 user.setEmail(resultList.getString("email"));
                 user.setCountry(resultList.getString("Country"));
-
+                user.setStatus(resultList.getInt("sid"));
                 users.add(user);
             }
         } catch (SQLException ex) {
@@ -396,5 +398,90 @@ public class UserDAOImplementation implements UserDAO
         }
 
 
+    }
+
+    @Override
+    public List<User> getOnlineUsers() {
+
+        List<User> users = new ArrayList<>();
+        String query = "select * from user where sid= 1 or sid=2 or sid=3";
+
+        try {
+
+            statement = connection.prepareStatement(query);
+            resultList = statement.executeQuery();
+            while (resultList.next()) {
+                User user = new User();
+                user.setId(resultList.getInt("id"));
+                user.setPhone(resultList.getString("phone"));
+                user.setName(resultList.getString("name"));
+                user.setPassword(resultList.getString("password"));
+                user.setGender(resultList.getString("gender"));
+                user.setBio(resultList.getString("bio"));
+                Blob blob = resultList.getBlob("picture");
+                byte[] image = blob.getBytes(1, (int) blob.length());
+                user.setPicture(image);
+                user.setDate(resultList.getDate("birthdate").toString());
+                user.setEmail(resultList.getString("email"));
+                user.setCountry(resultList.getString("Country"));
+
+                users.add(user);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return users;
+    }
+
+    @Override
+    public List<User> getOfflineUsers() {
+
+        List<User> users = new ArrayList<>();
+        String query = "select * from user where sid= 4";
+
+        try {
+
+            statement = connection.prepareStatement(query);
+            resultList = statement.executeQuery();
+            while (resultList.next()) {
+                User user = new User();
+                user.setId(resultList.getInt("id"));
+                user.setPhone(resultList.getString("phone"));
+                user.setName(resultList.getString("name"));
+                user.setPassword(resultList.getString("password"));
+                user.setGender(resultList.getString("gender"));
+                user.setBio(resultList.getString("bio"));
+                Blob blob = resultList.getBlob("picture");
+                byte[] image = blob.getBytes(1, (int) blob.length());
+                user.setPicture(image);
+                user.setDate(resultList.getDate("birthdate").toString());
+                user.setEmail(resultList.getString("email"));
+                user.setCountry(resultList.getString("Country"));
+
+                users.add(user);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return users;
+    }
+
+    @Override
+    public Map<String, Integer> getUsersCountry() {
+
+        Map<String, Integer> country = new HashMap<>();
+        String query = "select country,count(country) from  user group by country;";
+
+        try {
+
+            statement = connection.prepareStatement(query);
+            resultList = statement.executeQuery();
+            while (resultList.next()) {
+                country.put(resultList.getString(1), resultList.getInt(2));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return country;
     }
 }

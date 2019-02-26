@@ -9,6 +9,7 @@ import com.jets.LazerChatCommonService.models.entity.User;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContactServicesImp extends UnicastRemoteObject implements ContactServices {
     private UserDAO userDAO;
@@ -58,5 +59,10 @@ public class ContactServicesImp extends UnicastRemoteObject implements ContactSe
     @Override
     public void deleteFriendRequest(User fromuser, User touser) throws RemoteException {
         userDAO.deleteFriendRequest(fromuser,touser);
+    }
+
+    @Override
+    public List<User> getAllUserFriendList(String phone) throws RemoteException {
+        return userDAO.getUserFriends(phone);
     }
 }

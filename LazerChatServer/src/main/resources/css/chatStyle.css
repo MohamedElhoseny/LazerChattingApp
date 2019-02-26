@@ -1,0 +1,117 @@
+#status{
+    -fx-prompt-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-text-fill: white;
+}
+
+#searchContact{
+    -fx-prompt-text-fill: gray;
+}
+
+.jfx-decorator {
+    -fx-decorator-color:  #40444A;
+}
+
+.jfx-decorator .jfx-decorator-buttons-container {
+    -fx-background-color: -fx-decorator-color;
+}
+
+.jfx-decorator .resize-border {
+    -fx-border-color: -fx-decorator-color;
+    -fx-border-width: 2 2 2 2;
+}
+.jfx-decorator .title{
+    -fx-font-family : "Arial Black";
+}
+
+.loginPassword{
+    -fx-prompt-text-fill: silver;
+    -fx-text-fill: white;
+    -fx-font-style: italic;
+    -fx-font-size: 17px;
+}
+
+.loginPhone{
+    -fx-prompt-text-fill: silver;
+    -fx-text-fill: white;
+    -fx-font-style: italic;
+    -fx-font-size: 17px;
+    -jfx-focus-color: #609699;
+    -jfx-unfocus-color: #609699;
+}
+
+.registerTextField
+{
+    -fx-prompt-text-fill: silver;
+    -fx-font-style: italic;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -jfx-focus-color: #609699;
+    -jfx-unfocus-color: #609699;
+}
+.registerPasswordField
+{
+    -fx-prompt-text-fill: silver;
+    -fx-font-style: italic;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -jfx-focus-color: #609699;
+    -jfx-unfocus-color: #609699;
+}
+
+.jfx-combo-box {
+    -jfx-focus-color: #4d4d4d;
+    -jfx-unfocus-color: #4d4d4d;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: green;
+}
+.combo-box > .list-cell
+{
+    -fx-text-fill: white;
+}
+.list-view .scroll-bar:vertical {
+    -fx-scale-x: 0;
+}
+.list-view .scroll-bar:horizontal {
+    -fx-scale-x: 0;
+}
+.ChatSessionPane .scroll-bar:vertical{
+    -fx-scale-x: 0;
+}
+.ChatSessionPane .scroll-bar:horizontal{
+    -fx-scale-x: 0;
+}
+.chatScrollbar .scroll-bar:vertical{
+    -fx-scale-x: 0;
+}
+
+
+
+#statisticPane .tab
+{
+    -fx-background-color: transparent;
+}
+
+#statisticPane .tab:selected
+{
+    -fx-background-color: #3c3c3c;
+}
+
+#statisticPane .tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #828282;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-color: transparent;
+}
+
+#statisticPane .tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #96b946;
+    -fx-background-color: transparent;
+}
+#statisticPane
+{
+    -fx-tab-min-width:100px;
+    -fx-tab-min-height: 10px;
+}

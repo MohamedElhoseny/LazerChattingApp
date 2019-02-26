@@ -33,15 +33,18 @@ public class FriendChatViewController implements Initializable
     private ObservableList<User> friendList;
     private ChatRoomViewController chatRoomViewController;
     private User currentUser;
+    private User loginUser;
 
     public FriendChatViewController() {
 
     }
 
-    public FriendChatViewController(ChatRoomViewController chatRoomViewController)
+    public FriendChatViewController(ChatRoomViewController chatRoomViewController, User loginUser)
     {
         this.chatRoomViewController = chatRoomViewController;
+        friendList = FXCollections.observableArrayList();
         this.currentUser = new User();
+        this.loginUser = loginUser;
     }
 
     @Override
@@ -78,9 +81,11 @@ public class FriendChatViewController implements Initializable
                                 this.setItem(null);
                             }
                         } else {
-                            this.setUserData(null);
-                            this.setGraphic(null);
-                            this.setItem(null);
+                            Platform.runLater(()->{
+                                this.setUserData(null);
+                                this.setGraphic(null);
+                                this.setItem(null);
+                            });
                         }
 
                     }
@@ -101,7 +106,10 @@ public class FriendChatViewController implements Initializable
         });
 
         //Get user friend list to display it
-        friendList = chatRoomViewController.getUserFriendList();
+        List<User> allFriends = chatRoomViewController.getAllUserFriendList(loginUser.getPhone());
+        for (User user : allFriends) {
+            if (user.getId() != loginUser.getId()) friendList.add(user);
+        }
         friendListView.setItems(friendList);
     }
 
@@ -110,7 +118,7 @@ public class FriendChatViewController implements Initializable
     {
         User selectedUser = friendListView.getSelectionModel().getSelectedItem();
 
-        if (selectedUser != null)
+        if (selectedUser != null && selectedUser.getStatus() != 4)
         {
             if (currentUser == selectedUser)
             {

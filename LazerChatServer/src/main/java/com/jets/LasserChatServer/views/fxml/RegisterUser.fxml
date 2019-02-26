@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane opacity="0.7" prefHeight="496.0" prefWidth="518.0" style="-fx-background-color: #2f5266;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <effect>
+      <DropShadow height="29.9" radius="19.6375" width="50.65" />
+   </effect>
+   <children>
+      <AnchorPane prefHeight="496.0" prefWidth="498.0">
+         <children>
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="335.0" layoutY="429.0" onAction="#registerUser" prefHeight="36.0" prefWidth="136.0" style="-fx-background-color: #81f48a;" text="Register user" AnchorPane.bottomAnchor="31.0" AnchorPane.rightAnchor="47.0">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fx:id="userImgIV" fitHeight="121.0" fitWidth="120.0" layoutX="41.0" layoutY="73.0" pickOnBounds="true" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="73.0">
+               <image>
+                  <Image url="@/images/users.PNG" />
+               </image>
+            </ImageView>
+            <JFXButton alignment="CENTER" layoutX="31.0" layoutY="212.0" onAction="#openImageChooser" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #81f48a;" text="Choose profile image" textFill="#fff2f2" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="212.0">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <VBox layoutX="235.0" layoutY="68.0" prefHeight="288.0" prefWidth="251.0" spacing="10.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="65.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXTextField fx:id="userPhoneTF" alignment="CENTER" focusColor="#a7b7e8" prefHeight="36.0" prefWidth="200.0" promptText="Enter your phone number" styleClass="registerTextField" unFocusColor="#609699">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <FontAwesomeIconView fx:id="phone_error" fill="#2bff63" glyphName="CHECK" size="18" text="" visible="false" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXTextField fx:id="userNameTF" alignment="CENTER" focusColor="#a7b7e8" prefHeight="36.0" prefWidth="201.0" promptText="Enter your nickname" styleClass="registerTextField" unFocusColor="#609699">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <FontAwesomeIconView fx:id="name_error" fill="#2bff63" glyphName="CHECK" size="18" text="" visible="false" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXPasswordField fx:id="userPasswordTF" alignment="CENTER" focusColor="#a7b7e8" prefHeight="36.0" prefWidth="201.0" promptText="Enter your password" styleClass="registerPasswordField" unFocusColor="#609699">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <FontAwesomeIconView fx:id="password_error" fill="#2bff63" glyphName="CHECK" size="18" text="" visible="false" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXPasswordField fx:id="userConfirmPasswordTF" alignment="CENTER" focusColor="#a7b7e8" prefHeight="36.0" prefWidth="203.0" promptText="Enter your confirmation password" styleClass="registerPasswordField" unFocusColor="#609699">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <FontAwesomeIconView fx:id="confirmPassword_error" fill="#2bff63" glyphName="CHECK" size="18" text="" visible="false" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXTextField fx:id="userEmailTF" alignment="CENTER" focusColor="#a7b7e8" prefHeight="36.0" prefWidth="203.0" promptText="Enter your email" styleClass="registerTextField" unFocusColor="#609699">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <FontAwesomeIconView fx:id="email_error" fill="#2bff63" glyphName="CHECK" size="18" text="" visible="false" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXTextField fx:id="userCountryTF" alignment="CENTER" focusColor="#a7b7e8" prefHeight="36.0" prefWidth="203.0" promptText="Enter your country" styleClass="registerTextField" unFocusColor="#609699">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <FontAwesomeIconView fx:id="country_error" fill="#2bff63" glyphName="CHECK" size="18" text="" visible="false" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <DatePicker fx:id="userBirthdayDP" layoutX="27.0" layoutY="271.0" prefHeight="25.0" prefWidth="120.0" promptText="birthday" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="271.0" />
+            <TextArea fx:id="userBioTA" layoutX="26.0" layoutY="367.0" prefHeight="107.0" prefWidth="258.0" promptText="Tell us about yourself" style="-fx-border-color: gray; -fx-background-color: white;" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="234.0" AnchorPane.topAnchor="367.0" />
+            <ComboBox fx:id="userGenderCB" layoutX="31.0" layoutY="325.0" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="325.0" />
+            <Label layoutX="27.0" layoutY="250.0" text="Your birthday" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="250.0" />
+            <Label layoutX="31.0" layoutY="304.0" text="Gender" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="304.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

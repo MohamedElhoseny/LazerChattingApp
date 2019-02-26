@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="902.0" style="-fx-background-color: #40444A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="127.0" layoutY="72.0" prefHeight="310.0" prefWidth="268.0" style="-fx-border-color: white;" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="127.0" AnchorPane.topAnchor="72.0">
+         <children>
+            <Label layoutX="33.0" layoutY="24.0" text="Server state : " textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="serverState" layoutX="147.0" layoutY="27.0" text="Stopped" textFill="WHITE" underline="true" AnchorPane.leftAnchor="147.0" AnchorPane.topAnchor="27.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <VBox layoutX="1.0" layoutY="145.0" prefHeight="165.0" prefWidth="266.0" AnchorPane.bottomAnchor="0.0">
+               <children>
+                  <Label text="UserServices" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="ContactServices" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="RegisterServices" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="StatuesServices" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="FriendRequestNotifierServices" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <HBox alignment="TOP_CENTER" layoutX="34.0" layoutY="88.0" spacing="10.0">
+               <children>
+                  <JFXButton fx:id="startBtn" buttonType="RAISED" onAction="#startServer" prefHeight="39.0" prefWidth="85.0" style="-fx-background-color: #74f180;" text="Start">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="stopBtn" buttonType="RAISED" disable="true" onAction="#stopServer" prefHeight="39.0" prefWidth="85.0" style="-fx-background-color: #ea5c5c;" text="Stop" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="513.0" layoutY="76.0" prefHeight="175.0" prefWidth="247.0" style="-fx-border-color: white;" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="72.0">
+         <children>
+            <Label layoutX="46.0" layoutY="22.0" text="Application Users" textFill="WHITE" AnchorPane.leftAnchor="46.0" AnchorPane.topAnchor="22.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="86.0" text="Online : " textFill="#63ff68" AnchorPane.leftAnchor="46.0" AnchorPane.topAnchor="86.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="47.0" layoutY="128.0" text="Offline : " textFill="#ff3647" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="47.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Separator layoutX="46.0" layoutY="66.0" prefHeight="3.0" prefWidth="81.0" AnchorPane.leftAnchor="46.0" AnchorPane.topAnchor="66.0" />
+            <Label fx:id="numOfOnline" layoutX="127.0" layoutY="91.0" text="10" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="127.0" AnchorPane.topAnchor="91.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="numOfOflline" layoutX="130.0" layoutY="129.0" text="3" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="130.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

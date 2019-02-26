@@ -1,5 +1,6 @@
 package com.jets.LasserChat.views.controllers;
 
+import Animation.Transition.FadeInUpTransition;
 import com.healthmarketscience.rmiio.RemoteInputStream;
 import com.healthmarketscience.rmiio.RemoteInputStreamClient;
 import com.healthmarketscience.rmiio.SimpleRemoteInputStream;
@@ -532,7 +533,8 @@ public class ChatRoomViewController implements Initializable {
             if (!input.isEmpty()) {
                 //set style for current message
                 setMessageStyle(input);
-
+                String date_time = java.time.LocalTime.now().getHour() + " : "+java.time.LocalTime.now().getMinute();
+                userMessage.setDate_time(date_time);
                 //Add message to sessionMessageList
                 userCurrentSession.addMessageToSession(userMessage);
                 System.out.println("Your message saved to the current session see Session details : ");
@@ -540,7 +542,10 @@ public class ChatRoomViewController implements Initializable {
 
                 //Update UI, must be called !
                 Platform.runLater(() -> {
-                    ChatSessionPane.getChildren().add(new TextMessagePane(userMessage, true));
+                    TextMessagePane messagePane = new TextMessagePane(userMessage, true);
+                    new FadeInUpTransition(messagePane).play();  //for test
+                    ChatSessionPane.getChildren().add(messagePane);
+
                     messageTF.clear();
                 });
 
@@ -812,7 +817,7 @@ public class ChatRoomViewController implements Initializable {
     private void initUserFriendList() {
         FXMLLoader fxmlLoader = new FXMLLoader();
         File file = new File("src/main/java/com/jets/LasserChat/views/fxml/FriendChatPane.fxml");
-        FriendChatViewController friendChatViewController = new FriendChatViewController(this);
+        FriendChatViewController friendChatViewController = new FriendChatViewController(this, loginUser);
         fxmlLoader.setController(friendChatViewController);
         try {
             fxmlLoader.setLocation(file.toURL());
@@ -887,6 +892,10 @@ public class ChatRoomViewController implements Initializable {
 
     public void deleteFriendRequest(User senderUser) {
         chatRoomMainController.deleteFriendRequest(loginUser, senderUser);
+    }
+
+    public List<User> getAllUserFriendList(String phone) {
+        return chatRoomMainController.getAllUserFriendList(phone);
     }
 
     //Inner classes

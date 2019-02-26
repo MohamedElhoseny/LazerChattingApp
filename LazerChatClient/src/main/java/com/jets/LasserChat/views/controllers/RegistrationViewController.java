@@ -21,6 +21,7 @@ import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class RegistrationViewController implements Initializable
@@ -36,8 +37,9 @@ public class RegistrationViewController implements Initializable
     @FXML private FontAwesomeIconView confirmPassword_error;
     @FXML private JFXTextField userEmailTF;
     @FXML private FontAwesomeIconView email_error;
-    @FXML private JFXTextField userCountryTF;
+    @FXML private ComboBox<String> userCountryCB;
     @FXML private FontAwesomeIconView country_error;
+    @FXML private FontAwesomeIconView date_error;
     @FXML private DatePicker userBirthdayDP;
     @FXML private TextArea userBioTA;
     @FXML private ComboBox<String> userGenderCB;
@@ -46,12 +48,15 @@ public class RegistrationViewController implements Initializable
     private RegisterValidation registerValidation;
     private File choosenImg;
     private File defaultImg;
+    private boolean isAccept;
+    private boolean isDateAccept;
+    private boolean isCountryAccept;
 
     public RegistrationViewController()
     {
         registerValidation = new RegisterValidation();
         choosenImg = null;
-        defaultImg = new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\resources\\images\\default-avatar.png");
+        defaultImg = new File("src/main/resources/images/default-avatar.png");
     }
 
     public void injectMainController(StartupViewController startupViewController)
@@ -75,7 +80,7 @@ public class RegistrationViewController implements Initializable
                 userImgIV.setImage(imageFile);
             }
         } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
+            System.out.println("Error while choosing file : "+ ex.getMessage());
         } finally {
             try {
                 if (stream != null)
@@ -89,33 +94,47 @@ public class RegistrationViewController implements Initializable
     @FXML
     void registerUser(ActionEvent event)
     {
-        //if (isAccept) {
-        User user = new User();
-        user.setGender("male");
-        user.setName(userNameTF.getText());
-        user.setCountry(userCountryTF.getText());
-        user.setEmail(userEmailTF.getText());
-        user.setPhone(userPhoneTF.getText());
-        user.setPassword(userPasswordTF.getText());
-        user.setDate(userBirthdayDP.getValue().toString());
-        user.setBio(userBioTA.getText());
-        //convertImage
-        byte[] imgBytes;
-        if (choosenImg != null)
-            imgBytes = convertImageToBytes(choosenImg);
-        else
-            imgBytes = convertImageToBytes(defaultImg);
+        if (userBirthdayDP.getValue() == null) {
+            isDateAccept = false;
+            startupViewController.setFalseFlag(date_error);
+        }else {
+            isDateAccept = true;
+            startupViewController.setTrueFlag(date_error);
+        }
 
-        user.setPicture(imgBytes);
+        if (userCountryCB.getSelectionModel().getSelectedItem() == null) {
+            isCountryAccept = false;
+            startupViewController.setFalseFlag(country_error);
+        }else {
+            isCountryAccept = true;
+            startupViewController.setTrueFlag(country_error);
+        }
 
-        boolean registerAccepted = startupViewController.registerNewUser(user);
-        if (registerAccepted) {
-            System.out.println("Accepted");
-            startupViewController.showLoginForm();
+
+        if (isAccept && isDateAccept && isCountryAccept) {
+            User user = new User();
+            user.setName(userNameTF.getText());
+            user.setCountry(userCountryCB.getSelectionModel().getSelectedItem());
+            user.setGender(userGenderCB.getSelectionModel().getSelectedItem());
+            user.setEmail(userEmailTF.getText());
+            user.setPhone(userPhoneTF.getText());
+            user.setPassword(userPasswordTF.getText());
+            user.setDate(userBirthdayDP.getValue().toString());
+            user.setBio(userBioTA.getText());
+            //convertImage
+            byte[] imgBytes;
+            if (choosenImg != null) imgBytes = convertImageToBytes(choosenImg);
+            else imgBytes = convertImageToBytes(defaultImg);
+
+            user.setPicture(imgBytes);
+
+            boolean registerAccepted = startupViewController.registerNewUser(user);
+            if (registerAccepted) {
+                System.out.println("Accepted");
+                startupViewController.showLoginForm();
+            }
         }else
-            //dummy
             System.out.println("Not Accepted !");
-        //}
     }
 
     @FXML
@@ -124,35 +143,68 @@ public class RegistrationViewController implements Initializable
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        userNameTF.textProperty().addListener(e -> {
-            if (registerValidation.validateName(userNameTF.getText())) startupViewController.setTrueFlag(name_error);
-            else startupViewController.setFalseFlag(name_error);
-        });
-        userCountryTF.textProperty().addListener(e -> {
-            if (registerValidation.validateName(userCountryTF.getText())) startupViewController.setTrueFlag(country_error);
-            else startupViewController.setFalseFlag(country_error);
-        });
-        userEmailTF.textProperty().addListener(e -> {
-            if (registerValidation.validateEmail(userEmailTF.getText())) startupViewController.setTrueFlag(email_error);
-            else startupViewController.setFalseFlag(email_error);
-        });
-        userPhoneTF.textProperty().addListener(e -> {
-            if (registerValidation.validatePhone(userPhoneTF.getText())) startupViewController.setTrueFlag(phone_error);
-
-            else startupViewController.setFalseFlag(phone_error);
-        });
-        userPasswordTF.textProperty().addListener(e -> {
-            if (registerValidation.validatePassword(userPasswordTF.getText())) startupViewController.setTrueFlag(password_error);
-            else startupViewController.setFalseFlag(password_error);
-        });
-        userConfirmPasswordTF.textProperty().addListener(e -> {
-            if (registerValidation.matchPassword(userPasswordTF.getText(), userConfirmPasswordTF.getText())) startupViewController.setTrueFlag(confirmPassword_error);
-            else startupViewController.setFalseFlag(confirmPassword_error);
-        });
+    public void initialize(URL location, ResourceBundle resources)
+    {
         userGenderCB.getItems().add("Male");
         userGenderCB.getItems().add("Female");
         userGenderCB.getSelectionModel().select(0);
+
+        String[] country = Locale.getISOCountries();
+        for (String s : country) {
+            Locale locale = new Locale("", s);
+        }
+        userCountryCB.getItems().addAll(country);
+        userCountryCB.setEditable(false);
+
+        userNameTF.textProperty().addListener(e ->
+        {
+            if (registerValidation.validateName(userNameTF.getText()) && userNameTF.getText().length() > 4) {
+                startupViewController.setTrueFlag(name_error);
+                isAccept = true;
+            }else {
+                startupViewController.setFalseFlag(name_error);
+                isAccept = false;
+            }
+        });
+
+        userEmailTF.textProperty().addListener(e -> {
+            if (registerValidation.validateEmail(userEmailTF.getText())) {
+                startupViewController.setTrueFlag(email_error);
+                isAccept = true;
+            }else {
+                isAccept = false;
+                startupViewController.setFalseFlag(email_error);
+            }
+        });
+        userPhoneTF.textProperty().addListener(e ->
+        {
+            if (registerValidation.validatePhone(userPhoneTF.getText())) {
+                isAccept = true;
+                startupViewController.setTrueFlag(phone_error);
+            } else {
+                startupViewController.setFalseFlag(phone_error);
+                isAccept = false;
+            }
+        });
+        userPasswordTF.textProperty().addListener(e ->
+        {
+            if (registerValidation.validatePassword(userPasswordTF.getText())) {
+                isAccept = true;
+                startupViewController.setTrueFlag(password_error);
+            }else {
+                isAccept = false;
+                startupViewController.setFalseFlag(password_error);}
+        });
+        userConfirmPasswordTF.textProperty().addListener(e -> {
+            if (registerValidation.matchPassword(userPasswordTF.getText(), userConfirmPasswordTF.getText())) {
+                startupViewController.setTrueFlag(confirmPassword_error);
+                isAccept = true;
+            }else {
+                isAccept  = false;
+                startupViewController.setFalseFlag(confirmPassword_error);
+            }
+        });
+
     }
 
     private byte[] convertImageToBytes(File choosenImg)

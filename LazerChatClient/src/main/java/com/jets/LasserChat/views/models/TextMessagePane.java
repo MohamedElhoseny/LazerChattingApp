@@ -85,7 +85,7 @@ public class TextMessagePane extends AnchorPane implements MessagePane
 
 
         label0.setAlignment(javafx.geometry.Pos.CENTER);
-        label0.setText("4 : 30 PM");
+        label0.setText(message.getDate_time());
         label0.setPadding(new Insets(0.0, 0.0, 0.0, 10.0));
         hBox.setPadding(new Insets(2.0, 0.0, 0.0, 5.0));
         VBox.setMargin(hBox, new Insets(0.0));

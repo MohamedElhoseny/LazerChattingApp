@@ -5,8 +5,10 @@ import com.jets.LasserChat.models.entity.Session;
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.entity.Message;
 import com.jets.LazerChatCommonService.models.entity.User;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.controlsfx.control.Notifications;
 
 import java.io.File;
 import java.rmi.RemoteException;
@@ -32,6 +34,10 @@ public class ChatClientService
         clientList.put(user, clientInterface);
         userObservableList.add(user);
         System.out.println("User ID = "+ user.getId() + " : Registered in Your Friend List");
+
+        Platform.runLater(()->{
+            Notifications.create().title("New Client is Connected !").text(user.getName()+" is Online .").showInformation();
+        });
     }
 
     public void removeClient(User user) {
@@ -59,7 +65,9 @@ public class ChatClientService
                 ex.printStackTrace();
             }
         });
-    }
+        Platform.runLater(()->{
+            Notifications.create().title("New Client is disconnected !").text(user.getName()+" is Offline .").showInformation();
+        });       }
 
     /**
      * send file to client

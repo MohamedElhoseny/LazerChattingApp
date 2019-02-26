@@ -30,7 +30,8 @@ public class FriendRequestViewController implements Initializable {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         //to make user choose only one element at time
         friendRequestPane.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         friendRequestPane.setStyle("-fx-border-color: #40444A; -fx-background-color: #40444A;" + "-fx-control-inner-background : #40444A");
@@ -84,7 +85,8 @@ public class FriendRequestViewController implements Initializable {
         });
         //Get user friend list to display it
         ArrayList<User> friendRequests = chatRoomViewController.getUserFriendRequests();
-        if (friendRequests != null) {
+        if (friendRequests != null)
+        {
             requestedUsers.clear();
             requestedUsers.addAll(friendRequests);
         }

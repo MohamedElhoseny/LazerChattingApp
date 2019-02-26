@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="545.0" prefWidth="940.0" style="-fx-background-color: #40444A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Control panel" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font name="Bodoni MT Condensed Bold" size="45.0" />
+         </font>
+      </Label>
+      <JFXTabPane fx:id="tabPane" prefHeight="454.0" prefWidth="902.0" tabMinHeight="45.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="80.0">
+         <tabs>
+            <Tab fx:id="ManageServiceTab" text="Manage Service" />
+            <Tab fx:id="announcementTab" text="Announcement" />
+            <Tab fx:id="statisticsTab" text="Server Statistics" />
+            <Tab fx:id="dataTab" text="Data administration" />
+            <Tab fx:id="registerationTab" text="User registration" />
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

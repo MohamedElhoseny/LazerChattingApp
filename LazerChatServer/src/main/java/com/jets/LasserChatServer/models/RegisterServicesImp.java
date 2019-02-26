@@ -1,5 +1,6 @@
 package com.jets.LasserChatServer.models;
 
+import com.jets.LasserChatServer.controllers.ServerServicesController;
 import com.jets.LazerChatCommonService.models.dao.HandshakeServices;
 import com.jets.LazerChatCommonService.models.dao.RegisterServices;
 import com.jets.LazerChatCommonService.models.entity.Annoncement;
@@ -23,13 +24,15 @@ public class RegisterServicesImp extends UnicastRemoteObject implements Register
     static Map<User, HandshakeServices> clientList;
     private List<User> friendsList;
     private UserDAOImplementation userDAOImplementation;
+    private ServerServicesController mainController;
 
-    public RegisterServicesImp() throws RemoteException
+    public RegisterServicesImp(ServerServicesController controller) throws RemoteException
     {
         super();
         clientList = new HashMap<>();
         friendsList=new ArrayList<>();
         userDAOImplementation=UserDAOImplementation.getInstance();
+        mainController = controller;
     }
 
     /**
@@ -66,6 +69,7 @@ public class RegisterServicesImp extends UnicastRemoteObject implements Register
         //add client to online clients
         clientList.put(user, clientInterface);
         System.out.println(user + ": Is Registered on Server");
+        mainController.incrementOnline();
     }
 
     @Override
@@ -83,8 +87,12 @@ public class RegisterServicesImp extends UnicastRemoteObject implements Register
                 ex.printStackTrace();
             }
         });
+
+        user.setStatus(4);
+        userDAOImplementation.updateUserStatues(user);
         clientList.remove(user);
         System.out.println(user + ": Is Removed from Server");
+        mainController.decrementOnline();
     }
 
     public void stopServer()

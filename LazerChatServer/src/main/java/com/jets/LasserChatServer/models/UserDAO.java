@@ -4,6 +4,7 @@ import com.jets.LazerChatCommonService.models.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public interface UserDAO {
@@ -33,4 +34,10 @@ public interface UserDAO {
     public ArrayList<User> getFriendRequests(User user);
 
     public void deleteFriendRequest(User fromuser, User touser);
+
+    public List<User> getOnlineUsers();
+
+    public List<User> getOfflineUsers();
+
+    public Map<String, Integer> getUsersCountry();
 }

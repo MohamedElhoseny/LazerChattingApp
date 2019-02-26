@@ -2,10 +2,12 @@ package com.jets.LazerChatCommonService.models.dao;
 
 import com.jets.LazerChatCommonService.models.entity.GroupCategory;
 import com.jets.LazerChatCommonService.models.entity.User;
+import javafx.collections.ObservableList;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.List;
 
 public interface ContactServices extends Remote {
     /* Server side */
@@ -33,5 +35,7 @@ public interface ContactServices extends Remote {
     ArrayList<User> getFriendRequests(User user) throws RemoteException;
 
     /* Server side */
-    public void deleteFriendRequest(User fromuser, User touser) throws RemoteException;
+    void deleteFriendRequest(User fromuser, User touser) throws RemoteException;
+
+    List<User> getAllUserFriendList(String phone) throws RemoteException;
 }

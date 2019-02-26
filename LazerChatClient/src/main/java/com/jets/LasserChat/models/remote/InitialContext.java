@@ -14,7 +14,7 @@ public class InitialContext
         Remote returnedService = null;
         try
         {
-            Registry registry = LocateRegistry.getRegistry("127.0.0.1");
+            Registry registry = LocateRegistry.getRegistry("10.145.8.37",2000);
             returnedService = registry.lookup(remoteService);
 
         } catch (RemoteException | NotBoundException ex) {

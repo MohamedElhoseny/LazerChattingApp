@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="902.0" style="-fx-background-color: #40444A;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTabPane id="statisticPane" fx:id="tabPane" layoutX="103.0" layoutY="44.0" prefHeight="380.0" prefWidth="681.0" styleClass="list-view" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="44.0">
+        <tabs>
+          <Tab fx:id="onlineOffline" text="Number of Online &amp; Offline">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="323.0" prefWidth="679.0">
+                     <children>
+                        <StackPane fx:id="onlineOfflinePieChart" layoutX="109.0" layoutY="39.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="109.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="39.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="gender" text="User's gender">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <StackPane fx:id="genderPieChart" layoutX="97.0" layoutY="25.0" AnchorPane.bottomAnchor="14.0" AnchorPane.topAnchor="25.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="country" text="User's country">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <StackPane fx:id="countryBarChart" layoutX="58.0" layoutY="23.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="23.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

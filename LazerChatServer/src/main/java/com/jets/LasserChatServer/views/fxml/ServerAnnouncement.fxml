@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="902.0" style="-fx-background-color: #40444A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="43.0" layoutY="47.0" text="Broadcast new announcement .." textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="userImgIV" fitHeight="155.0" fitWidth="170.0" layoutX="139.0" layoutY="150.0" pickOnBounds="true" AnchorPane.bottomAnchor="149.0" AnchorPane.leftAnchor="139.0">
+         <image>
+            <Image url="@/images/users.PNG" />
+         </image></ImageView>
+      <JFXButton alignment="CENTER" layoutX="127.0" layoutY="326.0" onAction="#chooseImgFile" prefHeight="36.0" prefWidth="194.0" style="-fx-background-color: #81f48a;" text="Choose announcement cover" textFill="#2c2c2c" AnchorPane.bottomAnchor="92.0" AnchorPane.leftAnchor="127.0">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <TextArea fx:id="announceTA" layoutX="375.0" layoutY="150.0" prefHeight="208.0" prefWidth="400.0" promptText="About announcement .." AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="150.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextArea>
+      <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="808.0" layoutY="254.0" onAction="#broadcastAnnouncement" prefHeight="36.0" prefWidth="47.0" style="-fx-background-color: #81f48a;" text="Broadcast" textFill="#2c2c2c" AnchorPane.bottomAnchor="164.0" AnchorPane.leftAnchor="808.0" AnchorPane.rightAnchor="47.0">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="SEND" size="20" />
+         </graphic>
+      </JFXButton>
+      <Separator layoutX="43.0" layoutY="109.0" prefWidth="200.0" />
+      <Label fx:id="errorMsg" layoutX="388.0" layoutY="397.0" text="* please set a valid data !" textFill="RED" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

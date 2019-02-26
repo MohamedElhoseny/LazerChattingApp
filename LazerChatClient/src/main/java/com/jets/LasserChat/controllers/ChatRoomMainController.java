@@ -139,14 +139,14 @@ public class ChatRoomMainController {
     }
 
     public void unRegister(String status) {
-        if (!isServerStopped) {
+        if (!isServerStopped)
             // if server is running will remove user from server and friends
             chatServerService.unregister(user);
-        } else {
+         else
             // if server is not running will remove user from friends
             chatClientService.unregister(user);
-        }
-        saveUserInformation(status);
+
+        saveUserInformation(status);  //save to file
     }
 
     private void saveUserInformation(String status) {
@@ -260,6 +260,14 @@ public class ChatRoomMainController {
             contactServices.deleteFriendRequest(senderUser, loginUser);
         } catch (RemoteException e) {
             e.printStackTrace();
+        }
+    }
+
+    public List<User> getAllUserFriendList(String phone) {
+        try {
+            return contactServices.getAllUserFriendList(phone);
+        } catch (RemoteException e) {
+            return null;
         }
     }
 }

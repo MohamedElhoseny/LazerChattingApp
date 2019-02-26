@@ -17,6 +17,7 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
 import javafx.util.Callback;
+import org.controlsfx.control.Notifications;
 
 
 import java.io.File;
@@ -103,10 +104,13 @@ public class ServerAnnouncementViewController implements Initializable
     public void recieveAnnoncement(Annoncement annoncement) {
         announcements.add(annoncement);
 
-        File audio=new File("E:\\FCIH\\ITI\\JavaSE\\Project\\LazerChattingApp\\LazerChatClient\\src\\main\\resources\\sounds\\slow-spring-board.mp3");
+        File audio=new File("src/main/resources/sounds/slow-spring-board.mp3");
         AudioClip audioClip= null;
         try {
             audioClip = new AudioClip(audio.toURL().toExternalForm());
+            Platform.runLater(()->{
+                Notifications.create().title("Server announcement !").text(annoncement.getAnnoncementText()).showInformation();
+            });
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

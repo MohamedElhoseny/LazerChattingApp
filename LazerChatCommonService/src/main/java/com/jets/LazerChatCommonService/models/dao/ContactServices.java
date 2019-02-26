@@ -5,6 +5,7 @@ import com.jets.LazerChatCommonService.models.entity.User;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 public interface ContactServices extends Remote {
     /* Server side */
@@ -27,4 +28,10 @@ public interface ContactServices extends Remote {
 
     /* Server side */
     void AddContactToGroup(User Contact, GroupCategory groupType) throws RemoteException;
+
+    /* Server side */
+    ArrayList<User> getFriendRequests(User user) throws RemoteException;
+
+    /* Server side */
+    public void deleteFriendRequest(User fromuser, User touser) throws RemoteException;
 }

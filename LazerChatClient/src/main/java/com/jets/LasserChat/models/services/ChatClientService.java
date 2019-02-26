@@ -100,4 +100,14 @@ public class ChatClientService
             return newSession;
         }
     }
+
+    public void notifyStatus(User user) {
+        clientList.entrySet().forEach(client -> {
+            try {
+                client.getValue().notifyStatus(user);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        });
+    }
 }

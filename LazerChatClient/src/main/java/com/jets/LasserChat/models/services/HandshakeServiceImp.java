@@ -35,6 +35,7 @@ public class HandshakeServiceImp extends UnicastRemoteObject implements Handshak
     @Override
     public void receiveMessage(Message message) throws RemoteException {
         chatRoomMainController.receiveMessage(message);
+        chatRoomMainController.notifyMessage(message.getUser());
     }
 
     @Override
@@ -56,5 +57,10 @@ public class HandshakeServiceImp extends UnicastRemoteObject implements Handshak
     @Override
     public void notifyFriendRequest(User user) throws RemoteException {
         chatRoomMainController.notifyFriendRequest(user);
+    }
+
+    @Override
+    public void notifyStatus(User user) throws RemoteException {
+        chatRoomMainController.notifyStatusRecieve(user);
     }
 }

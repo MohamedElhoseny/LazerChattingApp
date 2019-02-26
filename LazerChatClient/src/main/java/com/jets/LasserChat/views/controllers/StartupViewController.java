@@ -102,7 +102,7 @@ public class StartupViewController implements Initializable
      * @param title string of feature
      * @return pane node to set as a pagination graphic node
      */
-    private StackPane getFeaturePage(String featureDetails, String title)
+    public static StackPane getFeaturePage(String featureDetails, String title)
     {
         StackPane pagePane = new StackPane();
         Reflection reflection;

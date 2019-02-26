@@ -6,6 +6,7 @@ import com.jets.LazerChatCommonService.models.entity.User;
 import com.jfoenix.controls.JFXListView;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -37,7 +38,8 @@ public class FriendChatViewController implements Initializable
 
     }
 
-    public FriendChatViewController(ChatRoomViewController chatRoomViewController) {
+    public FriendChatViewController(ChatRoomViewController chatRoomViewController)
+    {
         this.chatRoomViewController = chatRoomViewController;
         this.currentUser = new User();
     }
@@ -97,7 +99,6 @@ public class FriendChatViewController implements Initializable
                 };
             }
         });
-
 
         //Get user friend list to display it
         friendList = chatRoomViewController.getUserFriendList();

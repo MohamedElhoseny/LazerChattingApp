@@ -11,15 +11,15 @@ import javafx.scene.text.Font;
 
 import java.io.ByteArrayInputStream;
 
-public class FriendItemPane extends AnchorPane {
+public class FriendItemPane extends AnchorPane
+{
     final Circle profileImg;
     final Label label;
     final Circle circle;
     final Label state;
     final Label label1;
 
-    public FriendItemPane(User user)
-    {
+    public FriendItemPane(User user) {
         profileImg = new Circle();
         label = new Label();
         circle = new Circle();
@@ -74,6 +74,10 @@ public class FriendItemPane extends AnchorPane {
         setCursor(Cursor.HAND);
 
         /* Customizing pane*/
+        if (user.getStatus() != null)
+            setUserState(user.getStatus());
+        else
+            setUserState(1);
         getChildren().add(profileImg);
         getChildren().add(label);
         getChildren().add(circle);
@@ -82,19 +86,23 @@ public class FriendItemPane extends AnchorPane {
 
     }
 
-    public void setUserState(int state)
-    {
-        switch (state){
+    public void setUserState(int state) {
+        switch (state) {
             case 1:
                 this.state.setText("available");
+                circle.setFill(javafx.scene.paint.Color.valueOf("#8ae44f"));
                 break;
             case 2:
                 this.state.setText("busy");
+                circle.setFill(javafx.scene.paint.Color.valueOf("#da8b31"));
                 break;
             case 3:
                 this.state.setText("away");
+                circle.setFill(javafx.scene.paint.Color.valueOf("#e46241"));
                 break;
             case 4:
+                this.state.setText("offline");
+                circle.setFill(javafx.scene.paint.Color.valueOf("#a4a4a4"));
                 break;
         }
     }

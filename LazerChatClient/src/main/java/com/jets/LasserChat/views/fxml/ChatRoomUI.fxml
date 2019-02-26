@@ -10,6 +10,7 @@
 <?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
@@ -17,11 +18,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefWidth="1063.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefWidth="1063.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane layoutX="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="1036.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -39,7 +41,7 @@
                               </Label>
                               <Circle fx:id="loginUserStatus_Circle" fill="#1fff4e" layoutX="73.0" layoutY="53.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="47.0" />
 
-                              <JFXComboBox id="status" fx:id="loginUserStatus_CB" focusColor="#4d4d4d" layoutX="149.0" layoutY="41.0" onAction="#changeUserStatus" prefHeight="25.0" prefWidth="84.0" promptText="Available" stylesheets="@/css/chatStyle.css" AnchorPane.bottomAnchor="1.0">
+                              <JFXComboBox id="status" fx:id="loginUserStatus_CB" focusColor="#4d4d4d" layoutX="149.0" layoutY="41.0" onAction="#changeUserStatus" prefHeight="25.0" prefWidth="99.0" promptText="Available" stylesheets="@/css/chatStyle.css" AnchorPane.bottomAnchor="1.0">
                                  
                               </JFXComboBox>
                               <Button contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="256.0" layoutY="20.0" mnemonicParsing="false" onAction="#updateProfile" scaleShape="false" style="-fx-background-color: transparent;" text="Button">
@@ -87,7 +89,7 @@
                <left>
                   <BorderPane prefHeight="465.0" prefWidth="297.0" BorderPane.alignment="CENTER">
                      <center>
-                        <ScrollPane fx:id="switchableScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pickOnBounds="false" prefHeight="328.0" prefWidth="248.0" style="-fx-background-color: #40444A;">
+                        <ScrollPane fx:id="switchableScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pickOnBounds="false" prefHeight="328.0" prefWidth="248.0" style="-fx-background-color: #40444A;" vbarPolicy="NEVER">
 
                         </ScrollPane>
                      </center>
@@ -203,250 +205,256 @@
             </BorderPane>
          </left>
          <center>
-            <AnchorPane prefHeight="608.0" prefWidth="768.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+            <StackPane prefHeight="567.0" prefWidth="764.0" style="-fx-background-color: #40444A;" BorderPane.alignment="CENTER">
                <children>
-                  <BorderPane layoutX="45.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="463.0" style="-fx-background-color: silver;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="225.0" AnchorPane.topAnchor="0.0">
-                     <top>
-                        <AnchorPane style="-fx-background-color: #F2F8F8;" BorderPane.alignment="CENTER">
-                           <children>
-                              <HBox alignment="CENTER_RIGHT" layoutX="345.0" prefHeight="67.0" prefWidth="167.0" spacing="10.0" style="-fx-background-color: #F2F8F8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Pagination fx:id="featurePagination" layoutX="64.0" layoutY="149.0" maxPageIndicatorCount="3" prefHeight="388.0" prefWidth="472.0" />
+
+                  <AnchorPane fx:id="chatsessionAllPane" prefHeight="608.0" prefWidth="768.0" style="-fx-background-color: gray;" visible="false">
+                     <children>
+                        <BorderPane layoutX="45.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="463.0" style="-fx-background-color: silver;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="225.0" AnchorPane.topAnchor="0.0">
+                           <top>
+                              <AnchorPane style="-fx-background-color: #F2F8F8;" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Button fx:id="loadFile" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#chooseFile" style="-fx-background-color: transparent;" text="Button">
-                                       <graphic>
-                                          <FontAwesomeIconView fill="#9e9797" glyphName="FOLDER" size="1.5em" />
-                                       </graphic>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Button>
-                                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#startVideoCall" style="-fx-background-color: transparent;" text="Button">
-                                       <graphic>
-                                          <FontAwesomeIconView fill="#9e9797" glyphName="VIDEO_CAMERA" size="1.5em" />
-                                       </graphic>
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Button>
-                                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#startVoiceCall" style="-fx-background-color: transparent;" text="Button">
-                                       <graphic>
-                                          <FontAwesomeIconView fill="#9e9797" glyphName="VOLUME_CONTROL_PHONE" size="1.5em" />
-                                       </graphic>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Button>
+                                    <HBox alignment="CENTER_RIGHT" layoutX="345.0" prefHeight="67.0" prefWidth="167.0" spacing="10.0" style="-fx-background-color: #F2F8F8;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button fx:id="loadFile" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#chooseFile" style="-fx-background-color: transparent;" text="Button">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#9e9797" glyphName="FOLDER" size="1.5em" />
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#startVideoCall" style="-fx-background-color: transparent;" text="Button">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#9e9797" glyphName="VIDEO_CAMERA" size="1.5em" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#startVoiceCall" style="-fx-background-color: transparent;" text="Button">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#9e9797" glyphName="VOLUME_CONTROL_PHONE" size="1.5em" />
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="-8.0" prefHeight="67.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label fx:id="friendNameL" text="Chris Marina">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="21.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Circle fill="#1fff4e" radius="4.0" stroke="BLACK" strokeType="INSIDE">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Circle>
+                                          <Label prefHeight="24.0" prefWidth="49.0" text="Online" textFill="#7c6f6f">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </top>
+                           <center>
+                              <ScrollPane fx:id="chatScrollbar" fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+                                 <content>
+                                    <VBox fx:id="ChatSessionPane" pickOnBounds="false" prefHeight="453.0" prefWidth="538.0" style="-fx-background-color: #F2F8F8;" styleClass="ChatSessionPane">
+                                       <padding>
+                                          <Insets left="20.0" top="20.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </center>
+                           <bottom>
+                              <VBox alignment="CENTER" fillWidth="false" spacing="10.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="539.0" spacing="12.0">
+                                       <children>
+                                          <Label text="Customize style">
+                                             <font>
+                                                <Font name="Arial" size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <ToggleButton fx:id="bold_Btn" mnemonicParsing="false" text="B">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="italic_Btn" layoutX="105.0" layoutY="14.0" mnemonicParsing="false" text="I">
+                                             <font>
+                                                <Font name="System Bold Italic" size="12.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="underline_Btn" layoutX="141.0" layoutY="14.0" mnemonicParsing="false" text="U" underline="true">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ComboBox fx:id="size_CB" prefHeight="25.0" prefWidth="64.0" promptText="12" style="-fx-background-color: White; -fx-border-color: gray;" />
+                                          <ComboBox fx:id="family_CB" layoutX="205.0" layoutY="13.0" prefHeight="27.0" prefWidth="84.0" promptText="Arial" style="-fx-background-color: White; -fx-border-color: gray;" />
+                                          <ColorPicker fx:id="colorPicker" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+                                          <JFXButton fx:id="chatBotBtn" contentDisplay="GRAPHIC_ONLY" onAction="#openCloseChatBot" style="-fx-border-color: silver;" text="Button">
+                                             <graphic>
+                                                <FontAwesomeIconView glyphName="REDDIT_ALIEN" size="14.0" />
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="15.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="8.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefWidth="539.0" spacing="12.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#9e9797" glyphName="SMILE_ALT" size="1.7em" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button fx:id="customizeMessage_Btn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#9e9797" glyphName="PENCIL" size="1.5em" />
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <TextField fx:id="messageTF" alignment="CENTER" onKeyPressed="#sendMessage" prefHeight="41.0" prefWidth="335.0" promptText="Type something to send ..." style="-fx-background-color: transparent; -fx-border-color: gray; -fx-border-radius: 20;">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </TextField>
+                                          <JFXButton fx:id="like_Btn" contentDisplay="GRAPHIC_ONLY" prefHeight="38.0" prefWidth="49.0">
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#55ae4b" glyphName="THUMBS_UP" size="3em" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                       </children>
+                                    </HBox>
                                  </children>
                                  <padding>
-                                    <Insets right="20.0" />
-                                 </padding>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="-8.0" prefHeight="67.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Label fx:id="friendNameL" text="Chris Marina">
-                                       <font>
-                                          <Font name="Berlin Sans FB" size="21.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Circle fill="#1fff4e" radius="4.0" stroke="BLACK" strokeType="INSIDE">
-                                       <HBox.margin>
-                                          <Insets left="10.0" />
-                                       </HBox.margin>
-                                    </Circle>
-                                    <Label prefHeight="24.0" prefWidth="49.0" text="Online" textFill="#7c6f6f">
-                                       <font>
-                                          <Font name="Arial" size="12.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="5.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </AnchorPane>
-                     </top>
-                     <center>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
-                           <content>
-                              <VBox fx:id="ChatSessionPane" pickOnBounds="false" prefHeight="453.0" prefWidth="538.0" style="-fx-background-color: #F2F8F8;">
-                                 <padding>
-                                    <Insets left="20.0" top="20.0" />
+                                    <Insets bottom="10.0" top="5.0" />
                                  </padding>
                               </VBox>
-                           </content>
-                        </ScrollPane>
-                     </center>
-                     <bottom>
-                        <VBox alignment="CENTER" fillWidth="false" spacing="10.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+                           </bottom>
+                        </BorderPane>
+                        <VBox alignment="TOP_CENTER" layoutX="511.0" layoutY="6.0" prefHeight="598.0" prefWidth="226.0" spacing="14.0" style="-fx-background-color: WHITE; -fx-border-color: silver;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="539.0" spacing="12.0">
-                                 <children>
-                                    <Label text="Customize style">
-                                       <font>
-                                          <Font name="Arial" size="11.0" />
-                                       </font>
-                                    </Label>
-                                    <ToggleButton fx:id="bold_Btn" mnemonicParsing="false" text="B">
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="italic_Btn" layoutX="105.0" layoutY="14.0" mnemonicParsing="false" text="I">
-                                       <font>
-                                          <Font name="System Bold Italic" size="12.0" />
-                                       </font>
-                                    </ToggleButton>
-                                    <ToggleButton fx:id="underline_Btn" layoutX="141.0" layoutY="14.0" mnemonicParsing="false" text="U" underline="true">
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </ToggleButton>
-                                    <ComboBox fx:id="size_CB" prefHeight="25.0" prefWidth="64.0" promptText="12" style="-fx-background-color: White; -fx-border-color: gray;" />
-                                    <ComboBox fx:id="family_CB" layoutX="205.0" layoutY="13.0" prefHeight="27.0" prefWidth="84.0" promptText="Arial" style="-fx-background-color: White; -fx-border-color: gray;" />
-                                    <ColorPicker fx:id="colorPicker" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: white; -fx-border-color: gray;" />
-                                    <JFXButton fx:id="chatBotBtn" contentDisplay="GRAPHIC_ONLY" onAction="#openCloseChatBot" style="-fx-border-color: silver;" text="Button">
-                                       <graphic>
-                                          <FontAwesomeIconView glyphName="REDDIT_ALIEN" size="14.0" />
-                                       </graphic>
-                                    </JFXButton>
-                                 </children>
+                              <Circle fx:id="profileImg_R" fill="WHITE" radius="77.0" stroke="#d0d0d0" strokeType="INSIDE">
                                  <VBox.margin>
-                                    <Insets left="15.0" />
+                                    <Insets top="50.0" />
                                  </VBox.margin>
-                                 <padding>
-                                    <Insets top="8.0" />
-                                 </padding>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefWidth="539.0" spacing="12.0" VBox.vgrow="ALWAYS">
+                              </Circle>
+                              <HBox alignment="CENTER" prefHeight="35.0" prefWidth="190.0" spacing="14.0">
                                  <children>
-                                    <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button" HBox.hgrow="ALWAYS">
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#addFriendToFavourite" prefHeight="20.0" prefWidth="31.0" style="-fx-border-color: silver;">
                                        <graphic>
-                                          <FontAwesomeIconView fill="#9e9797" glyphName="SMILE_ALT" size="1.7em" />
+                                          <FontAwesomeIconView fill="#fff822" glyphName="STAR" size="2em" wrappingWidth="22.285715103149414" />
                                        </graphic>
-                                       <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Button>
-                                    <Button fx:id="customizeMessage_Btn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button">
+                                    </ToggleButton>
+                                    <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#blockUser" style="-fx-border-color: silver;">
                                        <graphic>
-                                          <FontAwesomeIconView fill="#9e9797" glyphName="PENCIL" size="1.5em" />
+                                          <FontAwesomeIconView fill="RED" glyphName="BAN" size="2em" />
                                        </graphic>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Button>
-                                    <TextField fx:id="messageTF" alignment="CENTER" onKeyPressed="#sendMessage" prefHeight="41.0" prefWidth="335.0" promptText="Type something to send ..." style="-fx-background-color: transparent; -fx-border-color: gray; -fx-border-radius: 20;">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </TextField>
-                                    <JFXButton fx:id="like_Btn" contentDisplay="GRAPHIC_ONLY" prefHeight="38.0" prefWidth="49.0">
-                                       <graphic>
-                                          <FontAwesomeIconView fill="#55ae4b" glyphName="THUMBS_UP" size="3em" />
-                                       </graphic>
-                                       <HBox.margin>
-                                          <Insets left="10.0" />
-                                       </HBox.margin>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </JFXButton>
+                                    </ToggleButton>
                                  </children>
                               </HBox>
+                              <Label fx:id="chattedUserName_R" text="Chris Marina">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="chattedUserBio_R" text="UX/UI Designer" textFill="#655d5d" translateY="-12.0">
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="chattedUserLoc_R" graphicTextGap="15.0" prefHeight="21.0" prefWidth="187.0" text="Cairo, Egypt" textFill="#7f7a7a">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#616060" glyphName="MAP_MARKER" size="18.0" />
+                                 </graphic>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="chattedUserEmail_R" alignment="CENTER" graphicTextGap="15.0" layoutX="77.0" layoutY="209.0" text="Chris_marina99@gmail.com" textFill="#7f7a7a">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#616060" glyphName="ENVELOPE" size="16.0" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Baskerville Old Face" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="chattedUserBirthdate_R" graphicTextGap="15.0" layoutX="83.0" layoutY="209.0" prefHeight="21.0" prefWidth="184.0" text="April 26, 2016" textFill="#7f7a7a">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#616060" glyphName="PHONE" size="18.0" />
+                                 </graphic>
+                              </Label>
+                              <Label fx:id="chattedUserPhone_R" graphicTextGap="15.0" layoutX="77.0" layoutY="250.0" prefHeight="21.0" prefWidth="180.0" text="01097706982" textFill="#7f7a7a">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#616060" glyphName="MOBILE" size="22.0" />
+                                 </graphic>
+                              </Label>
+                              <JFXButton onAction="#backUpChat" style="-fx-background-color: #9dff92;" text="Backup chat">
+                                 <font>
+                                    <Font name="Century" size="13.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXButton>
                            </children>
-                           <padding>
-                              <Insets bottom="10.0" top="5.0" />
-                           </padding>
                         </VBox>
-                     </bottom>
-                  </BorderPane>
-                  <VBox alignment="TOP_CENTER" layoutX="511.0" layoutY="6.0" prefHeight="598.0" prefWidth="226.0" spacing="14.0" style="-fx-background-color: WHITE; -fx-border-color: silver;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Circle fx:id="profileImg_R" fill="WHITE" radius="77.0" stroke="#d0d0d0" strokeType="INSIDE">
-                           <VBox.margin>
-                              <Insets top="50.0" />
-                           </VBox.margin>
-                        </Circle>
-                        <HBox alignment="CENTER" prefHeight="35.0" prefWidth="190.0" spacing="14.0">
-                           <children>
-                              <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#addFriendToFavourite" prefHeight="20.0" prefWidth="31.0" style="-fx-border-color: silver;">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="#fff822" glyphName="STAR" size="2em" wrappingWidth="22.285715103149414" />
-                                 </graphic>
-                              </ToggleButton>
-                              <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#blockUser" style="-fx-border-color: silver;">
-                                 <graphic>
-                                    <FontAwesomeIconView fill="RED" glyphName="BAN" size="2em" />
-                                 </graphic>
-                              </ToggleButton>
-                           </children>
-                        </HBox>
-                        <Label fx:id="chattedUserName_R" text="Chris Marina">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="chattedUserBio_R" text="UX/UI Designer" textFill="#655d5d" translateY="-12.0">
-                           <font>
-                              <Font name="System Italic" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="chattedUserLoc_R" graphicTextGap="15.0" prefHeight="21.0" prefWidth="187.0" text="Cairo, Egypt" textFill="#7f7a7a">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                           <graphic>
-                              <FontAwesomeIconView fill="#616060" glyphName="MAP_MARKER" size="18.0" />
-                           </graphic>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </Label>
-                        <Label fx:id="chattedUserEmail_R" alignment="CENTER" graphicTextGap="15.0" layoutX="77.0" layoutY="209.0" text="Chris_marina99@gmail.com" textFill="#7f7a7a">
-                           <graphic>
-                              <FontAwesomeIconView fill="#616060" glyphName="ENVELOPE" size="16.0" />
-                           </graphic>
-                           <font>
-                              <Font name="Baskerville Old Face" size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="chattedUserBirthdate_R" graphicTextGap="15.0" layoutX="83.0" layoutY="209.0" prefHeight="21.0" prefWidth="184.0" text="April 26, 2016" textFill="#7f7a7a">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                           <graphic>
-                              <FontAwesomeIconView fill="#616060" glyphName="PHONE" size="18.0" />
-                           </graphic>
-                        </Label>
-                        <Label fx:id="chattedUserPhone_R" graphicTextGap="15.0" layoutX="77.0" layoutY="250.0" prefHeight="21.0" prefWidth="180.0" text="01097706982" textFill="#7f7a7a">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                           <graphic>
-                              <FontAwesomeIconView fill="#616060" glyphName="MOBILE" size="22.0" />
-                           </graphic>
-                        </Label>
-                        <JFXButton onAction="#backUpChat" style="-fx-background-color: #9dff92;" text="Backup chat">
-                           <font>
-                              <Font name="Century" size="13.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </JFXButton>
                      </children>
-                  </VBox>
+                  </AnchorPane>
                </children>
-            </AnchorPane>
+            </StackPane>
          </center>
       </BorderPane>
       <AnchorPane fx:id="addContactPane" layoutX="293.0" layoutY="44.0" minWidth="100.0" prefHeight="371.0" prefWidth="249.0" style="-fx-background-color: #40444A; -fx-background-radius: 0 20 20 0; -fx-border-radius: 20;" visible="false" />

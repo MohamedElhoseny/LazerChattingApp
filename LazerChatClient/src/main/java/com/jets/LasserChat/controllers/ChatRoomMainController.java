@@ -17,6 +17,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChatRoomMainController {
@@ -38,6 +39,8 @@ public class ChatRoomMainController {
 
     private NotifierServerServices notifierServerServices;
 
+    private NotifierServices notifierServices;
+
     //To communicate with view controller
     private ChatRoomViewController chatRoomViewController;
     private boolean isServerStopped = false;
@@ -56,6 +59,7 @@ public class ChatRoomMainController {
             chatRoomViewController = viewController;
             //Calling server to register my handshake with all my online contacts
             chatServerService.register(user, handshakeServices);
+            notifierServices = new NotifierClientServices();
 
         } catch (RemoteException e) {
             e.printStackTrace();
@@ -214,5 +218,48 @@ public class ChatRoomMainController {
 
     public void recieveAnnoncement(Annoncement annoncement) {
         chatRoomViewController.recieveAnnoncement(annoncement);
+    }
+
+    /**
+     * Responsible for displaying bagdet icon number and message sound
+     *
+     * @param fromUser the user that sent message
+     */
+    public void notifyMessage(User fromUser) {
+        try {
+            notifierServices.notifyMessage(user);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void notifyStatus(User fromUserStatus) {
+        chatClientService.notifyStatus(user);
+    }
+
+
+    public void notifyStatusRecieve(User user) {
+        try {
+            notifierServices.notifyStatus(user);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<User> getUserFriendRequests(User loginUser) {
+        try {
+            return contactServices.getFriendRequests(loginUser);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void deleteFriendRequest(User loginUser, User senderUser) {
+        try {
+            contactServices.deleteFriendRequest(senderUser, loginUser);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 }

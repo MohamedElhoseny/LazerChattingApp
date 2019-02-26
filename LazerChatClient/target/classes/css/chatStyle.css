@@ -59,26 +59,28 @@
     -jfx-unfocus-color: #609699;
 }
 
-/***    Text Field   ***/
-/**.jfx-text-field{
-    -jfx-focus-color: #9dff92;
-    -jfx-unfocus-color: white;
-    -fx-padding: 0.333333em 0 0.333333em 0;
-}
-
-.jfx-text-field > .input-line {
-    -fx-background-color: -jfx-unfocus-color;
-    -fx-pref-height: 1px;
-    -fx-translate-y: 1px;
-}
-
-.jfx-text-field > .input-focused-line {
-    -fx-background-color: -jfx-focus-color;
-    -fx-pref-height: 2px;
-}
-
-.jfx-text-field, .jfx-text-field:focused, .jfx-password-field {
-    -fx-background-color: TRANSPARENT, TRANSPARENT, TRANSPARENT;
+.jfx-combo-box {
+    -jfx-focus-color: #4d4d4d;
+    -jfx-unfocus-color: #4d4d4d;
     -fx-prompt-text-fill: white;
+    -fx-text-fill: green;
+}
+.combo-box > .list-cell
+{
     -fx-text-fill: white;
-}**/
+}
+.list-view .scroll-bar:vertical {
+    -fx-scale-x: 0;
+}
+.list-view .scroll-bar:horizontal {
+    -fx-scale-x: 0;
+}
+.ChatSessionPane .scroll-bar:vertical{
+    -fx-scale-x: 0;
+}
+.ChatSessionPane .scroll-bar:horizontal{
+    -fx-scale-x: 0;
+}
+.chatScrollbar .scroll-bar:vertical{
+    -fx-scale-x: 0;
+}

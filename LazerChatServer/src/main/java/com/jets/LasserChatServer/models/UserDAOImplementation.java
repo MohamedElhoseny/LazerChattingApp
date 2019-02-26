@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class UserDAOImplementation implements UserDAO {
+public class UserDAOImplementation implements UserDAO
+{
     private static UserDAOImplementation instance;
     private String dbName = "projdb";
     private String dbURL = "jdbc:mysql://localhost:3306/" + dbName;
@@ -132,6 +133,36 @@ public class UserDAOImplementation implements UserDAO {
         try {
             statement = connection.prepareStatement(query);
             resultList = statement.executeQuery();
+            if (resultList != null)
+            {
+                resultList.first();
+                user = new User();
+
+                user.setId(resultList.getInt(1));
+                user.setPhone(resultList.getString(2));
+                user.setPassword(resultList.getString(3));
+                user.setName(resultList.getString(4));
+                user.setEmail(resultList.getString(5));
+                Blob blob = resultList.getBlob(6);
+                user.setPicture(blob.getBytes(1, (int) blob.length()));
+                user.setGender(resultList.getString(7));
+                user.setCountry(resultList.getString(8));
+                user.setDate(resultList.getString(9));
+                user.setBio(resultList.getString(10));
+                user.setStatus(resultList.getInt(11));
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error while get user : " + ex.getMessage());
+        }
+        return user;
+    }
+
+    public User getUser(int id) {
+        User user = null;
+        query = "select * from user where id=" + id;
+        try {
+            statement = connection.prepareStatement(query);
+            resultList = statement.executeQuery();
             if (resultList != null) {
                 resultList.first();
                 user = new User();
@@ -157,7 +188,6 @@ public class UserDAOImplementation implements UserDAO {
 
 
     }
-
 
     @Override
     public List<User> getUserFriends(String phone) {
@@ -323,6 +353,33 @@ public class UserDAOImplementation implements UserDAO {
             e.printStackTrace();
         }
         return ispending;
+    }
+
+    @Override
+    public ArrayList<User> getFriendRequests(User user){
+        ArrayList<User> friends=new ArrayList<>();
+        User myUser=getUser(user.getPhone());
+        String query="select fromUser from friendrequest where toUser= ?";
+        try {
+            statement=connection.prepareStatement(query);
+            System.out.println("Id "+myUser.getId());
+            statement.setInt(1, myUser.getId());
+            ResultSet resultList2=statement.executeQuery();
+            while (resultList2.next()){
+                int result=resultList2.getInt(1);
+                User friend=getUser(result);
+                friends.add(friend);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return friends;
+    }
+
+    @Override
+    public void deleteFriendRequest(User fromuser, User touser){
+        deletFriendRequest(fromuser,touser);
     }
 
     private void deletFriendRequest(User fromuser, User touser) {

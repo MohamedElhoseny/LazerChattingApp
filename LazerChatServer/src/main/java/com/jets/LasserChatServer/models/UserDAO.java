@@ -2,6 +2,7 @@ package com.jets.LasserChatServer.models;
 
 import com.jets.LazerChatCommonService.models.entity.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,5 +30,7 @@ public interface UserDAO {
 
     public boolean isPending(User fromUser, User toUser);
 
+    public ArrayList<User> getFriendRequests(User user);
 
+    public void deleteFriendRequest(User fromuser, User touser);
 }

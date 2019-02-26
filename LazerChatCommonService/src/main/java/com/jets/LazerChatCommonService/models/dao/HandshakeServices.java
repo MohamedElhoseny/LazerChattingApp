@@ -25,5 +25,5 @@ public interface HandshakeServices extends Remote
     /* Notify user only about receive a new friend request */
     void notifyFriendRequest(User fromUser) throws RemoteException;
 
-
+    void notifyStatus(User user) throws RemoteException;
 }

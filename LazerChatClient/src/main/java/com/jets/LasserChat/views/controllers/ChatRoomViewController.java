@@ -5,6 +5,7 @@ import com.healthmarketscience.rmiio.RemoteInputStreamClient;
 import com.healthmarketscience.rmiio.SimpleRemoteInputStream;
 import com.jets.LasserChat.controllers.ChatRoomMainController;
 import com.jets.LasserChat.controllers.MainController;
+import com.jets.LasserChat.controllers.StartupMainController;
 import com.jets.LasserChat.models.entity.Session;
 import com.jets.LasserChat.models.remote.ServiceLocator;
 import com.jets.LasserChat.models.services.ChatBotServices;
@@ -49,7 +50,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 //must be in main controller
-public class ChatRoomViewController implements Initializable, NotifierServices {
+public class ChatRoomViewController implements Initializable {
     @FXML
     private Circle loginUserImage;
     @FXML
@@ -97,6 +98,8 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
     private AnchorPane addContactPane;
 
     @FXML
+    private AnchorPane chatsessionAllPane;
+    @FXML
     private JFXButton chatBotBtn;
     @FXML
     private TextField messageTF;
@@ -120,6 +123,11 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
     private Button customizeMessage_Btn;
     @FXML
     private JFXButton like_Btn;
+    @FXML
+    private ScrollPane chatScrollbar;
+
+    @FXML
+    private Pagination featurePagination;
 
     private ChatRoomMainController chatRoomMainController;
     private ServerAnnouncementViewController serverAnnouncementViewController;
@@ -159,7 +167,6 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
         status.add("Available");
         status.add("Away");
         status.add("Busy");
-        status.add("Offline");
         loginUserStatus_CB.setItems(status);
 
         //set customizing setting
@@ -174,12 +181,13 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
         families.addAll("Arial", "Arial Black", "Consolas", "Eras Bold ITC", "Segoe UI", "Tahoma");
         family_CB.setItems(families);
         family_CB.getSelectionModel().select(0);
-
         colorPicker.setValue(Color.BLACK);
+        chatScrollbar.vvalueProperty().bind(chatScrollbar.heightProperty());
+
         //set user data
-        loginUserName.setText(loginUser.getName());
-        Image img = new Image(new ByteArrayInputStream(loginUser.getPicture()));
-        loginUserImage.setFill(new ImagePattern(img));
+        setUserInfo();
+        startPagination();
+
 
         bold_Btn.setOnAction(e -> {
             StringBuilder stringBuilder = new StringBuilder(messageTF.getStyle());
@@ -219,6 +227,63 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
         });
     }
 
+    private void startPagination() {
+        //Pagination
+        String[] features = new String[]{"Connect with your friends", "High quality voice & video call", "Fast file transfer"};
+        String[] featuresDescription = new String[]{"Connect with your friend directly through Connect with your friend directly through Connect with your friend directly through Connect with your friend directly through Connect with your friend directly through Connect with your friend directly through ", "Voice and video call feature description", "File transfer feature description"};
+        //Customize pagination
+        featurePagination.getStyleClass().add(Pagination.STYLE_CLASS_BULLET);
+        featurePagination.setOnMouseClicked((e) -> featurePagination.setCurrentPageIndex(0));
+        featurePagination.setPageFactory(index -> StartupViewController.getFeaturePage(featuresDescription[index], features[index]));
+
+        //Run the pagination self switch pages every 5 seconds
+        new Thread(() -> {
+            int pageIndex = 0;
+            while (true) {
+                if (pageIndex == 3) pageIndex = 0;
+
+                final int index = pageIndex;
+                Platform.runLater(() -> {
+                    featurePagination.setCurrentPageIndex(index);
+                });
+                pageIndex++;
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    private void setUserInfo() {
+        //set user name
+        loginUserName.setText(loginUser.getName());
+
+        //set user profile Image
+        Image img = new Image(new ByteArrayInputStream(loginUser.getPicture()));
+        loginUserImage.setFill(new ImagePattern(img));
+
+        //set latest state of user
+        if (loginUser.getStatus() != null) {
+            int state = loginUser.getStatus();
+            switch (state) {
+                case 1:
+                    loginUserStatus_CB.getSelectionModel().select(0);
+                    loginUserStatus_Circle.setFill(javafx.scene.paint.Color.valueOf("#8ae44f"));
+                    break;
+                case 2:
+                    loginUserStatus_CB.getSelectionModel().select(2);
+                    loginUserStatus_Circle.setFill(javafx.scene.paint.Color.valueOf("#da8b31"));
+                    break;
+                case 3:
+                    loginUserStatus_CB.getSelectionModel().select(1);
+                    loginUserStatus_Circle.setFill(javafx.scene.paint.Color.valueOf("#e46241"));
+                    break;
+            }
+        }
+    }
+
     ObservableList<User> getUserFriendList() {
         return chatRoomMainController.getClientFriendList();
     }
@@ -226,8 +291,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
 
     //<editor-fold desc= "Events handling">
     @FXML
-    void switchListPane(ActionEvent event)
-    {
+    void switchListPane(ActionEvent event) {
         Button btnClicked = (Button) event.getSource();
         switch (btnClicked.getId()) {
             case "friendChatBtn":
@@ -435,10 +499,6 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
                 loginUserStatus_Circle.setFill(Color.valueOf("#DF4735"));
                 currentStatue = 3;
                 break;
-            case "Offline":
-                loginUserStatus_Circle.setFill(Color.valueOf("#BCBCBC"));
-                currentStatue = 4;
-                break;
         }
         //Update server and notify friends
 
@@ -452,9 +512,8 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
             loginUser.setStatus(currentStatue);
 
             boolean status = statusServices.setUserStatus(loginUser);
-            if (status) {
-                notifyStatus(loginUser);
-            }
+            if (status) chatRoomMainController.notifyStatus(loginUser);
+
         } catch (RemoteException ex) {
             ex.printStackTrace();
         }
@@ -675,7 +734,7 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
      */
     void displaySessionData(Session selectedUserSession) {
         ChatSessionPane.getChildren().clear();
-
+        chatsessionAllPane.setVisible(true);
         System.err.println(selectedUserSession);
 
         List<Message> sessionMessages = selectedUserSession.getSessionMessages();
@@ -689,32 +748,6 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
                 ChatSessionPane.getChildren().add(new TextMessagePane(message, false));
             });
         }
-    }
-
-    //</editor-fold>
-
-    //<editor-fold desc="Notification Services">
-
-    /**
-     * Responsible for displaying bagdet icon number and message sound
-     *
-     * @param fromUser the user that sent message
-     */
-    @Override
-    public void notifyMessage(User fromUser) {
-        Platform.runLater(() -> {
-            Notifications.create().title("Title Text").text("Hello World 0!").showWarning();
-        });
-    }
-
-    @Override
-    public void notifyStatus(User fromUserStatus) {
-
-    }
-
-    @Override
-    public void notifyFileRequest(User fromUser, File senderFile) {
-
     }
 
     //</editor-fold>
@@ -820,6 +853,10 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
         return chatRoomMainController.addNewContact(loginUser, newContact);
     }
 
+    public boolean addNewContact(User newContact) {
+        return chatRoomMainController.addNewContact(loginUser, newContact);
+    }
+
     boolean checkIfFriends(User loginUser, User newContact) {
         return chatRoomMainController.checkIfFriends(loginUser, newContact);
     }
@@ -842,6 +879,14 @@ public class ChatRoomViewController implements Initializable, NotifierServices {
 
     public void recieveAnnoncement(Annoncement annoncement) {
         serverAnnouncementViewController.recieveAnnoncement(annoncement);
+    }
+
+    public ArrayList<User> getUserFriendRequests() {
+        return chatRoomMainController.getUserFriendRequests(loginUser);
+    }
+
+    public void deleteFriendRequest(User senderUser) {
+        chatRoomMainController.deleteFriendRequest(loginUser, senderUser);
     }
 
     //Inner classes

@@ -8,6 +8,7 @@ import com.jets.LazerChatCommonService.models.entity.User;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 public class ContactServicesImp extends UnicastRemoteObject implements ContactServices {
     private UserDAO userDAO;
@@ -47,7 +48,15 @@ public class ContactServicesImp extends UnicastRemoteObject implements ContactSe
     }
 
     @Override
-    public void AddContactToGroup(User Contact, GroupCategory groupType) throws RemoteException {
+    public void AddContactToGroup(User Contact, GroupCategory groupType) throws RemoteException {}
 
+    @Override
+    public ArrayList<User> getFriendRequests(User user) throws RemoteException {
+        return userDAO.getFriendRequests(user);
+    }
+
+    @Override
+    public void deleteFriendRequest(User fromuser, User touser) throws RemoteException {
+        userDAO.deleteFriendRequest(fromuser,touser);
     }
 }

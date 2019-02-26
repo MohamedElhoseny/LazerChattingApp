@@ -2,66 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de94f953-624b-4c59-a65b-125b1e267031" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/slow-spring-board.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LazerChatCommonService/src/main/java/com/jets/LazerChatCommonService/models/entity/Annoncement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FriendRequestItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LazerChat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LazerChat.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/controllers/ChatRoomMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/controllers/ChatRoomMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/ChatClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/ChatClientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/HandshakeServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/HandshakeServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/AddContactViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/AddContactViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierClientServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierClientServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/ChatRoomViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/ChatRoomViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/CreateChatViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/CreateChatViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/GroupChatViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/GroupChatViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/FriendChatViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/FriendChatViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/FriendRequestViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/FriendRequestViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/StartupViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/StartupViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/ChatRoomUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/ChatRoomUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/CreateGroupChatPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/CreateGroupChatPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/ServerAnnouncementPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/ServerAnnouncementPane.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/AnnouncementItemPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/AnnouncementItemPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FileMessagePane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FileMessagePane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/FriendRequestPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/FriendRequestPane.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FriendItemPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FriendItemPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/LazerChat-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/LazerChat-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/chatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/chatStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/controllers/ChatRoomMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/controllers/ChatRoomMainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/models/services/ChatClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/models/services/ChatClientService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/models/services/HandshakeServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/models/services/HandshakeServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/AddContactViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/AddContactViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/models/services/NotifierClientServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/models/services/NotifierClientServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/models/services/NotifierServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/models/services/NotifierServices.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController$MenuItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController$MenuItems.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/ChatRoomViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/CreateChatViewController$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/CreateChatViewController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/CreateChatViewController$FriendItemPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/CreateChatViewController$FriendItemPane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/CreateChatViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/CreateChatViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/GroupChatViewController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/GroupChatViewController$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/GroupChatViewController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/GroupChatViewController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/GroupChatViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/GroupChatViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/models/AnnouncementItemPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/models/AnnouncementItemPane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/models/FileMessagePane$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/models/FileMessagePane$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/models/FileMessagePane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/models/FileMessagePane.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/FriendChatViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/FriendRequestViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/FriendRequestViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/StartupViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/controllers/StartupViewController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/models/FriendItemPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jets/LasserChat/views/models/FriendItemPane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/css/chatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/chatStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userInformation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/userInformation.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LazerChatCommonService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatCommonService/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatCommonService/src/main/java/com/jets/LazerChatCommonService/models/dao/ContactServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatCommonService/src/main/java/com/jets/LazerChatCommonService/models/dao/ContactServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LazerChatCommonService/src/main/java/com/jets/LazerChatCommonService/models/dao/HandshakeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatCommonService/src/main/java/com/jets/LazerChatCommonService/models/dao/HandshakeServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatCommonService/src/main/java/com/jets/LazerChatCommonService/models/dao/RegisterServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatCommonService/src/main/java/com/jets/LazerChatCommonService/models/dao/RegisterServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatCommonService/target/LazerChatCommonService-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatCommonService/target/classes/com/jets/LazerChatCommonService/models/dao/ContactServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatCommonService/target/classes/com/jets/LazerChatCommonService/models/dao/ContactServices.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LazerChatCommonService/target/classes/com/jets/LazerChatCommonService/models/dao/HandshakeServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatCommonService/target/classes/com/jets/LazerChatCommonService/models/dao/HandshakeServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatCommonService/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatCommonService/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatCommonService/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatCommonService/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LazerChatServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/LazerChatServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/LazerChatServer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/controllers/ServerServicesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/controllers/ServerServicesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/RegisterServicesImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/RegisterServicesImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/LazerChatServer-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/target/LazerChatServer-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/controllers/ServerServicesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/controllers/ServerServicesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/RegisterServicesImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/RegisterServicesImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/ContactServicesImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/ContactServicesImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/UserDAOImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/src/main/java/com/jets/LasserChatServer/models/UserDAOImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/ContactServicesImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/ContactServicesImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserDAOImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LazerChatServer/target/classes/com/jets/LasserChatServer/models/UserDAOImplementation.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,7 +56,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -89,6 +74,8 @@
       <find>annoncement</find>
       <find>announcements</find>
       <find>serverAnnouncementViewController</find>
+      <find>stackpane</find>
+      <find>displa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,24 +92,30 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/controllers/StartupMainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/LoginViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/notifierServerServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierServices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/FriendRequestViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/AddContactPane.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierClientServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FileMessagePane.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/AddContactViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/CreateChatViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/GroupChatViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/ChatRoomUI.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FriendItemPane.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/HandshakeServiceImp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/controllers/ChatRoomMainController.java" />
-        <option value="$PROJECT_DIR$/userInformation.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/AnnouncementItemPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/ServerAnnouncementPane.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FriendItemPane.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/FriendChatViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/StartupPane.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/ChatRoomUI.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/StartupViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/css/chatStyle.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FriendRequestItem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/FriendRequestViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierClientServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/ChatClientService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/controllers/ChatRoomMainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/ChatRoomViewController.java" />
+        <option value="$PROJECT_DIR$/userInformation.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/HandshakeServiceImp.java" />
       </list>
     </option>
   </component>
@@ -163,99 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -318,12 +218,97 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LazerChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LazerChatClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="LasserChat" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551113576931" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551135343284" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -353,7 +338,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client1">
+  <component name="RunManager" selected="Application.Client3">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -445,16 +430,18 @@
       <workItem from="1551087488671" duration="4956000" />
       <workItem from="1551097063917" duration="6467000" />
       <workItem from="1551104160607" duration="6856000" />
+      <workItem from="1551122745123" duration="9868000" />
+      <workItem from="1551133291464" duration="2110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36000000" />
+    <option name="totallyTimeSpent" value="47978000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27609682" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28744328" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -571,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/ChatClientService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/TextMessagePane.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -613,14 +593,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/FriendChatPane.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/LoginViewController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -667,32 +639,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/FriendRequestViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/AddContactPane.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierClientServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
@@ -725,73 +676,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/AddContactViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-          <folding>
-            <element signature="method#addFriendToList#0;class#AddContactViewController#0" />
-            <element signature="method#saveFriends#0;class#AddContactViewController#0" />
-            <element signature="method#deleteFriendFromList#0;class#AddContactViewController#0" />
-            <element signature="method#AddContactViewController#0;class#AddContactViewController#0" />
-            <element signature="method#initialize#0;class#AddContactViewController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/GroupChatPane.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/CreateChatViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding>
-            <element signature="method#addContactToGroup#0;class#CreateChatViewController#0" />
-            <element signature="method#cancelGroupCreation#0;class#CreateChatViewController#0" />
-            <element signature="class#FriendItemPane#0;class#CreateChatViewController#0" />
-            <element signature="method#FriendItemPane#0;class#FriendItemPane#0;class#CreateChatViewController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/GroupChatViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="160" column="44" selection-start-line="160" selection-start-column="44" selection-end-line="160" selection-end-column="44" />
-          <folding>
-            <element signature="method#GroupChatViewController#0;class#GroupChatViewController#0" />
-            <element signature="method#GroupChatViewController#1;class#GroupChatViewController#0" />
-            <element signature="method#initialize#0;class#GroupChatViewController#0" />
-            <element signature="class#2048:3883" />
-            <element signature="method#updateItem#0;class#2048:3883" />
-            <element signature="e#2364#3036#1" />
-            <element signature="e#2406#2810#1" />
-            <element signature="e#2816#3010#1" />
-            <element signature="e#3042#3220#1" />
-            <element signature="method#updateSelected#0;class#2048:3883" />
-            <element signature="e#3465#3646#1" />
-            <element signature="e#3652#3843#1" />
-            <element signature="method#selectGroupSession#0;class#GroupChatViewController#0" />
-            <element signature="method#addNewGroupChat#0;class#GroupChatViewController#0" />
-            <element signature="e#5974#5975#0" expanded="true" />
-            <element signature="e#5993#5994#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/CreateGroupChatPane.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="40" column="16" selection-start-line="37" selection-start-column="52" selection-end-line="40" selection-end-column="16" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/controllers/StartupMainController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -814,41 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/FriendChatViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-          <folding>
-            <element signature="method#FriendChatViewController#0;class#FriendChatViewController#0" />
-            <element signature="method#FriendChatViewController#1;class#FriendChatViewController#0" />
-            <element signature="e#2309#2985#1" />
-            <element signature="e#2351#2759#1" />
-            <element signature="e#2765#2959#1" />
-            <element signature="e#2991#3169#1" />
-            <element signature="method#updateSelected#0;class#2016:3816" />
-            <element signature="e#3394#3577#1" />
-            <element signature="e#3583#3776#1" />
-            <element signature="e#4196#4706#1" />
-            <element signature="e#4255#4343#1" />
-            <element signature="e#4348#4696#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FriendItemPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/HandshakeServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -863,17 +719,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userInformation.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/ServerAnnouncementPane.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        <state relative-caret-position="136">
+          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/AnnouncementItemPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/GroupChatViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding>
+            <element signature="method#GroupChatViewController#0;class#GroupChatViewController#0" />
+            <element signature="method#GroupChatViewController#1;class#GroupChatViewController#0" />
+            <element signature="method#initialize#0;class#GroupChatViewController#0" />
+            <element signature="method#selectGroupSession#0;class#GroupChatViewController#0" />
+            <element signature="method#addNewGroupChat#0;class#GroupChatViewController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/jfoenix/jfoenix/8.0.8/jfoenix-8.0.8.jar!/css/controls/jfx-combo-box.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="61" column="12" lean-forward="true" selection-start-line="61" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FriendItemPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="method#FriendItemPane#0;class#FriendItemPane#0" />
+            <element signature="method#setUserState#0;class#FriendItemPane#0" />
+            <element signature="e#2985#3660#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/CreateChatViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="849">
+          <caret line="108" column="4" lean-forward="true" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
+          <folding>
+            <element signature="method#CreateChatViewController#0;class#CreateChatViewController#0" />
+            <element signature="method#initialize#0;class#CreateChatViewController#0" />
+            <element signature="e#1838#2046#1" />
+            <element signature="docComment;method#addContactToGroup#0;class#CreateChatViewController#0" />
+            <element signature="method#FriendItemPane#0;class#FriendItemPane#0;class#CreateChatViewController#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/ChatRoomUI.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="129" column="171" selection-start-line="129" selection-start-column="157" selection-end-line="129" selection-end-column="171" />
+        <state relative-caret-position="339">
+          <caret line="209" column="23" selection-start-line="209" selection-start-column="23" selection-end-line="209" selection-end-column="23" />
           <folding>
             <element signature="n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#VBox#0;n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
@@ -897,7 +819,6 @@
             <element signature="n#graphic#0;n#Button#0;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#cursor#0;n#Button#0;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#padding#0;n#VBox#0;n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#center#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#ScrollPane#0;n#center#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#Button#0;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#graphic#0;n#Button#0;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
@@ -911,9 +832,6 @@
             <element signature="n#graphic#0;n#Button#2;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#padding#0;n#Button#2;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#cursor#0;n#Button#2;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#Button#3;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#padding#0;n#Button#3;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#cursor#0;n#Button#3;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#Button#4;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#graphic#0;n#Button#4;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#padding#0;n#Button#4;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
@@ -922,9 +840,6 @@
             <element signature="n#graphic#0;n#Button#5;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#VBox.margin#0;n#Button#5;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#cursor#0;n#Button#5;n#children#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#padding#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#effect#0;n#VBox#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#VBox#0;n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#children#0;n#VBox#0;n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#Label#0;n#children#0;n#VBox#0;n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
@@ -934,128 +849,140 @@
             <element signature="n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#padding#0;n#HBox#0;n#children#0;n#VBox#0;n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
             <element signature="n#padding#0;n#VBox#0;n#top#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#left#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#children#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Button#0;n#children#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#Button#0;n#children#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#cursor#0;n#Button#0;n#children#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Button#1;n#children#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#Button#1;n#children#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#HBox.margin#0;n#Button#1;n#children#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#cursor#0;n#Button#1;n#children#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Button#2;n#children#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#Button#2;n#children#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#cursor#0;n#Button#2;n#children#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#padding#0;n#HBox#0;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#HBox#1;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#children#0;n#HBox#1;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Label#0;n#children#0;n#HBox#1;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#Label#0;n#children#0;n#HBox#1;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#HBox.margin#0;n#Label#0;n#children#0;n#HBox#1;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Circle#0;n#children#0;n#HBox#1;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#HBox.margin#0;n#Circle#0;n#children#0;n#HBox#1;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Label#1;n#children#0;n#HBox#1;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#Label#1;n#children#0;n#HBox#1;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#HBox.margin#0;n#Label#1;n#children#0;n#HBox#1;n#children#0;n#AnchorPane#0;n#top#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#ScrollPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#content#0;n#ScrollPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#VBox#0;n#content#0;n#ScrollPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#padding#0;n#VBox#0;n#content#0;n#ScrollPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Label#0;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#Label#0;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#ToggleButton#0;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#ToggleButton#0;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#ToggleButton#1;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#ToggleButton#1;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#ToggleButton#2;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#ToggleButton#2;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#JFXButton#0;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#JFXButton#0;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#VBox.margin#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#padding#0;n#HBox#0;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Button#0;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#Button#0;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#HBox.margin#0;n#Button#0;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#cursor#0;n#Button#0;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Button#1;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#Button#1;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#cursor#0;n#Button#1;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#TextField#0;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#TextField#0;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#JFXButton#0;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#JFXButton#0;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#HBox.margin#0;n#JFXButton#0;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#cursor#0;n#JFXButton#0;n#children#0;n#HBox#1;n#children#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#padding#0;n#VBox#0;n#bottom#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Circle#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#VBox.margin#0;n#Circle#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#HBox#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#ToggleButton#0;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#ToggleButton#0;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#ToggleButton#1;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#ToggleButton#1;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Label#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#Label#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Label#1;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#Label#1;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Label#2;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#Label#2;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#Label#2;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#VBox.margin#0;n#Label#2;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Label#3;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#Label#3;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#Label#3;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Label#4;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#Label#4;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#Label#4;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#Label#5;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#Label#5;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#graphic#0;n#Label#5;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#JFXButton#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#font#0;n#JFXButton#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
-            <element signature="n#VBox.margin#0;n#JFXButton#0;n#children#0;n#VBox#0;n#children#0;n#AnchorPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
+            <element signature="n#AnchorPane#0;n#children#0;n#StackPane#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" />
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/ServerAnnouncementPane.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/AnnouncementItemPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/StartupPane.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="64" column="25" selection-start-line="64" selection-end-line="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/ServerAnnouncementViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/GroupChatPane.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/StartupViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        <state relative-caret-position="743">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="method#getFeaturePage#0;class#StartupViewController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/chatStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="78" column="19" lean-forward="true" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/fxml/FriendChatPane.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/FriendChatViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+          <folding>
+            <element signature="method#FriendChatViewController#0;class#FriendChatViewController#0" />
+            <element signature="method#FriendChatViewController#1;class#FriendChatViewController#0" />
+            <element signature="method#selectFriendSession#0;class#FriendChatViewController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/AddContactViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+          <folding>
+            <element signature="method#addFriendToList#0;class#AddContactViewController#0" />
+            <element signature="method#saveFriends#0;class#AddContactViewController#0" />
+            <element signature="method#deleteFriendFromList#0;class#AddContactViewController#0" />
+            <element signature="method#AddContactViewController#0;class#AddContactViewController#0" />
+            <element signature="method#initialize#0;class#AddContactViewController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/FriendRequestViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="84" column="44" lean-forward="true" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierClientServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/ChatClientService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#ChatClientService#0" />
+            <element signature="method#ChatClientService#0;class#ChatClientService#0" />
+            <element signature="method#addClient#0;class#ChatClientService#0" />
+            <element signature="method#removeClient#0;class#ChatClientService#0" />
+            <element signature="method#sendMessageToClients#0;class#ChatClientService#0" />
+            <element signature="e#1517#1701#0" />
+            <element signature="e#1737#1782#0" />
+            <element signature="method#unregister#0;class#ChatClientService#0" />
+            <element signature="e#1877#2063#0" />
+            <element signature="e#1905#1972#0" />
+            <element signature="e#2000#2053#0" />
+            <element signature="docComment;method#sendFileToClients#0;class#ChatClientService#0" />
+            <element signature="method#sendFileToClients#0;class#ChatClientService#0" />
+            <element signature="e#2242#2551#0" />
+            <element signature="e#2353#2459#1" />
+            <element signature="e#2465#2540#1" />
+            <element signature="e#2579#2624#0" />
+            <element signature="method#lookupSession#0;class#ChatClientService#0" />
+            <element signature="e#2925#3072#1" />
+            <element signature="e#3076#3398#1" />
+            <element signature="method#notifyStatus#0;class#ChatClientService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/NotifierServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userInformation.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/models/FriendRequestItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-515">
+          <caret line="28" column="94" lean-forward="true" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1064,14 +991,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/controllers/ChatRoomMainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="216" column="5" selection-start-line="216" selection-start-column="5" selection-end-line="216" selection-end-column="5" />
+        <state relative-caret-position="316">
+          <caret line="235" column="23" lean-forward="true" selection-start-line="235" selection-start-column="23" selection-end-line="235" selection-end-column="23" />
           <folding>
-            <element signature="method#ChatRoomMainController#0;class#ChatRoomMainController#0" />
             <element signature="docComment;method#sendMessage#0;class#ChatRoomMainController#0" />
+            <element signature="e#3057#3058#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
             <element signature="docComment;method#receiveMessage#0;class#ChatRoomMainController#0" />
             <element signature="method#receiveMessage#0;class#ChatRoomMainController#0" />
+            <element signature="e#3531#3532#0" expanded="true" />
+            <element signature="e#3588#3589#0" expanded="true" />
+            <element signature="e#3663#3664#0" expanded="true" />
+            <element signature="e#3729#3730#0" expanded="true" />
+            <element signature="e#3772#3773#0" expanded="true" />
+            <element signature="e#3824#3825#0" expanded="true" />
             <element signature="method#serverStop#0;class#ChatRoomMainController#0" />
+            <element signature="e#4006#4007#0" expanded="true" />
+            <element signature="e#4080#4081#0" expanded="true" />
             <element signature="method#saveSession#0;class#ChatRoomMainController#0" />
             <element signature="method#reciveFile#0;class#ChatRoomMainController#0" />
             <element signature="method#sendFile#0;class#ChatRoomMainController#0" />
@@ -1081,134 +1017,31 @@
             <element signature="method#checkIfUserExist#0;class#ChatRoomMainController#0" />
             <element signature="method#addNewContact#0;class#ChatRoomMainController#0" />
             <element signature="method#checkIfFriends#0;class#ChatRoomMainController#0" />
+            <element signature="e#6818#6819#0" expanded="true" />
+            <element signature="e#6886#6887#0" expanded="true" />
+            <element signature="e#6959#6960#0" expanded="true" />
+            <element signature="e#7041#7042#0" expanded="true" />
             <element signature="method#addFriendRequest#0;class#ChatRoomMainController#0" />
             <element signature="method#checkIfPending#0;class#ChatRoomMainController#0" />
-            <element signature="e#7500#7501#0" expanded="true" />
-            <element signature="e#7570#7571#0" expanded="true" />
+            <element signature="e#7637#7638#0" expanded="true" />
+            <element signature="e#7707#7708#0" expanded="true" />
+            <element signature="e#8103#8104#0" expanded="true" />
+            <element signature="e#8155#8156#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/views/controllers/ChatRoomViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="736" column="51" selection-start-line="736" selection-start-column="51" selection-end-line="736" selection-end-column="51" />
-          <folding>
-            <element signature="e#4169#4861#0" />
-            <element signature="e#4867#7779#0" />
-            <element signature="e#6170#6486#0" />
-            <element signature="e#6521#6839#0" />
-            <element signature="e#6877#7191#0" />
-            <element signature="e#7223#7368#0" />
-            <element signature="e#7402#7551#0" />
-            <element signature="e#7587#7771#0" />
-            <element signature="e#7901#7940#0" />
-            <element signature="e#7901#8804#0" />
-            <element signature="e#8092#8798#0" />
-            <element signature="e#8810#9511#0" />
-            <element signature="e#9185#9438#0" />
-            <element signature="e#9461#9505#0" />
-            <element signature="e#9517#9580#0" />
-            <element signature="e#9586#9885#0" />
-            <element signature="e#9891#9943#0" />
-            <element signature="e#9949#10073#0" />
-            <element signature="e#10079#10950#0" />
-            <element signature="e#10516#10877#0" />
-            <element signature="e#10900#10944#0" />
-            <element signature="e#10956#11827#0" />
-            <element signature="e#11393#11754#0" />
-            <element signature="e#11777#11821#0" />
-            <element signature="e#11833#12613#0" />
-            <element signature="e#12233#12540#0" />
-            <element signature="e#12563#12607#0" />
-            <element signature="e#12619#12671#0" />
-            <element signature="e#12619#15189#0" />
-            <element signature="e#12889#15182#1" />
-            <element signature="e#13290#15087#0" />
-            <element signature="e#13375#14727#0" />
-            <element signature="e#13685#13753#0" />
-            <element signature="e#14200#14266#0" />
-            <element signature="e#14474#14709#1" />
-            <element signature="e#14548#14687#1" />
-            <element signature="e#14778#14838#0" />
-            <element signature="e#14847#15004#0" />
-            <element signature="e#15195#15430#0" />
-            <element signature="e#15551#16866#0" />
-            <element signature="e#15714#16361#0" />
-            <element signature="e#16576#16787#0" />
-            <element signature="e#16721#16777#1" />
-            <element signature="e#16815#16860#0" />
-            <element signature="e#16894#16926#0" />
-            <element signature="e#16932#18115#0" />
-            <element signature="e#17031#18109#1" />
-            <element signature="e#17165#18099#1" />
-            <element signature="e#17618#17777#0" />
-            <element signature="e#18121#18231#0" />
-            <element signature="e#18121#19352#0" />
-            <element signature="e#19358#19775#0" />
-            <element signature="e#19358#21094#0" />
-            <element signature="e#20124#20428#1" />
-            <element signature="e#20179#20418#1" />
-            <element signature="e#20282#20402#0" />
-            <element signature="e#20434#20519#1" />
-            <element signature="e#20550#21087#1" />
-            <element signature="e#20821#20993#1" />
-            <element signature="e#20857#20977#0" />
-            <element signature="e#21100#21149#0" />
-            <element signature="e#21100#21570#0" />
-            <element signature="e#21244#21404#1" />
-            <element signature="e#21410#21564#1" />
-            <element signature="e#21576#21614#0" />
-            <element signature="e#21576#24371#0" />
-            <element signature="e#21860#24276#1" />
-            <element signature="e#22158#22290#0" />
-            <element signature="e#22415#22478#1" />
-            <element signature="e#22484#24266#1" />
-            <element signature="e#22550#23879#0" />
-            <element signature="e#22845#23561#0" />
-            <element signature="e#23326#23415#1" />
-            <element signature="e#23570#23860#0" />
-            <element signature="e#23600#23672#0" />
-            <element signature="e#23681#23838#0" />
-            <element signature="e#23732#23812#1" />
-            <element signature="e#23903#23964#0" />
-            <element signature="e#23973#24251#0" />
-            <element signature="e#23999#24140#0" />
-            <element signature="e#24046#24118#1" />
-            <element signature="e#24164#24233#0" />
-            <element signature="e#24282#24364#1" />
-            <element signature="e#24399#24429#0" />
-            <element signature="e#24399#24662#0" />
-            <element signature="e#24668#24816#0" />
-            <element signature="e#24668#25509#0" />
-            <element signature="e#25114#25503#1" />
-            <element signature="e#25236#25344#0" />
-            <element signature="e#25382#25491#0" />
-            <element signature="e#25537#25581#0" />
-            <element signature="e#25587#25726#0" />
-            <element signature="e#25587#25932#0" />
-            <element signature="e#25814#25924#0" />
-            <element signature="e#25938#26006#0" />
-            <element signature="e#26012#26096#0" />
-            <element signature="e#26124#26791#0" />
-            <element signature="e#26558#26718#0" />
-            <element signature="e#26741#26785#0" />
-            <element signature="e#27204#27366#0" />
-            <element signature="e#27389#27433#0" />
-            <element signature="e#27445#28069#0" />
-            <element signature="e#27833#27996#0" />
-            <element signature="e#28019#28063#0" />
-            <element signature="e#28075#28682#0" />
-            <element signature="e#28450#28609#0" />
-            <element signature="e#28632#28676#0" />
-            <element signature="e#28688#29273#0" />
-            <element signature="e#29040#29200#0" />
-            <element signature="e#29223#29267#0" />
-            <element signature="e#29300#29977#0" />
-            <element signature="e#31182#31183#0" expanded="true" />
-            <element signature="e#31262#31263#0" expanded="true" />
-            <element signature="e#31269#31390#0" />
-          </folding>
+        <state relative-caret-position="-58">
+          <caret line="514" column="47" selection-start-line="514" selection-start-column="47" selection-end-line="514" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jets/LasserChat/models/services/HandshakeServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="37" column="62" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="62" />
         </state>
       </provider>
     </entry>
